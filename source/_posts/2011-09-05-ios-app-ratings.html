@@ -1,0 +1,25 @@
+---
+layout: post
+title: iOS app ratings
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+Partially inspired by this <a href="http://www.stumbleupon.com/su/1xgrfW/mobileorchard.com/improving-your-app-store-rating/">great article</a>. 
+
+AppStore rating system isn't something developers like, generally. There are several problems which I found myself:
+
+<strong>1. Developer will not receive any notification about new rating/review.</strong> There is no problem if all ratings are 5-star, but let's be more reallistic... Bad ratings are omnipresent and usually tackle a problem with your application. In some cases, bad ratings are actually feature requests rather than bug reports. So, if developer doesn't often check ratings, someone can report a bug that stays untouched until dev sees it. AppStore rating/review maybe wants to be both, but it actually isn't any of it.
+
+<strong>2. Developer can't reply to a rating.</strong> If someone writes a review telling "I want (imagine some feature) in this app", you can't tell him that you are working on it and it will be there in next update. You can just hope that this user will keep this app and download your next update.
+
+<strong>3. Bad ratings.</strong> Every rated app will receive at least one bad rating. This is not something Apple should bother with, but no one wants a bad rating to make new shiny app unpopular.
+
+<strong>How to tackle all 3in1?</strong> Make in-app links (buttons, whateva...) to redirect happy user to rate app on the AppStore and unsatisfied user to send you an email. So, you removed a bad rating from AppStore, you got notified about something bad in you app instantly and you know who sent you email and you can respond directly to unsatisfied user. Awesome!
+
+<strong>Instrusive or not?</strong> I really hate those pop-ups asking me to rate app. I don't want to bother a user who is using my app to rate it when he wants to use the app. So, I still use Appirater, which I found to be one of greatest open source frameworks for iOS SDK, but I just don't make a callbacks to Appirater. What I do is using Appirater config and method to open AppStore url, but when user wants to rate, e.g. tapping a button.
+

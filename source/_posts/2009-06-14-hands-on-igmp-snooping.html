@@ -1,0 +1,19 @@
+---
+layout: post
+title: Hands on IGMP Snooping
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta: {}
+---
+Last few weeks were quite a hell for me. While struggling to finish all labs and seminars on time, I suffered quite strong pain in paranasal sinuses, which was followed by toothache and usual headache caused by lack of sleep and rest. Despite that, I managed not to break any deadlines. Not just that, but IGMP snooping project entered working state. Sometimes I can't belive how I can stay alive...
+
+So, what's with IGMP snooping... Long story short, IGMP snooping is functionality built in enterprise switches that gives it ability to read IGMP protocol, used for IPv4 multicast groups management. Switch that snoops IGMP can optimaly forward multicast traffic causing less congestion in contrast with usual non-snooping switch that broadcasts multicast datagrams.
+
+Few months ago, menthor of mine and I agreed to work on inserting IGMP snooping extensions in software implementation of network bridge. As my menthor is author of network stack virtualization in FreeBSD kernel and network simulator IMUNES, heavily based on virtnet and netgraph, this work is based on bridge implementation called <em>ng_bridge</em>, part of <em>netgraph</em> system included in mainline FreeBSD kernel.
+
+Right now, patch against FreeBSD-CURRENT version of <em>ng_bridge.c</em> contains about 1k lines of code, but there macros and debuging functions that will be trimmed out at some point of development. Thanks to menthor, I received FreeBSD mail alias and perforce account, so code was moved from my personal subversion repository to official one at <a href="perforce.freebsd.org">perforce.freebsd.org</a>. Few things are yet to be added, like applying few more rules from RFC4541, locking mechanisms for thread-safe execution, multicast group and multicast host timers... If everything goes well, I hope that code will be included in one of following stable releases from FreeBSD-8.x branch.
+
+Wish me luck ^^

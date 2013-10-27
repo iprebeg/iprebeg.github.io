@@ -1,0 +1,15 @@
+---
+layout: post
+title: Gentoo CUPS + Samba pain
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta: {}
+---
+Yet again it was a just regular coding break. I ssh-ed to my home server, sudo-ed as root, read e-mail about portage tree update. I issued emerge -uavDN world and watched cups, samba and a lot of other stuff getting compiled and upgraded to some newer version. I restarted all services and got back to work. Three minutes after, my roommate was screaming about printer (shared via samba) doesn't work on her laptop and her essay which must be done until tommorow. After few hours of revisiting all bloody guide's and howtos and conf files, I've found a thread on gentoo forums telling something about /etc/mime.convs... Yeah yeah, etc-update replaced it (of course, it was me, not the script) and uncommenting line
+
+application/octet-stream  application/vnd.cups-raw  0 -
+
+solved it. Back to work, hope so...

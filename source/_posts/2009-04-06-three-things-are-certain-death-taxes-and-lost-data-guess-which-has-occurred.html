@@ -1,0 +1,11 @@
+---
+layout: post
+title: 'Three things are certain: Death, taxes, and lost data. Guess which has occurred.'
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta: {}
+---
+Few days ago I wanted to do some testing in one of my virtual machines. So I started it and in the time fsck was initiated in virtual machine, host machine started to freeze. I tought it happened due to recent upgrade of vmware modules patched (improperly?) for 2.6.29 kernel, so I downgraded kernel and modules, but with no luck. Being very pissed off, I installed virtualbox instead of vmware. Even then, machine started to freeze again... Logs showed errors reported by SATA driver and it could mean only one thing; hdd failure. SeaTools discovered and fixed 48 errors in my 750GB-7200.11 Barracuda, but the drive didn't show much will to cooperate. In a meantime, I discovered that those 7200.11's are very prone to errors so I decided to buy WD Caviar, Black Edition. Right now, I'm reinstalling Gentoo using WD for system partitions. In few days, I'll visit a dealer from which I bought Barracuda and request new disk, as warrany didn't expire yet.

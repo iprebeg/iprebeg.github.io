@@ -1,0 +1,14 @@
+---
+layout: post
+title: Doing fun things from kernel space
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+I was always fascinated with Linux kernel and how this asm-C-macro mashup even gets compiled. Much more fascinating is that  moment of enlightenment when you realize that you actually can patch driver that handles your harddisks, if you are able to do so. Anyway, as network programming is area which intrigues me very much, I decided to research what happens in network subsystem of Linux kernel. As complete kernel newbie, I played with exporting sys_call_table and reimplementing syscalls. Even it is not a proper way, but Wile E. Coyote way, it is a lot of fun and gives a great intro into kernel mechanisms. Just do it in virtual environment. Even more cool things I recently discovered are NetFilter hooks which are pretty understandable and easy way to do anything with packets passing to networking subsystem. As PoC and to learn as much as I can, I started to code simple firewall using kernel implementation of connected lists (&lt;linux/list.h&gt;) which is really nice to have when no glibc is there. So, many ideas are appearing these days and I'm thinking off proposing draft for thesis work.
+
+Oh yeah, planning new trip to Vienna. Fun fun:-)

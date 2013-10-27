@@ -1,0 +1,85 @@
+---
+layout: post
+title: Decrypting outgoing IPSec traffic
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+Sniffing plaintext traffic on IPSec endpoint works for incoming traffic, since it's already decrypted, but outgoing traffic can not be sniffed in original form but only as ESP packets with encapsulated original. This also means that these packages can't be sniffed with dst address of real destination, but address of IPSec peer.
+
+You need to get some traffic with tcpdump/Wireshark/tshark/whateva, but when you analye it, you will need Wireshark built with gcrypt support.
+
+So, fire up your favourite pcap compatible sniffer and get outgoing packets by setting dst address filter with address of IPSec peer. While sniffing, get encryption and authentication keys and algos by hitting
+<code>
+ip xfrm state
+</code>
+or
+<code>
+racoonctl show-sa esp
+</code>
+
+There is also nice perl script written by <a title="Anon guys explains this crap" href="http://www.wireshark.org/lists/wireshark-users/201103/msg00084.html">some anon dude on wireshark mailing list</a>. Script prepares above command output to Wireshark friendly form. Play with it a little. *BEWARE* you IPSec/IKE daemon is probably rekeying every half an hour so you might need to split sniff and analyze separately with different keys.
+
+<code>
+open(RACOON, "racoonctl show-sa esp|") || die "can't execute racoonctl successfully\n";</code>
+
+$sa = 1;
+
+while (&lt;RACOON&gt;) {
+
+chop();
+
+# look for a line starting with an IP addr... yes, I know there are
+# better regexps... but racoon seems to only have one line starting with...
+if (/^[0-9]/) {
+($ip1, $ip2) = split(/\s+/, $_);
+# print the SA #1 line for wireshark
+print "SA #$sa:\t\t\tIPv4|$ip1|$ip2|*\n";
+$sa++;
+}
+if (/^\s*E: aes-cbc/) {
+if (!$aes_1) {
+# print "AES-1:\t0x";
+print "Encryption Key #1:\t0x";
+($x, $x, $x, $one, $two, $three, $four) = split(/\s+/, $_);
+$aes_1 = "$one$two$three$four";
+# print "AES-1: $aes_1\n";
+print "$aes_1\n";
+}
+else {
+# print "AES-2:\t0x";
+print "Encryption Key #2:\t0x";
+($x, $x, $x, $one, $two, $three, $four) = split(/\s+/, $_);
+$aes_2 = "$one$two$three$four";
+# print "AES-2: $aes_2\n";
+print "$aes_2\n";
+}
+}
+
+if (/^\s*A: hmac-sha1/) {
+if (!$hmac_1) {
+# print "HMAC-1:\t0x";
+print "Authentication Key #1:\t0x";
+($x, $x, $x, $one, $two, $three, $four, $five) = split(/\s+/, $_);
+$hmac_1 = "$one$two$three$four$five";
+# print "HMAC-1: $hmac_1\n";
+print "$hmac_1\n";
+}
+else {
+# print "HMAC-2:\t0x";
+print "Authentication Key #2:\t0x";
+($x, $x, $x, $one, $two, $three, $four, $five) = split(/\s+/, $_);
+$hmac_2 = "$one$two$three$four$five";
+# print "HMAC-2: $hmac_2\n";
+print "$hmac_2\n";
+}
+}
+
+}
+
+Fire up wireshark and open your sniff
+Just paste these values into Preferences-&gt;Protocols-&gt;ESP, enable decryption too and hit apply. Enjoy your plaintext traffic.

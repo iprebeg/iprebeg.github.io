@@ -1,0 +1,52 @@
+---
+layout: post
+title: Tomcat and Apache via mod_jk in Gentoo Linux
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta: {}
+---
+Once again, I was resorting things out, cleaning the mess and placing services in logical order on different machines. So, once again, I had to configure tomcat to work with apache on one standard port. A year ago, I found tutorial made by some debian h4x0rz, but I lost my bookmarks so many times since then (thnq, firefox devs). Happily, my configuration files are still there, so I will document it this time.
+
+1. Install apache2, tomcat6 and mod_jk.
+
+2. Append this to httpd.conf
+
+LoadModule jk_module /usr/lib/apache2/modules/mod_jk.so
+# loggging
+JkLogFile /usr/lib/apache2/logs/mod_jk.log
+# Where to find workers.properties
+JkWorkersFile /etc/apache2/jk-workers.properties
+# Select the log format
+JkLogStampFormat "[%a %b %d %H:%M:%S %Y] "
+# JkOptions indicate to send SSL KEY SIZE,
+JkOptions +ForwardKeySize +ForwardURICompat -ForwardDirectories
+# JkRequestLogFormat set the request format
+JkRequestLogFormat "%w %V %T"
+# Send servlet for context / jsp-examples to worker named worker1
+JkMount /jsp-examples worker1
+# Send JSPs for context /jsp-examples/* to worker named worker1
+JkMount /jsp-examples/* worker1
+
+#application specific (my is called pdd)
+
+# Send servlet for context / jsp-examples to worker named worker1
+JkMount /pdd worker1
+# Send JSPs for context /jsp-examples/* to worker named worker1
+JkMount /pdd/* worker1
+
+2. Create directory /usr/lib/apache2/logs/ and empty file /usr/lib/apache2/logs/mod_jk.log
+3. Append this to jk-workers.properties
+
+workers.tomcat_home=/var/lib/tomcat-5.5
+workers.java_home=/opt/sun-jdk-1.6.0.03/
+ps=/
+worker.list=worker1
+worker.default.port=8009
+worker.default.host=localhost
+worker.default.type=ajp13
+worker.default.lbfactor=1
+
+4. /etc/init.d/apache2 restart &amp;&amp; /etc/init.d/tomcat-6 restart

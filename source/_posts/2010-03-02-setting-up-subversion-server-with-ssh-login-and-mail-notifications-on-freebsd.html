@@ -1,0 +1,77 @@
+---
+layout: post
+title: Setting up Subversion server with SSH login and mail notifications on FreeBSD
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta: {}
+---
+I combined few tutorial I found on interwebs to set this up and don't wanna loose it, so I puttin it here...
+
+Make sure you have installed OpenSSH server and Subversion packages.
+
+First, create user "svnadm" for admin and group "svnusers".
+Then add svnadm to svnusers group.
+
+pw usermod svnadm -G svnusers
+
+All users that are supposed to use svn should have umask 002 in .cshrc or .bashrc. That prevents destroying group write permissions during SSH session.
+
+
+Make directory where you want to store your repos, let's say /usr/local/svnrepos
+
+mkdir /usr/local/svnrepos
+
+Next, we will restrict access to this area only for root and svn users:
+
+chown -R root:svnusers /usr/local/svnrepos
+chmod -R u+wrx,g+wrx,o-wrx /usr/local/svnrepos
+
+Then, rename svnserve binary to svnserve.bin and create svnserve script wrapper and make it executable:
+
+########### svnserve #######
+#!/bin/sh
+
+exec /usr/local/bin/svnserve.bin -r /path/to/repos/root "$@"
+############################
+
+
+After that, su to svnadm user and create repo, named, let's say, studsvn.
+
+su - svnadm
+svnadmin create /usr/local/svnrepos/studsvn
+chmod -R o-rwx /usr/local/svnrepos/studsvn
+
+Configure repository
+
+cd /usr/local/svnrepos/studsvn/conf
+
+edit svnserve.conf and make it look like this (just uncomment stuff):
+[general]
+
+anon-access = none
+auth-access = write
+
+Test your connection like this:
+
+svn list svn+ssh://&lt;user-id&gt;@&lt;host&gt;/studsvn
+
+If it doesn't work, you probably screwed some permissions, so make sure that your users are in svnusers group, that they have umask 002 in their default shel
+l's rc file and svn repo has recursive g+rwx.
+
+After that, you may want to have mail notifications for your commits like perforce has.
+
+You need mailer.py script, so you either install svnmailer package, or compile from ports (mail/svnmailer).
+
+After that, you will be able to use mailer.py. Sort of. First, copy it from
+/usr/local/share/subversion/hook-scripts/mailer/mailer.py to /usr/local/bin or create symlink.
+
+Then, get to /usr/local/svnrepos/studsvn/hooks and copy post-commit.tmpl to post-commit, make it executable and then edit it.
+
+You will also need mailer.conf, so copy it from /usr/local/share/subversion/hook-scripts/mailer/tests/mailer.conf to your &lt;repository_path&gt;/hooks (seems best
+to me) and edit it to suit your needs. You also need smtp server which will allow relaying. Do it yourself. Be sure to edit from_addr, to_addr and reply_to
+in mailer.conf.
+
+Enjoy massive distribute spam attack.

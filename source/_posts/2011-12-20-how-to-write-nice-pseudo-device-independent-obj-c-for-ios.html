@@ -1,0 +1,48 @@
+---
+layout: post
+title: How to write nice, pseudo device independent obj-C for iOS
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+When developing iOS app that works on both iPhone and iPad, there are probably many places where you have to apply different size of image, font, button, whatever... If you insert device discrimination snippets, code becomes dirty and unreadable. What you want is to have as much code as possible to look like there is no any difference whether running on iPad or iPhone. Since macros are resolved even before compile time, but besides @2x and ~ipad image nomenclature, there is no some magical way to decide which size of cell, label, button (...) to use, iPhone one or iPad. You have to do that in runtime using one of built-in calls to iOS API.
+
+Check this ugly example:
+<code><pre>
+#define IMAGE_WIDTH_IPAD 100
+#define IMAGE_HEIGHT_IPAD 100
+#define IMAGE_WIDTH_IPHONE 80
+#define IMAGE_HEIGHT_IPHONE 80
+- (void)doSomething
+{
+  ...
+  // if device iPad, use large height and width, if iPhone, use small
+  float IMAGE_WIDTH = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) ? IMAGE_WIDTH_IPHONE : IMAGE_WIDTH_IPAD;
+  float IMAGE_HEIGHT = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) ? IMAGE_HEIGHT_IPHONE : IMAGE_HEIGHT_IPAD;
+  iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, IMAGE_WIDTH, IMAGE_HEIGHT)];
+  ...
+}
+</pre></code>
+Of source, you can put that huge call into another MACRO that evaluates device discrimination, but still, there are two variables that make code fuzzy.
+Now, check this example:
+<code><pre>
+#define IMAGE_WIDTH_IPAD 100
+#define IMAGE_HEIGHT_IPAD 100
+#define IMAGE_WIDTH_IPHONE 80
+#define IMAGE_HEIGHT_IPHONE 80
+//CRUCIAL
+#define DEVICE_IS_IPHONE ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
+#define IMAGE_WIDTH (DEVICE_IS_IPHONE ? IMAGE_WIDTH_IPHONE : IMAGE_WIDTH_IPAD)
+#define IMAGE_HEIGHT (DEVICE_IS_IPHONE ? IMAGE_HEIGHT_IPHONE : IMAGE_HEIGHT_IPHONE)
+- (void)doSomething
+{
+  ...
+  // nice code, if you read it you have no clue which crap is going on behind simple looking macro
+  iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, IMAGE_WIDTH, IMAGE_HEIGHT)];
+  ...
+}
+</pre></code>There, DEVICE_IS_IPHONE is a macro evaluated before compile time, but actual evaluation of expression is happened at run-time. Therefore, every time you use constant defined this way, call is made determine which device is app running on, if there isn't too many of them, it's not a problem. And code is readable :)

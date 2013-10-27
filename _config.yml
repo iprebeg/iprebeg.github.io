@@ -3,8 +3,8 @@
 # ----------------------- #
 
 url: http://iprebeg.github.io
-title: Personal log and reference
-subtitle: all the crazy shit I did last night.
+title: Ivor Prebeg
+subtitle: tail -f /var/log/iprebeg.log
 author: Ivor Prebeg
 simple_search: http://google.com/search
 description: check yourself

@@ -1,0 +1,17 @@
+---
+layout: post
+title: Binding postfix to localhost
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta: {}
+---
+I was searching how to bind postfix to localhost. Took me precious twenty minutes to find a solution, so I'll better make a mind note here. Thanx ubuntu guys!
+
+In master.cnf:
+
+127.0.0.1:smtp inet n -	 -	 -	 - smtpd # binded to localhost
+
+smtp inet n -	 -	 -	 -	 smtpd # promisc:-)
