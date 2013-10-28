@@ -7,6 +7,6 @@ sharing: true
 footer: true
 ---
 
-My name is Ivor Prebeg. I am software engineer living Zagreb, Croatia. I work as developer in Network Technologies department of <a title="SedamIT" href="http://www.sedamit.hr/">SedamIT</a>. I spend my free time developing iOS, solving problems on HackerRank and Kaggle and watching stuff on Coursera.
+Ivor Prebeg is a software development engineer based in Zagreb, Croatia. Works full time at <a title="SedamIT" href="http://www.sedamit.hr/">SedamIT</a> on Spring based solutions in hi-speed network and voice environments. Also does occasional iOS development, stays up late to solve algorithmic problems, automate test and deployments in cloud and walk the dog.  
 
 <a title="CV" href="http://www.prebeg.com/content/CV_iprebeg.pdf">Here is my probably outdated CV</a>
