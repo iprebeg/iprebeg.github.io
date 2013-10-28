@@ -16,7 +16,7 @@ OK, honestly I'd have more private stuff on bitbucket, but I just couldn't resis
 
 ## paas 
 
-Anyway, in efforts to ditch hosting which houses my blog (this one, not there anymore LOL) and Spring Roo stack that powers REST APIs that my iOS apps use, I've begun to experiment with Heroku and Openshift. Currently in process of migrating my iOS apps to iOS 7 and relinking urls to Openshift and REST stack is already set-up. What is so cool about it, I don't have to upload war files, which are not famous for their small footprint, no more downgrading JEE Stack to '02 version to be able to run it against Tomcat-5, only option available in cPanel. What?! Wait, what? It's 2013 guys, how 'bout a little upgrade.
+Anyway, in efforts to ditch hosting which ~~houses~~ housed my blog and Spring Roo stack that powers REST APIs that my iOS apps use, I've begun to experiment with Heroku and Openshift. Currently in process of migrating my iOS apps to iOS 7 and relinking urls to Openshift and REST stack is already set-up. What is so cool about it, I don't have to upload war files, which are not famous for their small footprint, no more downgrading JEE Stack to '02 version to be able to run it against Tomcat-5, only option available in cPanel. What?! Wait, what? It's 2013 guys, how 'bout a little upgrade.
 
 ## blog
 
