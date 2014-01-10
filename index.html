@@ -1,111 +1,128 @@
 
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
-	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<meta charset="utf-8">
-	<title>personal journal and reference  | Ivor Prebeg</title>
+  <meta charset="utf-8">
+  <title>Ivor Prebeg</title>
+  <meta name="author" content="Ivor Prebeg">
 
-<meta name="author" content="Ivor Prebeg"> 
+  
+  <meta name="description" content="check yourself">
+  
 
-<meta name="description" content="check yourself"> <meta name="keywords" content="">
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link rel="canonical" href="http://iprebeg.github.io">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Ivor Prebeg" type="application/atom+xml">
+  
+  
 
-	<link href="/atom.xml" rel="alternate" title="Ivor Prebeg" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
-
-<script language="Javascript" type="text/javascript">
-$(document).ready(
-  function() {
-    (function($) {
-      $(".fancybox[data-content-id]").each(function() {
-        this.href = $(this).data('content-id');
-      });
-      $(".fancybox").fancybox({
-        beforeLoad: function() {
-          var el, 
-              id = $(this.element).data('title-id');
-
-          if (id) {
-            el = $('#' + id);
-
-            if (el.length) {
-              this.title = el.html();
-            }
-          }
-          if ($(this).data('content')) {
-            this.content = $(this).data('content');
-          }
-        },
-        helpers: {
-          title: {
-            type: 'inside'
-          }
-        }
-      });
-    })(jQuery);
-  }
-);
-</script>
-
-	
 </head>
 
+<body   >
+  <nav role="navigation"><div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
 
-<body>
-	<header id="header" class="inner"><h1><a href="/">Ivor Prebeg</a></h1>
-<h4>personal journal and reference</h4>
-<nav id="main-nav"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/ci">CI</a></li>
-	<li><a href="/archives">Archive</a></li>
+      <a class="brand" href="/">Ivor Prebeg</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/ci">CI</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
 </ul>
-</nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/ci">CI</a></li>
-	<li><a href="/archives">Archive</a></li>
-</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:iprebeg.github.io" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
 </div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="http://google.com/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:iprebeg.github.io">
-			</form>
-		</div>
-	</div>
 </nav>
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span9">
+  
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/27/in-the-clouds/">In the Clouds</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
-</header>
-
-	<div id="content" class="inner">
 
 
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/10/27/in-the-clouds/">
-		
-			In the Clouds</a>
-	</h2>
-	<div class="entry-content">
-		<h2>modern vcs</h2>
+
+
+
+
+  
+
+
+<time datetime="2013-10-27T23:26:00+01:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>modern vcs</h2>
 
 <p>Recently moved all my stuff from weird place hosted Subversion repo to github and bitbucket. Bitbucket only to host private repos I can&rsquo;t just share around, like previous freelance work, coursera homeworks and stuff.</p>
 
@@ -124,14 +141,23 @@ $(document).ready(
 <h2>era of powerful cli</h2>
 
 <p>All that stuff I can do just using command line. Monitor travis builds, deploy to openshift on my own even I have travis configured to do that automatically, write blog entries in markdown. I also started using CocoaPods, xctool for obj-c work, super easy.</p>
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/27/amazon-seattle-and-h1b-hell/">Amazon Seattle and H1B Hell</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -143,35 +169,35 @@ $(document).ready(
   
 
 
-<time datetime="2013-10-27T23:26:00+01:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time></div>
-	
+<time datetime="2013-06-27T22:40:00+02:00" pubdate data-updated="true">Jun 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/06/27/amazon-seattle-and-h1b-hell/">
-		
-			Amazon Seattle and H1B Hell</a>
-	</h2>
-	<div class="entry-content">
-		<p>Late March 2013 I visited Amazon offices in Seattle for interview. Got an offer few days after flying out. WHOAT ACCEPTED!?!1!!</p>
+  <div class="entry-content"><p>Late March 2013 I visited Amazon offices in Seattle for interview. Got an offer few days after flying out. WHOAT ACCEPTED!?!1!!</p>
 
 <p>Then I got email from immigration attorney asking me to send my documents as soon as possible. Sure. What lottery?! Gee, there is frickin&#8217; lottery for H1B as well!? My chances were around 60%. Didn&rsquo;t get through, was never much of a gambler. Better luck next year. Damn!</p>
 
 <p>Thing I regret is not visiting Bruce Lee&rsquo;s grave to pay respects while I was there. Not gonna miss it next time.</p>
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/04/lesssions-learned-how-to-sell-your-mac-for-ios-devs/">Lesssions Learned: How to Sell Your Mac (for iOS Devs)</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -183,23 +209,14 @@ $(document).ready(
   
 
 
-<time datetime="2013-06-27T22:40:00+02:00" pubdate data-updated="true">Jun 27<span>th</span>, 2013</time></div>
-	
+<time datetime="2012-07-04T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/07/04/lesssions-learned-how-to-sell-your-mac-for-ios-devs/">
-		
-			Lesssions Learned: How to Sell Your Mac (for iOS Devs)</a>
-	</h2>
-	<div class="entry-content">
-		<strong>Backup</strong>
+  <div class="entry-content"><strong>Backup</strong>
 <p>
 Be sure to have latest backup in TimeMachine. This can keep your transfer to new machine much easier.
 </p>
@@ -224,14 +241,23 @@ Not talking here about your music collection, I&#8217;m talking about projects y
 <p>
 Do not just erase your disk, you have to erase it in safe way. Even if files are deleted, data can be restored with bCheck security options in Mac OS X, not to mention EnCase stuff. Usual zeroing device is fine if you are regular user, but if you work for high-profile clients, don&#8217;t hesitate to leave your computer writing clever random patterns 47 times all over your storage devices. Or just take these out and do not sell them.
 </p>
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/16/decrypting-outgoing-ipsec-traffic/">Decrypting Outgoing IPSec Traffic</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -243,23 +269,14 @@ Do not just erase your disk, you have to erase it in safe way. Even if files are
   
 
 
-<time datetime="2012-07-04T00:00:00+02:00" pubdate data-updated="true">Jul 4<span>th</span>, 2012</time></div>
-	
+<time datetime="2012-02-16T00:00:00+01:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/02/16/decrypting-outgoing-ipsec-traffic/">
-		
-			Decrypting Outgoing IPSec Traffic</a>
-	</h2>
-	<div class="entry-content">
-		Sniffing plaintext traffic on IPSec endpoint works for incoming traffic, since it&#8217;s already decrypted, but outgoing traffic can not be sniffed in original form but only as ESP packets with encapsulated original. This also means that these packages can&#8217;t be sniffed with dst address of real destination, but address of IPSec peer.
+  <div class="entry-content">Sniffing plaintext traffic on IPSec endpoint works for incoming traffic, since it&#8217;s already decrypted, but outgoing traffic can not be sniffed in original form but only as ESP packets with encapsulated original. This also means that these packages can&#8217;t be sniffed with dst address of real destination, but address of IPSec peer.
 
 You need to get some traffic with tcpdump/Wireshark/tshark/whateva, but when you analye it, you will need Wireshark built with gcrypt support.
 
@@ -333,14 +350,23 @@ print &#8220;$hmac_2\n&#8221;;
 
 Fire up wireshark and open your sniff
 Just paste these values into Preferences-&gt;Protocols-&gt;ESP, enable decryption too and hit apply. Enjoy your plaintext traffic.
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/31/thailand-series-vodic-za-balkanca/">Thailand Series: Vodic Za Balkanca</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -352,23 +378,14 @@ Just paste these values into Preferences-&gt;Protocols-&gt;ESP, enable decryptio
   
 
 
-<time datetime="2012-02-16T00:00:00+01:00" pubdate data-updated="true">Feb 16<span>th</span>, 2012</time></div>
-	
+<time datetime="2012-01-31T00:00:00+01:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/01/31/thailand-series-vodic-za-balkanca/">
-		
-			Thailand Series: Vodic Za Balkanca</a>
-	</h2>
-	<div class="entry-content">
-		<strong>Kada ici na Thailand?</strong>
+  <div class="entry-content"><strong>Kada ici na Thailand?</strong>
 
 Najbolje vrijeme za otic na Thailand je od početka studenog do kraja veljace kada je razdoblje hladne klime. U ostatku godine, Thailand nije ugodno mjesto za ljude naviknute na nasu, balkansku klimu zbog ogromne vlage u zraku pa se boravak na otvorenom može pretvoriti u pakleno iskustvo s otežnim disanjem. FYI na tajlandu nema 4 godisnja doba kao kod nas, nego ima hladno, toplo i kisno. Klima je tropska.
 
@@ -394,14 +411,23 @@ Opet, avionom! Za vrijeme sezone, busevi i vlakovi kasne i po nekoliko sati, a d
 Najbliže Bangkoku nalazi se Hua Hin, nekakav ok resort u kojem nisam bio, a kojeg mi je preporucila frendica iz Singapura, tamo valjda si idu u Hua Hin.Na istocnoj obali, u Tajlandskom zaljevu nalaze se Koh Samui, Koh Pha Ngan i Koh Tao. Na zapadnoj obali, u Andamanskom moru je Koh Phi Phi Don (Beach s DiCaprijem je sniman na Koh Phi Phi Lay, to je otocic krajem), Ko Lanta i Phuket. Bili samo na Phi Phiu i Samuiu i iskreno mi je Samui puno bolje sjeo. Phi Phi je mrtav u 22h, nista ne radi, plaza je lijepa ali nije za kupanje jer je ogradjeni dio preplitak. Samui je puno zivlji, a nije toliko iskomercijaliziran i umjetan kao Phi Phi. Pored je Koh Tao, raj za svakog tko voli ronjenje.
 
 &nbsp;
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/20/how-to-write-nice-pseudo-device-independent-obj-c-for-ios/">How to Write Nice, Pseudo Device Independent obj-C for iOS</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -413,23 +439,14 @@ Najbliže Bangkoku nalazi se Hua Hin, nekakav ok resort u kojem nisam bio, a koj
   
 
 
-<time datetime="2012-01-31T00:00:00+01:00" pubdate data-updated="true">Jan 31<span>st</span>, 2012</time></div>
-	
+<time datetime="2011-12-20T00:00:00+01:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/12/20/how-to-write-nice-pseudo-device-independent-obj-c-for-ios/">
-		
-			How to Write Nice, Pseudo Device Independent obj-C for iOS</a>
-	</h2>
-	<div class="entry-content">
-		When developing iOS app that works on both iPhone and iPad, there are probably many places where you have to apply different size of image, font, button, whatever&#8230; If you insert device discrimination snippets, code becomes dirty and unreadable. What you want is to have as much code as possible to look like there is no any difference whether running on iPad or iPhone. Since macros are resolved even before compile time, but besides @2x and ~ipad image nomenclature, there is no some magical way to decide which size of cell, label, button (&#8230;) to use, iPhone one or iPad. You have to do that in runtime using one of built-in calls to iOS API.
+  <div class="entry-content">When developing iOS app that works on both iPhone and iPad, there are probably many places where you have to apply different size of image, font, button, whatever&#8230; If you insert device discrimination snippets, code becomes dirty and unreadable. What you want is to have as much code as possible to look like there is no any difference whether running on iPad or iPhone. Since macros are resolved even before compile time, but besides @2x and ~ipad image nomenclature, there is no some magical way to decide which size of cell, label, button (&#8230;) to use, iPhone one or iPad. You have to do that in runtime using one of built-in calls to iOS API.
 
 Check this ugly example:
 <code><pre>
@@ -466,14 +483,23 @@ Now, check this example:
   ...
 }
 </pre></code>There, DEVICE_IS_IPHONE is a macro evaluated before compile time, but actual evaluation of expression is happened at run-time. Therefore, every time you use constant defined this way, call is made determine which device is app running on, if there isn&#8217;t too many of them, it&#8217;s not a problem. And code is readable :)
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/07/t-com-scam-series-maxadsl-qos/">T-Com Scam Series: MaxADSL QoS</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -485,23 +511,14 @@ Now, check this example:
   
 
 
-<time datetime="2011-12-20T00:00:00+01:00" pubdate data-updated="true">Dec 20<span>th</span>, 2011</time></div>
-	
+<time datetime="2011-09-07T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/09/07/t-com-scam-series-maxadsl-qos/">
-		
-			T-Com Scam Series: MaxADSL QoS</a>
-	</h2>
-	<div class="entry-content">
-		Toliko dugo ne živim u Đakovu da se još vrlo malo smatram Đakovčanom. Kako god, svako malo, tipa jednom u dva mjeseca, kapnem doma do svojih, vidjet starce i sestru, par frendova do kojih mi je još stalo itd itd&#8230; Enivej, nije se još dogodio takav posjet Đakovu, a da nije uključivao rješavanje problema s MaxTV-om, ADSL-om, ruterima, antenama, laptopima i svim ostalim sranjima za koje moja okolina smatra da sam ekspert i da baš volim tražit drivere za printere, defragmentirat diskove i brisat viruse, a posebno razgovarati s T-Com službom za podršku&#8230; sigh&#8230; Tu dolazimo i do današnje epizdoe, ali prije toga, mali uvod u problematiku&#8230;
+  <div class="entry-content">Toliko dugo ne živim u Đakovu da se još vrlo malo smatram Đakovčanom. Kako god, svako malo, tipa jednom u dva mjeseca, kapnem doma do svojih, vidjet starce i sestru, par frendova do kojih mi je još stalo itd itd&#8230; Enivej, nije se još dogodio takav posjet Đakovu, a da nije uključivao rješavanje problema s MaxTV-om, ADSL-om, ruterima, antenama, laptopima i svim ostalim sranjima za koje moja okolina smatra da sam ekspert i da baš volim tražit drivere za printere, defragmentirat diskove i brisat viruse, a posebno razgovarati s T-Com službom za podršku&#8230; sigh&#8230; Tu dolazimo i do današnje epizdoe, ali prije toga, mali uvod u problematiku&#8230;
 
 <strong>Kako živi T-Com?</strong>
 Tko imalo zna kretanje cijena Internet i IPTV usluga u Rvata, vjerojatno se pitao kako T-Com uspijeva opstati pored Optime, Bneta, BTNeta, Iskona, Metroneta, H1 i inih koje više ne znam niti nabrojati, a svi redom nude usluge po cijena prema kojima T-Com izgleda kao&#8230; kao T-Com, valjda nema  boljeg primjera. E pa, sva ta sila, nazovimo ih tako, inih operatera nema svoju infrastrukturu u svim malim vukojebinama i bespućima Lijepe Naše, nego je T-Com još uvijek tata-mata i nema druge alternative nego se lijepo naguzit, duboko udahnit i platit da &#8220;Živimo zajedno&#8221;. Eto, valjda tako živi T-Com.
@@ -514,14 +531,23 @@ Zadnjih nekoliko puta kako sam bio doma, bio mi nekako Internet sporiji, al mi s
 
 <strong>Vrhunac</strong>
 Uglavnom, ustanovili smo da su T-Comovi inženjeri limitirali MaxADSL link na 1Mbit (4Mbit flat je ono što plaćamo), kako se ne bi pojavljivali problemi na MaxTV-u, kojem treba isto 4Mbita. Jednostavno matematikom, ako imas 5 jabuka, a trebas 8, imas problem. Evidentno je to da T-Com mjesecima naplaćuje uslugu koju nije u stanju isporučiti (i to su znali i prešutno postavili limit na MaxADSL). Tip s kojim sam razgovarao mi je rekao da je prijavio kvar te da mogu poslati pismeni zahtjev da nam smanje iznos mjesečne pretplate. I šta sad, nije meni krivo što, jebiga, ne valja parica, ne skida se nešto ovako brzo ili onako brzo, nego što netko od lopova nije nazvao i rekao &#8220;gle, ne može internet onako baš brzo kako mi kažemo da može, nego malo sporije, aj ak oćeš pa ti smanjimo pretplatu&#8221; i svima srce na mjestu. Ovo smatram prijevarom najpodlijeg oblika. Zadnje što želim je moliti ih da mi smanje pretplatu, ionako istječe uskoro 2 godine ugovora pa zbogom T-Come, jednom za svagda, želim ti dugu starost i tešku bolest.
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/05/ios-app-ratings/">iOS App Ratings</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -533,23 +559,14 @@ Uglavnom, ustanovili smo da su T-Comovi inženjeri limitirali MaxADSL link na 1M
   
 
 
-<time datetime="2011-09-07T00:00:00+02:00" pubdate data-updated="true">Sep 7<span>th</span>, 2011</time></div>
-	
+<time datetime="2011-09-05T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/09/05/ios-app-ratings/">
-		
-			iOS App Ratings</a>
-	</h2>
-	<div class="entry-content">
-		Partially inspired by this <a href="http://www.stumbleupon.com/su/1xgrfW/mobileorchard.com/improving-your-app-store-rating/">great article</a>. 
+  <div class="entry-content">Partially inspired by this <a href="http://www.stumbleupon.com/su/1xgrfW/mobileorchard.com/improving-your-app-store-rating/">great article</a>. 
 
 AppStore rating system isn&#8217;t something developers like, generally. There are several problems which I found myself:
 
@@ -563,14 +580,23 @@ AppStore rating system isn&#8217;t something developers like, generally. There a
 
 <strong>Instrusive or not?</strong> I really hate those pop-ups asking me to rate app. I don&#8217;t want to bother a user who is using my app to rate it when he wants to use the app. So, I still use Appirater, which I found to be one of greatest open source frameworks for iOS SDK, but I just don&#8217;t make a callbacks to Appirater. What I do is using Appirater config and method to open AppStore url, but when user wants to rate, e.g. tapping a button.
 
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/04/xcode4-0-x-and-source-control/">Xcode4.0.x and Source Control</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -582,37 +608,37 @@ AppStore rating system isn&#8217;t something developers like, generally. There a
   
 
 
-<time datetime="2011-09-05T00:00:00+02:00" pubdate data-updated="true">Sep 5<span>th</span>, 2011</time></div>
-	
+<time datetime="2011-09-04T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/09/04/xcode4-0-x-and-source-control/">
-		
-			Xcode4.0.x and Source Control</a>
-	</h2>
-	<div class="entry-content">
-		I can remember my early days of colleague when students were gathered into a small teams working on a week-projects. We all know these Node_FinalVersionThisIsReallyFinalOkNowItsFinalFixedv47.cpp files shared via e-mail and how confusing all this could get. Along with computer-aided software development in general, source control software evolved from crappy CVS to GIT and others which got so nicely integrated into IDEs (Eclipse Team) and file managers so people started to use it not just for software versioning but versioning and sharing of any files.
+  <div class="entry-content">I can remember my early days of colleague when students were gathered into a small teams working on a week-projects. We all know these Node_FinalVersionThisIsReallyFinalOkNowItsFinalFixedv47.cpp files shared via e-mail and how confusing all this could get. Along with computer-aided software development in general, source control software evolved from crappy CVS to GIT and others which got so nicely integrated into IDEs (Eclipse Team) and file managers so people started to use it not just for software versioning but versioning and sharing of any files.
 
 Since I discovered beautys of SVN in my early days, I use personal repository to store some small projects source code, bunch of simple bash and perl scripts, old code that I may reuse sometimes, random files I need very often (like CV), artwork&#8230; It may be an overuse, but this suites my needs and I don&#8217;t have any issues with current setup for couple of years. Few times I considered  moving to GIT, but eventually gave up as I didn&#8217;t have real need to make a step into it. And because of laziness too&#8230;
 
 Anyway, lately I&#8217;m using Xcode on daily basis for iPhone development. Xcode has few diseases but in bottom line, it&#8217;s one fine IDE, comparable to Eclipse/STS I use daily too. What I really can&#8217;t understand is why Xcode can be so awesome and still suck at one of basic features that any IDE must have. Several times I tried to setup repositories in Organizer to handle my code, ending shit-pissed off and confused with such idiotic design and implementation of such a simple (ok, it&#8217;s not so simple, but anyway&#8230;) feature. Still today, I&#8217;m using Terminal commands to commit/update code and really hope that in some of future realeses, Xcode would do VCS better&#8230;
 
 P.S. Xcode now hangs with &#8220;Checking source control status&#8221; message&#8230; blegh
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/10/updating-iphone-from-virtualbox-machine/">Updating iPhone From VirtualBox Machine</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -624,74 +650,90 @@ P.S. Xcode now hangs with &#8220;Checking source control status&#8221; message&#
   
 
 
-<time datetime="2011-09-04T00:00:00+02:00" pubdate data-updated="true">Sep 4<span>th</span>, 2011</time></div>
-	
+<time datetime="2011-03-10T00:00:00+01:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/03/10/updating-iphone-from-virtualbox-machine/">
-		
-			Updating iPhone From VirtualBox Machine</a>
-	</h2>
-	<div class="entry-content">
-		If you run some soft of Linux and you have iPhone which you sync in virtual machine in VirtualBox, you may run into problems when updating iPhone firmware&#8230; 
+  <div class="entry-content">If you run some soft of Linux and you have iPhone which you sync in virtual machine in VirtualBox, you may run into problems when updating iPhone firmware&#8230; 
 When iPhone gets into recovery mode, usb can&#8217;t be attached to virtual machine in VirtualBox&#8230; 
 
 Finally, I found out that you have to run VirtualBox as root!
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
+</div>
+  
   
 
 
-<time datetime="2011-03-10T00:00:00+01:00" pubdate data-updated="true">Mar 10<span>th</span>, 2011</time></div>
-	
-
-
-	
-</div></article>
-
-<nav id="pagenavi">
+    </article>
+  
+  <ul class="pager">
     
+    <li class="previous"><a href="/blog/page/2/">&larr; Older</a></li>
     
-        <a href="/blog/page/2/" class="next">Next</a>
+    <li><a href="/blog/archives">Blog Archives</a></li>
     
-    <div class="center"><a href="/archives">Blog Archives</a></div>
-</nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2014
+  </ul>
+</div>
+<aside class="sidebar-nav span3">
+  
+    
+<section class="well">
+  <ul id="gh_repos" class="nav">
+    <li class="nav-header">GitHub Repos</li>
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/iprebeg">@iprebeg</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        github.showRepos({
+            user: 'iprebeg',
+            count: 20,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/asides/github.js" type="text/javascript"> </script>
+</section>
 
-    Ivor Prebeg
+<section>
+  <a class="twitter-timeline" href="https://twitter.com/iprebeg" data-widget-id="421637597757063170">Tweets by @iprebeg</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
 
-<br>
-Powered by Octopress.
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer"><hr>
+<p>
+  Copyright &copy; 2014 - Ivor Prebeg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
 </footer>
-	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
+  
 
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
 
 
 

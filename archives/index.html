@@ -1,681 +1,427 @@
 
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
-	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<meta charset="utf-8">
-	<title>Blog Archives  | Ivor Prebeg</title>
+  <meta charset="utf-8">
+  <title>Blog Archives - Ivor Prebeg</title>
+  <meta name="author" content="Ivor Prebeg">
 
-<meta name="author" content="Ivor Prebeg"> 
+  
+  <meta name="description" content="check yourself">
+  
 
-<meta name="description" content="check yourself"> <meta name="keywords" content="">
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link rel="canonical" href="http://iprebeg.github.io/archives">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Ivor Prebeg" type="application/atom+xml">
+  
+  
 
-	<link href="/atom.xml" rel="alternate" title="Ivor Prebeg" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
-
-<script language="Javascript" type="text/javascript">
-$(document).ready(
-  function() {
-    (function($) {
-      $(".fancybox[data-content-id]").each(function() {
-        this.href = $(this).data('content-id');
-      });
-      $(".fancybox").fancybox({
-        beforeLoad: function() {
-          var el, 
-              id = $(this.element).data('title-id');
-
-          if (id) {
-            el = $('#' + id);
-
-            if (el.length) {
-              this.title = el.html();
-            }
-          }
-          if ($(this).data('content')) {
-            this.content = $(this).data('content');
-          }
-        },
-        helpers: {
-          title: {
-            type: 'inside'
-          }
-        }
-      });
-    })(jQuery);
-  }
-);
-</script>
-
-	
 </head>
 
+<body   >
+  <nav role="navigation"><div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
 
-<body>
-	<header id="header" class="inner"><h1><a href="/">Ivor Prebeg</a></h1>
-<h4>personal journal and reference</h4>
-<nav id="main-nav"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/ci">CI</a></li>
-	<li><a href="/archives">Archive</a></li>
+      <a class="brand" href="/">Ivor Prebeg</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/ci">CI</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
 </ul>
-</nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/ci">CI</a></li>
-	<li><a href="/archives">Archive</a></li>
-</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:iprebeg.github.io" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
 </div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="http://google.com/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:iprebeg.github.io">
-			</form>
-		</div>
-	</div>
 </nav>
+  <div class="container">
+    <div class="row-fluid">
+      
+	<div class="well">
 
+<h2><a href="/blog/2013/10/27/in-the-clouds/">in the clouds</a></h2>
+<time datetime="2013-10-27T23:26:00+01:00" pubdate><span class='month'>Oct</span> <span class='day'>27</span> <span class='year'>2013</span></time>
 
-</header>
-
-	<div id="content" class="inner">
-	
-
-
-	
-	
-	<section class="archives"><h1 class="year">2013</h1>
-
-<article>
-	<h2 class="title"><a href="/blog/2013/10/27/in-the-clouds/">in the clouds</a></h2>
-	<div class="meta">
-		<div class="date">Oct 27</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2013/06/27/amazon-seattle-and-h1b-hell/">Amazon Seattle and H1B hell</a></h2>
-	<div class="meta">
-		<div class="date">Jun 27</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-	
-	
-		</section>
-	
-	<section class="archives"><h1 class="year">2012</h1>
-
-<article>
-	<h2 class="title"><a href="/blog/2012/07/04/lesssions-learned-how-to-sell-your-mac-for-ios-devs/">Lesssions learned: How to sell your Mac (for iOS devs)</a></h2>
-	<div class="meta">
-		<div class="date">Jul  4</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2012/02/16/decrypting-outgoing-ipsec-traffic/">Decrypting outgoing IPSec traffic</a></h2>
-	<div class="meta">
-		<div class="date">Feb 16</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2012/01/31/thailand-series-vodic-za-balkanca/">Thailand Series: Vodic za balkanca</a></h2>
-	<div class="meta">
-		<div class="date">Jan 31</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-	
-	
-		</section>
-	
-	<section class="archives"><h1 class="year">2011</h1>
-
-<article>
-	<h2 class="title"><a href="/blog/2011/12/20/how-to-write-nice-pseudo-device-independent-obj-c-for-ios/">How to write nice, pseudo device independent obj-C for iOS</a></h2>
-	<div class="meta">
-		<div class="date">Dec 20</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2011/09/07/t-com-scam-series-maxadsl-qos/">T-Com scam series: MaxADSL QoS</a></h2>
-	<div class="meta">
-		<div class="date">Sep  7</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2011/09/05/ios-app-ratings/">iOS app ratings</a></h2>
-	<div class="meta">
-		<div class="date">Sep  5</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2011/09/04/xcode4-0-x-and-source-control/">Xcode4.0.x and source control</a></h2>
-	<div class="meta">
-		<div class="date">Sep  4</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2011/03/10/updating-iphone-from-virtualbox-machine/">Updating iPhone from VirtualBox machine</a></h2>
-	<div class="meta">
-		<div class="date">Mar 10</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-	
-	
-		</section>
-	
-	<section class="archives"><h1 class="year">2010</h1>
-
-<article>
-	<h2 class="title"><a href="/blog/2010/03/02/setting-up-subversion-server-with-ssh-login-and-mail-notifications-on-freebsd/">Setting up Subversion server with SSH login and mail notifications on FreeBSD</a></h2>
-	<div class="meta">
-		<div class="date">Mar  2</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-	
-	
-		</section>
-	
-	<section class="archives"><h1 class="year">2009</h1>
-
-<article>
-	<h2 class="title"><a href="/blog/2009/09/24/londonske-avanture-i-devsummiteurobsdconcambridge/">Londonske avanture i DevSummit+EuroBSDCon@Cambridge</a></h2>
-	<div class="meta">
-		<div class="date">Sep 24</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/09/15/japan-series-onsen-okinawa-bar-i-let-doma/">Japan Series: Onsen, Okinawa bar i let doma</a></h2>
-	<div class="meta">
-		<div class="date">Sep 15</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/09/09/japan-series-kamakura-fujisawa-enoshima-ginza-i-asakusa/">Japan Series: Kamakura, Fujisawa, Enoshima, Ginza i Asakusa</a></h2>
-	<div class="meta">
-		<div class="date">Sep  9</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/09/07/japan-series-mt-takao-national-museum-i-ueno-park/">Japan Series: Mt. Takao, National Museum i Ueno Park</a></h2>
-	<div class="meta">
-		<div class="date">Sep  7</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/08/27/japan-series-obon-festival-i-put-u-kyoto/">Japan Series: Obon festival i put u Kyoto</a></h2>
-	<div class="meta">
-		<div class="date">Aug 27</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/08/26/japan-series-tachikawa-adventures/">Japan Series: Tachikawa adventures</a></h2>
-	<div class="meta">
-		<div class="date">Aug 26</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/08/17/japan-series-prvi-vikend-off/">Japan Series: Prvi vikend off</a></h2>
-	<div class="meta">
-		<div class="date">Aug 17</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/08/08/japan-series-let-dolazak-i-prvi-dojmovi/">Japan Series: Let, dolazak i prvi dojmovi</a></h2>
-	<div class="meta">
-		<div class="date">Aug  8</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/08/08/japan-series-clare-restoran-i-drvena-kuca/">Japan Series: Clare restoran i drvena kuca</a></h2>
-	<div class="meta">
-		<div class="date">Aug  8</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/06/14/hands-on-igmp-snooping/">Hands on IGMP Snooping</a></h2>
-	<div class="meta">
-		<div class="date">Jun 14</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/04/24/banzaaai/">Banzaaai</a></h2>
-	<div class="meta">
-		<div class="date">Apr 24</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/04/06/three-things-are-certain-death-taxes-and-lost-data-guess-which-has-occurred/">Three things are certain: Death, taxes, and lost data. Guess which has occurred.</a></h2>
-	<div class="meta">
-		<div class="date">Apr  6</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/03/28/migrated-to-kde/">migrated to kde</a></h2>
-	<div class="meta">
-		<div class="date">Mar 28</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/03/01/sun-is-back-so-am-i/">Sun is back, so am I</a></h2>
-	<div class="meta">
-		<div class="date">Mar  1</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2009/01/10/doing-fun-things-from-kernel-space/">Doing fun things from kernel space</a></h2>
-	<div class="meta">
-		<div class="date">Jan 10</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-	
-	
-		</section>
-	
-	<section class="archives"><h1 class="year">2008</h1>
-
-<article>
-	<h2 class="title"><a href="/blog/2008/12/28/happy-whatever-you-celebrate/">Happy $(whatever you celebrate)!</a></h2>
-	<div class="meta">
-		<div class="date">Dec 28</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2008/10/24/cat-varzaralog/">cat /var/zara.log</a></h2>
-	<div class="meta">
-		<div class="date">Oct 24</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2008/09/08/cli-rocks/">CLI rocks</a></h2>
-	<div class="meta">
-		<div class="date">Sep  8</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2008/09/05/slacking-and-having-phun/">Slacking and having phun</a></h2>
-	<div class="meta">
-		<div class="date">Sep  5</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2008/08/27/summer-summary/">Summer summary</a></h2>
-	<div class="meta">
-		<div class="date">Aug 27</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2008/07/30/solving-health-problems/">Solving health problems&#8230;</a></h2>
-	<div class="meta">
-		<div class="date">Jul 30</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2008/07/23/tomcat-and-apache-via-mod_jk-in-gentoo-linux/">Tomcat and Apache via mod_jk in Gentoo Linux</a></h2>
-	<div class="meta">
-		<div class="date">Jul 23</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2008/07/13/titles-and-stuff/">Education stuff</a></h2>
-	<div class="meta">
-		<div class="date">Jul 13</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2008/07/13/hardcoding-passwords-in-scripts/">Hardcoding passwords in scripts</a></h2>
-	<div class="meta">
-		<div class="date">Jul 13</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2008/06/05/binding-postfix-to-localhost/">Binding postfix to localhost</a></h2>
-	<div class="meta">
-		<div class="date">Jun  5</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2008/06/02/gentoo-cups-samba-pain/">Gentoo CUPS + Samba pain</a></h2>
-	<div class="meta">
-		<div class="date">Jun  2</div>
-		
-
-
-	    
-	</div>
-</article>
-
-	
-
-
-<article>
-	<h2 class="title"><a href="/blog/2008/05/31/hello-world-2/">Hello world</a></h2>
-	<div class="meta">
-		<div class="date">May 31</div>
-		
-
-
-	    
-	</div>
-</article>
 </div>
-	<footer id="footer" class="inner">Copyright &copy; 2014
 
-    Ivor Prebeg
 
-<br>
-Powered by Octopress.
+	<div class="well">
+
+<h2><a href="/blog/2013/06/27/amazon-seattle-and-h1b-hell/">Amazon Seattle and H1B hell</a></h2>
+<time datetime="2013-06-27T22:40:00+02:00" pubdate><span class='month'>Jun</span> <span class='day'>27</span> <span class='year'>2013</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2012/07/04/lesssions-learned-how-to-sell-your-mac-for-ios-devs/">Lesssions learned: How to sell your Mac (for iOS devs)</a></h2>
+<time datetime="2012-07-04T00:00:00+02:00" pubdate><span class='month'>Jul</span> <span class='day'>04</span> <span class='year'>2012</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2012/02/16/decrypting-outgoing-ipsec-traffic/">Decrypting outgoing IPSec traffic</a></h2>
+<time datetime="2012-02-16T00:00:00+01:00" pubdate><span class='month'>Feb</span> <span class='day'>16</span> <span class='year'>2012</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2012/01/31/thailand-series-vodic-za-balkanca/">Thailand Series: Vodic za balkanca</a></h2>
+<time datetime="2012-01-31T00:00:00+01:00" pubdate><span class='month'>Jan</span> <span class='day'>31</span> <span class='year'>2012</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2011/12/20/how-to-write-nice-pseudo-device-independent-obj-c-for-ios/">How to write nice, pseudo device independent obj-C for iOS</a></h2>
+<time datetime="2011-12-20T00:00:00+01:00" pubdate><span class='month'>Dec</span> <span class='day'>20</span> <span class='year'>2011</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2011/09/07/t-com-scam-series-maxadsl-qos/">T-Com scam series: MaxADSL QoS</a></h2>
+<time datetime="2011-09-07T00:00:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>07</span> <span class='year'>2011</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2011/09/05/ios-app-ratings/">iOS app ratings</a></h2>
+<time datetime="2011-09-05T00:00:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>05</span> <span class='year'>2011</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2011/09/04/xcode4-0-x-and-source-control/">Xcode4.0.x and source control</a></h2>
+<time datetime="2011-09-04T00:00:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>04</span> <span class='year'>2011</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2011/03/10/updating-iphone-from-virtualbox-machine/">Updating iPhone from VirtualBox machine</a></h2>
+<time datetime="2011-03-10T00:00:00+01:00" pubdate><span class='month'>Mar</span> <span class='day'>10</span> <span class='year'>2011</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2010/03/02/setting-up-subversion-server-with-ssh-login-and-mail-notifications-on-freebsd/">Setting up Subversion server with SSH login and mail notifications on FreeBSD</a></h2>
+<time datetime="2010-03-02T00:00:00+01:00" pubdate><span class='month'>Mar</span> <span class='day'>02</span> <span class='year'>2010</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/09/24/londonske-avanture-i-devsummiteurobsdconcambridge/">Londonske avanture i DevSummit+EuroBSDCon@Cambridge</a></h2>
+<time datetime="2009-09-24T00:00:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>24</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/09/15/japan-series-onsen-okinawa-bar-i-let-doma/">Japan Series: Onsen, Okinawa bar i let doma</a></h2>
+<time datetime="2009-09-15T00:00:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>15</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/09/09/japan-series-kamakura-fujisawa-enoshima-ginza-i-asakusa/">Japan Series: Kamakura, Fujisawa, Enoshima, Ginza i Asakusa</a></h2>
+<time datetime="2009-09-09T00:00:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>09</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/09/07/japan-series-mt-takao-national-museum-i-ueno-park/">Japan Series: Mt. Takao, National Museum i Ueno Park</a></h2>
+<time datetime="2009-09-07T00:00:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>07</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/08/27/japan-series-obon-festival-i-put-u-kyoto/">Japan Series: Obon festival i put u Kyoto</a></h2>
+<time datetime="2009-08-27T00:00:00+02:00" pubdate><span class='month'>Aug</span> <span class='day'>27</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/08/26/japan-series-tachikawa-adventures/">Japan Series: Tachikawa adventures</a></h2>
+<time datetime="2009-08-26T00:00:00+02:00" pubdate><span class='month'>Aug</span> <span class='day'>26</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/08/17/japan-series-prvi-vikend-off/">Japan Series: Prvi vikend off</a></h2>
+<time datetime="2009-08-17T00:00:00+02:00" pubdate><span class='month'>Aug</span> <span class='day'>17</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/08/08/japan-series-let-dolazak-i-prvi-dojmovi/">Japan Series: Let, dolazak i prvi dojmovi</a></h2>
+<time datetime="2009-08-08T00:00:00+02:00" pubdate><span class='month'>Aug</span> <span class='day'>08</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/08/08/japan-series-clare-restoran-i-drvena-kuca/">Japan Series: Clare restoran i drvena kuca</a></h2>
+<time datetime="2009-08-08T00:00:00+02:00" pubdate><span class='month'>Aug</span> <span class='day'>08</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/06/14/hands-on-igmp-snooping/">Hands on IGMP Snooping</a></h2>
+<time datetime="2009-06-14T00:00:00+02:00" pubdate><span class='month'>Jun</span> <span class='day'>14</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/04/24/banzaaai/">Banzaaai</a></h2>
+<time datetime="2009-04-24T00:00:00+02:00" pubdate><span class='month'>Apr</span> <span class='day'>24</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/04/06/three-things-are-certain-death-taxes-and-lost-data-guess-which-has-occurred/">Three things are certain: Death, taxes, and lost data. Guess which has occurred.</a></h2>
+<time datetime="2009-04-06T00:00:00+02:00" pubdate><span class='month'>Apr</span> <span class='day'>06</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/03/28/migrated-to-kde/">migrated to kde</a></h2>
+<time datetime="2009-03-28T00:00:00+01:00" pubdate><span class='month'>Mar</span> <span class='day'>28</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/03/01/sun-is-back-so-am-i/">Sun is back, so am I</a></h2>
+<time datetime="2009-03-01T00:00:00+01:00" pubdate><span class='month'>Mar</span> <span class='day'>01</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2009/01/10/doing-fun-things-from-kernel-space/">Doing fun things from kernel space</a></h2>
+<time datetime="2009-01-10T00:00:00+01:00" pubdate><span class='month'>Jan</span> <span class='day'>10</span> <span class='year'>2009</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2008/12/28/happy-whatever-you-celebrate/">Happy $(whatever you celebrate)!</a></h2>
+<time datetime="2008-12-28T00:00:00+01:00" pubdate><span class='month'>Dec</span> <span class='day'>28</span> <span class='year'>2008</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2008/10/24/cat-varzaralog/">cat /var/zara.log</a></h2>
+<time datetime="2008-10-24T00:00:00+02:00" pubdate><span class='month'>Oct</span> <span class='day'>24</span> <span class='year'>2008</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2008/09/08/cli-rocks/">CLI rocks</a></h2>
+<time datetime="2008-09-08T00:00:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>08</span> <span class='year'>2008</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2008/09/05/slacking-and-having-phun/">Slacking and having phun</a></h2>
+<time datetime="2008-09-05T00:00:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>05</span> <span class='year'>2008</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2008/08/27/summer-summary/">Summer summary</a></h2>
+<time datetime="2008-08-27T00:00:00+02:00" pubdate><span class='month'>Aug</span> <span class='day'>27</span> <span class='year'>2008</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2008/07/30/solving-health-problems/">Solving health problems&#8230;</a></h2>
+<time datetime="2008-07-30T00:00:00+02:00" pubdate><span class='month'>Jul</span> <span class='day'>30</span> <span class='year'>2008</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2008/07/23/tomcat-and-apache-via-mod_jk-in-gentoo-linux/">Tomcat and Apache via mod_jk in Gentoo Linux</a></h2>
+<time datetime="2008-07-23T00:00:00+02:00" pubdate><span class='month'>Jul</span> <span class='day'>23</span> <span class='year'>2008</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2008/07/13/titles-and-stuff/">Education stuff</a></h2>
+<time datetime="2008-07-13T00:00:00+02:00" pubdate><span class='month'>Jul</span> <span class='day'>13</span> <span class='year'>2008</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2008/07/13/hardcoding-passwords-in-scripts/">Hardcoding passwords in scripts</a></h2>
+<time datetime="2008-07-13T00:00:00+02:00" pubdate><span class='month'>Jul</span> <span class='day'>13</span> <span class='year'>2008</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2008/06/05/binding-postfix-to-localhost/">Binding postfix to localhost</a></h2>
+<time datetime="2008-06-05T00:00:00+02:00" pubdate><span class='month'>Jun</span> <span class='day'>05</span> <span class='year'>2008</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2008/06/02/gentoo-cups-samba-pain/">Gentoo CUPS + Samba pain</a></h2>
+<time datetime="2008-06-02T00:00:00+02:00" pubdate><span class='month'>Jun</span> <span class='day'>02</span> <span class='year'>2008</span></time>
+
+</div>
+
+
+	<div class="well">
+
+<h2><a href="/blog/2008/05/31/hello-world-2/">Hello world</a></h2>
+<time datetime="2008-05-31T00:00:00+02:00" pubdate><span class='month'>May</span> <span class='day'>31</span> <span class='year'>2008</span></time>
+
+</div>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer"><hr>
+<p>
+  Copyright &copy; 2014 - Ivor Prebeg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
 </footer>
-	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
+  
 
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
 
 
 

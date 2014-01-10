@@ -1,111 +1,128 @@
 
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
-	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<meta charset="utf-8">
-	<title>personal journal and reference  | Ivor Prebeg</title>
+  <meta charset="utf-8">
+  <title>Ivor Prebeg</title>
+  <meta name="author" content="Ivor Prebeg">
 
-<meta name="author" content="Ivor Prebeg"> 
+  
+  <meta name="description" content="check yourself">
+  
 
-<meta name="description" content="check yourself"> <meta name="keywords" content="">
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link rel="canonical" href="http://iprebeg.github.io/blog/page/4">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Ivor Prebeg" type="application/atom+xml">
+  
+  
 
-	<link href="/atom.xml" rel="alternate" title="Ivor Prebeg" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
-
-<script language="Javascript" type="text/javascript">
-$(document).ready(
-  function() {
-    (function($) {
-      $(".fancybox[data-content-id]").each(function() {
-        this.href = $(this).data('content-id');
-      });
-      $(".fancybox").fancybox({
-        beforeLoad: function() {
-          var el, 
-              id = $(this.element).data('title-id');
-
-          if (id) {
-            el = $('#' + id);
-
-            if (el.length) {
-              this.title = el.html();
-            }
-          }
-          if ($(this).data('content')) {
-            this.content = $(this).data('content');
-          }
-        },
-        helpers: {
-          title: {
-            type: 'inside'
-          }
-        }
-      });
-    })(jQuery);
-  }
-);
-</script>
-
-	
 </head>
 
+<body   >
+  <nav role="navigation"><div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
 
-<body>
-	<header id="header" class="inner"><h1><a href="/">Ivor Prebeg</a></h1>
-<h4>personal journal and reference</h4>
-<nav id="main-nav"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/ci">CI</a></li>
-	<li><a href="/archives">Archive</a></li>
+      <a class="brand" href="/">Ivor Prebeg</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/ci">CI</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
 </ul>
-</nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/ci">CI</a></li>
-	<li><a href="/archives">Archive</a></li>
-</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:iprebeg.github.io" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
 </div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="http://google.com/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:iprebeg.github.io">
-			</form>
-		</div>
-	</div>
 </nav>
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span9">
+  
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/27/summer-summary/">Summer Summary</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
-</header>
-
-	<div id="content" class="inner">
 
 
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/08/27/summer-summary/">
-		
-			Summer Summary</a>
-	</h2>
-	<div class="entry-content">
-		Since my last post, I mostly took the time to enjoy the summer. As health always comes first and me being paranoid about it, I decided to make another examination to make sure that my sight problem has nothing to do with neural stuff. <a href="http://en.wikipedia.org/wiki/Magnetic_resonance_imaging">MRI</a> of my brain was made (and payed:-) in private clinic in Zagreb, named <a href="http://www.medikol.hr">Medikol</a>. Maybe I&#8217;ll post some pics of my CPU :-D if I manage to get them in digital format. Results were done in less then half an hour and I was told that everything is fine up there.
+
+
+
+
+  
+
+
+<time datetime="2008-08-27T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Since my last post, I mostly took the time to enjoy the summer. As health always comes first and me being paranoid about it, I decided to make another examination to make sure that my sight problem has nothing to do with neural stuff. <a href="http://en.wikipedia.org/wiki/Magnetic_resonance_imaging">MRI</a> of my brain was made (and payed:-) in private clinic in Zagreb, named <a href="http://www.medikol.hr">Medikol</a>. Maybe I&#8217;ll post some pics of my CPU :-D if I manage to get them in digital format. Results were done in less then half an hour and I was told that everything is fine up there.
 
 A day after examination, I took the bus to Omiš, a nice place at seaside near Split, and stayed there for three days with my family, who were there on vacation. Sea was a bit cold, but that didn&#8217;t stop me to swim and stay on the beach. We also met a lot of our relatives who live there. It was a bit of pain in the ass to get back to Zagreb as it is tourist season and roads are crowded but I got there just in time.
 
@@ -114,14 +131,23 @@ Same evening, I packed things in new shiny Ferrino Transalp 75 <a href="http://w
 Right now, I am sitting in the office after testing some NFS stuff. I&#8217;m about to buy Linksys WRT54GL, h4ck it with OpenWRT and install it at parents house, as sister is expecting a shiny new pinky Dell Inspirion so we get rid of bloody cables. I plan to be with family next week and then get back in Zagreb as new semester starts on 8. of September. Till then, I&#8217;ll continue to hack a hoax recognition bash script and have phun with IKE stuff I already mentioned.
 
 Like summers, tough.
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/30/solving-health-problems/">Solving Health Problems&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -133,23 +159,14 @@ Like summers, tough.
   
 
 
-<time datetime="2008-08-27T00:00:00+02:00" pubdate data-updated="true">Aug 27<span>th</span>, 2008</time></div>
-	
+<time datetime="2008-07-30T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/07/30/solving-health-problems/">
-		
-			Solving Health Problems&#8230;</a>
-	</h2>
-	<div class="entry-content">
-		Last few weeks passed like a second. I tried to spend time with my family which is situated for about 250 km away (2:50 hours traveling by train), so I ended up spending a pretty much (for a well situated student) cash on train tickets and being chronicaly tired.
+  <div class="entry-content">Last few weeks passed like a second. I tried to spend time with my family which is situated for about 250 km away (2:50 hours traveling by train), so I ended up spending a pretty much (for a well situated student) cash on train tickets and being chronicaly tired.
 
 Also, I decided that it is time to solve my sight problems. After visiting my doctor and telling her that I see double pictures when looking with only right eye, I was pretty sure that I will have to visit neurologist. It was really **cked up to find oftalmologist which wasn&#8217;t on vacation. After all, I found pretty kind one, who told me that I my sight is bad, but no neuro problems (later confirmed by neurologist). So now, as every regular geek, I wear glasses. Besides that, I wanted to make a blood analysis, as I recently became vegetarian. Everything was OK with that, too.
 
@@ -158,14 +175,23 @@ Everything seems to be fine at job, besides we had to spend few days (or weeks) 
 The thing which makes me happy is fact that besides yoga, I have enough free time to work on analyzing implementation of one of IKEv2 daemons and figuring out how to implement an intresting draft. I will post no futher details about that until I entirely understand the existing code.
 
 H4ppy h4ck1n9!
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/23/tomcat-and-apache-via-mod_jk-in-gentoo-linux/">Tomcat and Apache via Mod_jk in Gentoo Linux</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -177,23 +203,14 @@ H4ppy h4ck1n9!
   
 
 
-<time datetime="2008-07-30T00:00:00+02:00" pubdate data-updated="true">Jul 30<span>th</span>, 2008</time></div>
-	
+<time datetime="2008-07-23T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/07/23/tomcat-and-apache-via-mod_jk-in-gentoo-linux/">
-		
-			Tomcat and Apache via Mod_jk in Gentoo Linux</a>
-	</h2>
-	<div class="entry-content">
-		Once again, I was resorting things out, cleaning the mess and placing services in logical order on different machines. So, once again, I had to configure tomcat to work with apache on one standard port. A year ago, I found tutorial made by some debian h4x0rz, but I lost my bookmarks so many times since then (thnq, firefox devs). Happily, my configuration files are still there, so I will document it this time.
+  <div class="entry-content">Once again, I was resorting things out, cleaning the mess and placing services in logical order on different machines. So, once again, I had to configure tomcat to work with apache on one standard port. A year ago, I found tutorial made by some debian h4x0rz, but I lost my bookmarks so many times since then (thnq, firefox devs). Happily, my configuration files are still there, so I will document it this time.
 
 1. Install apache2, tomcat6 and mod_jk.
 
@@ -235,14 +252,23 @@ worker.default.type=ajp13
 worker.default.lbfactor=1
 
 4. /etc/init.d/apache2 restart &amp;&amp; /etc/init.d/tomcat-6 restart
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/13/titles-and-stuff/">Education Stuff</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -254,33 +280,33 @@ worker.default.lbfactor=1
   
 
 
-<time datetime="2008-07-23T00:00:00+02:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2008</time></div>
-	
+<time datetime="2008-07-13T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/07/13/titles-and-stuff/">
-		
-			Education Stuff</a>
-	</h2>
-	<div class="entry-content">
-		Yesterday, I became BSc in Computer Science, weeeee:) My parents and sister visited me and we attended nice ceremony organized by <a title="Fakultet Elektrotehnike i Racunarstva" href="http://www.fer.hr" target="_blank">FER</a> and had lunch in kewl private vegetarian restaurant <a title="Holistički centar Pyr" href="http://www.pyr-centar.com" target="_blank">Pyr</a>. It was really awsome.
+  <div class="entry-content">Yesterday, I became BSc in Computer Science, weeeee:) My parents and sister visited me and we attended nice ceremony organized by <a title="Fakultet Elektrotehnike i Racunarstva" href="http://www.fer.hr" target="_blank">FER</a> and had lunch in kewl private vegetarian restaurant <a title="Holistički centar Pyr" href="http://www.pyr-centar.com" target="_blank">Pyr</a>. It was really awsome.
 
 All in all, those are best three years of my life. Let&#8217;s get the Master now.
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/13/hardcoding-passwords-in-scripts/">Hardcoding Passwords in Scripts</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -292,23 +318,14 @@ All in all, those are best three years of my life. Let&#8217;s get the Master no
   
 
 
-<time datetime="2008-07-13T00:00:00+02:00" pubdate data-updated="true">Jul 13<span>th</span>, 2008</time></div>
-	
+<time datetime="2008-07-13T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/07/13/hardcoding-passwords-in-scripts/">
-		
-			Hardcoding Passwords in Scripts</a>
-	</h2>
-	<div class="entry-content">
-		is actually very bad idea:-)  Let&#8217;s say that you have a script which needs to SSH to remote host and get some data. Hardcoded password is bad, oh, very bad idea.  What you could do is this:
+  <div class="entry-content">is actually very bad idea:-)  Let&#8217;s say that you have a script which needs to SSH to remote host and get some data. Hardcoded password is bad, oh, very bad idea.  What you could do is this:
 
 1. Issue ssh-keygen command on local machine (the one where your script is executed)
 
@@ -319,14 +336,23 @@ All in all, those are best three years of my life. Let&#8217;s get the Master no
 4. Repeat those steps every time you change your public key
 
 You should be able to log in to remote machine without passing password.
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2008/06/05/binding-postfix-to-localhost/">Binding Postfix to Localhost</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -338,37 +364,37 @@ You should be able to log in to remote machine without passing password.
   
 
 
-<time datetime="2008-07-13T00:00:00+02:00" pubdate data-updated="true">Jul 13<span>th</span>, 2008</time></div>
-	
+<time datetime="2008-06-05T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/06/05/binding-postfix-to-localhost/">
-		
-			Binding Postfix to Localhost</a>
-	</h2>
-	<div class="entry-content">
-		I was searching how to bind postfix to localhost. Took me precious twenty minutes to find a solution, so I&#8217;ll better make a mind note here. Thanx ubuntu guys!
+  <div class="entry-content">I was searching how to bind postfix to localhost. Took me precious twenty minutes to find a solution, so I&#8217;ll better make a mind note here. Thanx ubuntu guys!
 
 In master.cnf:
 
 127.0.0.1:smtp inet n -	 -	 -	 - smtpd # binded to localhost
 
 smtp inet n -	 -	 -	 -	 smtpd # promisc:-)
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2008/06/02/gentoo-cups-samba-pain/">Gentoo CUPS + Samba Pain</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -380,35 +406,35 @@ smtp inet n -	 -	 -	 -	 smtpd # promisc:-)
   
 
 
-<time datetime="2008-06-05T00:00:00+02:00" pubdate data-updated="true">Jun 5<span>th</span>, 2008</time></div>
-	
+<time datetime="2008-06-02T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/06/02/gentoo-cups-samba-pain/">
-		
-			Gentoo CUPS + Samba Pain</a>
-	</h2>
-	<div class="entry-content">
-		Yet again it was a just regular coding break. I ssh-ed to my home server, sudo-ed as root, read e-mail about portage tree update. I issued emerge -uavDN world and watched cups, samba and a lot of other stuff getting compiled and upgraded to some newer version. I restarted all services and got back to work. Three minutes after, my roommate was screaming about printer (shared via samba) doesn&#8217;t work on her laptop and her essay which must be done until tommorow. After few hours of revisiting all bloody guide&#8217;s and howtos and conf files, I&#8217;ve found a thread on gentoo forums telling something about /etc/mime.convs&#8230; Yeah yeah, etc-update replaced it (of course, it was me, not the script) and uncommenting line
+  <div class="entry-content">Yet again it was a just regular coding break. I ssh-ed to my home server, sudo-ed as root, read e-mail about portage tree update. I issued emerge -uavDN world and watched cups, samba and a lot of other stuff getting compiled and upgraded to some newer version. I restarted all services and got back to work. Three minutes after, my roommate was screaming about printer (shared via samba) doesn&#8217;t work on her laptop and her essay which must be done until tommorow. After few hours of revisiting all bloody guide&#8217;s and howtos and conf files, I&#8217;ve found a thread on gentoo forums telling something about /etc/mime.convs&#8230; Yeah yeah, etc-update replaced it (of course, it was me, not the script) and uncommenting line
 
 application/octet-stream  application/vnd.cups-raw  0 -
 
 solved it. Back to work, hope so&#8230;
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2008/05/31/hello-world-2/">Hello World</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -420,73 +446,89 @@ solved it. Back to work, hope so&#8230;
   
 
 
-<time datetime="2008-06-02T00:00:00+02:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2008</time></div>
-	
+<time datetime="2008-05-31T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
 
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/05/31/hello-world-2/">
-		
-			Hello World</a>
-	</h2>
-	<div class="entry-content">
-		To stay with good old tradition of all bad developers, it starts with hello world&#8230;
+  <div class="entry-content">To stay with good old tradition of all bad developers, it starts with hello world&#8230;
 
 Content of this blog will be related mostly to nerd stuff, like Linux, sockets and function pointers. Maybe some day, beautiful princess will came and turn this antisocial geeky frog into prince:). But, until then, rather go out and play.
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
+</div>
+  
   
 
 
-<time datetime="2008-05-31T00:00:00+02:00" pubdate data-updated="true">May 31<span>st</span>, 2008</time></div>
-	
-
-
-	
-</div></article>
-
-<nav id="pagenavi">
+    </article>
+  
+  <ul class="pager">
     
-        <a href="/blog/page/3/" class="prev">Prev</a>
+    <li><a href="/blog/archives">Blog Archives</a></li>
     
+    <li class="next"><a href="/blog/page/3/">Newer &rarr;</a></li>
     
-    <div class="center"><a href="/archives">Blog Archives</a></div>
-</nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2014
+  </ul>
+</div>
+<aside class="sidebar-nav span3">
+  
+    
+<section class="well">
+  <ul id="gh_repos" class="nav">
+    <li class="nav-header">GitHub Repos</li>
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/iprebeg">@iprebeg</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        github.showRepos({
+            user: 'iprebeg',
+            count: 20,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/asides/github.js" type="text/javascript"> </script>
+</section>
 
-    Ivor Prebeg
+<section>
+  <a class="twitter-timeline" href="https://twitter.com/iprebeg" data-widget-id="421637597757063170">Tweets by @iprebeg</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
 
-<br>
-Powered by Octopress.
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer"><hr>
+<p>
+  Copyright &copy; 2014 - Ivor Prebeg -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
 </footer>
-	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
+  
 
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
 
 
 
