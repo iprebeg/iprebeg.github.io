@@ -1,0 +1,229 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>Decrypting outgoing IPSec traffic  | Ivor Prebeg</title>
+
+<meta name="author" content="Ivor Prebeg"> 
+
+<meta name="description" content="check yourself"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ivor Prebeg" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Ivor Prebeg</a></h1>
+<h4>personal journal and reference</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:iprebeg.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Decrypting Outgoing IPSec Traffic</h2>
+	<div class="entry-content">Sniffing plaintext traffic on IPSec endpoint works for incoming traffic, since it&#8217;s already decrypted, but outgoing traffic can not be sniffed in original form but only as ESP packets with encapsulated original. This also means that these packages can&#8217;t be sniffed with dst address of real destination, but address of IPSec peer.
+
+You need to get some traffic with tcpdump/Wireshark/tshark/whateva, but when you analye it, you will need Wireshark built with gcrypt support.
+
+So, fire up your favourite pcap compatible sniffer and get outgoing packets by setting dst address filter with address of IPSec peer. While sniffing, get encryption and authentication keys and algos by hitting
+<code>
+ip xfrm state
+</code>
+or
+<code>
+racoonctl show-sa esp
+</code>
+
+There is also nice perl script written by <a title="Anon guys explains this crap" href="http://www.wireshark.org/lists/wireshark-users/201103/msg00084.html">some anon dude on wireshark mailing list</a>. Script prepares above command output to Wireshark friendly form. Play with it a little. *BEWARE* you IPSec/IKE daemon is probably rekeying every half an hour so you might need to split sniff and analyze separately with different keys.
+
+<code>
+open(RACOON, "racoonctl show-sa esp|") || die "can't execute racoonctl successfully\n";</code>
+
+$sa = 1;
+
+while (&lt;RACOON&gt;) {
+
+chop();
+
+# look for a line starting with an IP addr&#8230; yes, I know there are
+# better regexps&#8230; but racoon seems to only have one line starting with&#8230;
+if (/^[0-9]/) {
+($ip1, $ip2) = split(/\s+/, $_);
+# print the SA #1 line for wireshark
+print &#8220;SA #$sa:\t\t\tIPv4|$ip1|$ip2|*\n&#8221;;
+$sa++;
+}
+if (/^\s*E: aes-cbc/) {
+if (!$aes_1) {
+# print &#8220;AES-1:\t0x&#8221;;
+print &#8220;Encryption Key #1:\t0x&#8221;;
+($x, $x, $x, $one, $two, $three, $four) = split(/\s+/, $_);
+$aes_1 = &#8220;$one$two$three$four&#8221;;
+# print &#8220;AES-1: $aes_1\n&#8221;;
+print &#8220;$aes_1\n&#8221;;
+}
+else {
+# print &#8220;AES-2:\t0x&#8221;;
+print &#8220;Encryption Key #2:\t0x&#8221;;
+($x, $x, $x, $one, $two, $three, $four) = split(/\s+/, $_);
+$aes_2 = &#8220;$one$two$three$four&#8221;;
+# print &#8220;AES-2: $aes_2\n&#8221;;
+print &#8220;$aes_2\n&#8221;;
+}
+}
+
+if (/^\s*A: hmac-sha1/) {
+if (!$hmac_1) {
+# print &#8220;HMAC-1:\t0x&#8221;;
+print &#8220;Authentication Key #1:\t0x&#8221;;
+($x, $x, $x, $one, $two, $three, $four, $five) = split(/\s+/, $_);
+$hmac_1 = &#8220;$one$two$three$four$five&#8221;;
+# print &#8220;HMAC-1: $hmac_1\n&#8221;;
+print &#8220;$hmac_1\n&#8221;;
+}
+else {
+# print &#8220;HMAC-2:\t0x&#8221;;
+print &#8220;Authentication Key #2:\t0x&#8221;;
+($x, $x, $x, $one, $two, $three, $four, $five) = split(/\s+/, $_);
+$hmac_2 = &#8220;$one$two$three$four$five&#8221;;
+# print &#8220;HMAC-2: $hmac_2\n&#8221;;
+print &#8220;$hmac_2\n&#8221;;
+}
+}
+
+}
+
+Fire up wireshark and open your sniff
+Just paste these values into Preferences-&gt;Protocols-&gt;ESP, enable decryption too and hit apply. Enjoy your plaintext traffic.
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-16T00:00:00+01:00" pubdate data-updated="true">Feb 16<span>th</span>, 2012</time></div>
+	
+
+
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Ivor Prebeg
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</body>
+</html>

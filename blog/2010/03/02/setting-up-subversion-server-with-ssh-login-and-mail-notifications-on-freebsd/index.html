@@ -1,0 +1,222 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>Setting up Subversion server with SSH login and mail notifications on FreeBSD  | Ivor Prebeg</title>
+
+<meta name="author" content="Ivor Prebeg"> 
+
+<meta name="description" content="check yourself"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ivor Prebeg" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Ivor Prebeg</a></h1>
+<h4>personal journal and reference</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:iprebeg.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Setting Up Subversion Server With SSH Login and Mail Notifications on FreeBSD</h2>
+	<div class="entry-content">I combined few tutorial I found on interwebs to set this up and don&#8217;t wanna loose it, so I puttin it here&#8230;
+
+Make sure you have installed OpenSSH server and Subversion packages.
+
+First, create user &#8220;svnadm&#8221; for admin and group &#8220;svnusers&#8221;.
+Then add svnadm to svnusers group.
+
+pw usermod svnadm -G svnusers
+
+All users that are supposed to use svn should have umask 002 in .cshrc or .bashrc. That prevents destroying group write permissions during SSH session.
+
+
+Make directory where you want to store your repos, let&#8217;s say /usr/local/svnrepos
+
+mkdir /usr/local/svnrepos
+
+Next, we will restrict access to this area only for root and svn users:
+
+chown -R root:svnusers /usr/local/svnrepos
+chmod -R u+wrx,g+wrx,o-wrx /usr/local/svnrepos
+
+Then, rename svnserve binary to svnserve.bin and create svnserve script wrapper and make it executable:
+
+########### svnserve #######
+#!/bin/sh
+
+exec /usr/local/bin/svnserve.bin -r /path/to/repos/root &#8220;$@&#8221;
+############################
+
+
+After that, su to svnadm user and create repo, named, let&#8217;s say, studsvn.
+
+su - svnadm
+svnadmin create /usr/local/svnrepos/studsvn
+chmod -R o-rwx /usr/local/svnrepos/studsvn
+
+Configure repository
+
+cd /usr/local/svnrepos/studsvn/conf
+
+edit svnserve.conf and make it look like this (just uncomment stuff):
+[general]
+
+anon-access = none
+auth-access = write
+
+Test your connection like this:
+
+svn list svn+ssh://&lt;user-id&gt;@&lt;host&gt;/studsvn
+
+If it doesn&#8217;t work, you probably screwed some permissions, so make sure that your users are in svnusers group, that they have umask 002 in their default shel
+l&#8217;s rc file and svn repo has recursive g+rwx.
+
+After that, you may want to have mail notifications for your commits like perforce has.
+
+You need mailer.py script, so you either install svnmailer package, or compile from ports (mail/svnmailer).
+
+After that, you will be able to use mailer.py. Sort of. First, copy it from
+/usr/local/share/subversion/hook-scripts/mailer/mailer.py to /usr/local/bin or create symlink.
+
+Then, get to /usr/local/svnrepos/studsvn/hooks and copy post-commit.tmpl to post-commit, make it executable and then edit it.
+
+You will also need mailer.conf, so copy it from /usr/local/share/subversion/hook-scripts/mailer/tests/mailer.conf to your &lt;repository_path&gt;/hooks (seems best
+to me) and edit it to suit your needs. You also need smtp server which will allow relaying. Do it yourself. Be sure to edit from_addr, to_addr and reply_to
+in mailer.conf.
+
+Enjoy massive distribute spam attack.
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-02T00:00:00+01:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2010</time></div>
+	
+
+
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Ivor Prebeg
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</body>
+</html>

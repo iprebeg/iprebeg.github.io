@@ -1,0 +1,164 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>Hands on IGMP Snooping  | Ivor Prebeg</title>
+
+<meta name="author" content="Ivor Prebeg"> 
+
+<meta name="description" content="check yourself"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ivor Prebeg" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Ivor Prebeg</a></h1>
+<h4>personal journal and reference</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:iprebeg.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Hands on IGMP Snooping</h2>
+	<div class="entry-content">Last few weeks were quite a hell for me. While struggling to finish all labs and seminars on time, I suffered quite strong pain in paranasal sinuses, which was followed by toothache and usual headache caused by lack of sleep and rest. Despite that, I managed not to break any deadlines. Not just that, but IGMP snooping project entered working state. Sometimes I can&#8217;t belive how I can stay alive&#8230;
+
+So, what&#8217;s with IGMP snooping&#8230; Long story short, IGMP snooping is functionality built in enterprise switches that gives it ability to read IGMP protocol, used for IPv4 multicast groups management. Switch that snoops IGMP can optimaly forward multicast traffic causing less congestion in contrast with usual non-snooping switch that broadcasts multicast datagrams.
+
+Few months ago, menthor of mine and I agreed to work on inserting IGMP snooping extensions in software implementation of network bridge. As my menthor is author of network stack virtualization in FreeBSD kernel and network simulator IMUNES, heavily based on virtnet and netgraph, this work is based on bridge implementation called <em>ng_bridge</em>, part of <em>netgraph</em> system included in mainline FreeBSD kernel.
+
+Right now, patch against FreeBSD-CURRENT version of <em>ng_bridge.c</em> contains about 1k lines of code, but there macros and debuging functions that will be trimmed out at some point of development. Thanks to menthor, I received FreeBSD mail alias and perforce account, so code was moved from my personal subversion repository to official one at <a href="perforce.freebsd.org">perforce.freebsd.org</a>. Few things are yet to be added, like applying few more rules from RFC4541, locking mechanisms for thread-safe execution, multicast group and multicast host timers&#8230; If everything goes well, I hope that code will be included in one of following stable releases from FreeBSD-8.x branch.
+
+Wish me luck ^^
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-14T00:00:00+02:00" pubdate data-updated="true">Jun 14<span>th</span>, 2009</time></div>
+	
+
+
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Ivor Prebeg
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</body>
+</html>

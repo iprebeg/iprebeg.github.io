@@ -1,0 +1,644 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>personal journal and reference  | Ivor Prebeg</title>
+
+<meta name="author" content="Ivor Prebeg"> 
+
+<meta name="description" content="check yourself"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ivor Prebeg" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Ivor Prebeg</a></h1>
+<h4>personal journal and reference</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:iprebeg.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/03/10/updating-iphone-from-virtualbox-machine/">
+		
+			Updating iPhone From VirtualBox Machine</a>
+	</h2>
+	<div class="entry-content">
+		If you run some soft of Linux and you have iPhone which you sync in virtual machine in VirtualBox, you may run into problems when updating iPhone firmware&#8230; 
+When iPhone gets into recovery mode, usb can&#8217;t be attached to virtual machine in VirtualBox&#8230; 
+
+Finally, I found out that you have to run VirtualBox as root!
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-10T00:00:00+01:00" pubdate data-updated="true">Mar 10<span>th</span>, 2011</time></div>
+	
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/03/02/setting-up-subversion-server-with-ssh-login-and-mail-notifications-on-freebsd/">
+		
+			Setting Up Subversion Server With SSH Login and Mail Notifications on FreeBSD</a>
+	</h2>
+	<div class="entry-content">
+		I combined few tutorial I found on interwebs to set this up and don&#8217;t wanna loose it, so I puttin it here&#8230;
+
+Make sure you have installed OpenSSH server and Subversion packages.
+
+First, create user &#8220;svnadm&#8221; for admin and group &#8220;svnusers&#8221;.
+Then add svnadm to svnusers group.
+
+pw usermod svnadm -G svnusers
+
+All users that are supposed to use svn should have umask 002 in .cshrc or .bashrc. That prevents destroying group write permissions during SSH session.
+
+
+Make directory where you want to store your repos, let&#8217;s say /usr/local/svnrepos
+
+mkdir /usr/local/svnrepos
+
+Next, we will restrict access to this area only for root and svn users:
+
+chown -R root:svnusers /usr/local/svnrepos
+chmod -R u+wrx,g+wrx,o-wrx /usr/local/svnrepos
+
+Then, rename svnserve binary to svnserve.bin and create svnserve script wrapper and make it executable:
+
+########### svnserve #######
+#!/bin/sh
+
+exec /usr/local/bin/svnserve.bin -r /path/to/repos/root &#8220;$@&#8221;
+############################
+
+
+After that, su to svnadm user and create repo, named, let&#8217;s say, studsvn.
+
+su - svnadm
+svnadmin create /usr/local/svnrepos/studsvn
+chmod -R o-rwx /usr/local/svnrepos/studsvn
+
+Configure repository
+
+cd /usr/local/svnrepos/studsvn/conf
+
+edit svnserve.conf and make it look like this (just uncomment stuff):
+[general]
+
+anon-access = none
+auth-access = write
+
+Test your connection like this:
+
+svn list svn+ssh://&lt;user-id&gt;@&lt;host&gt;/studsvn
+
+If it doesn&#8217;t work, you probably screwed some permissions, so make sure that your users are in svnusers group, that they have umask 002 in their default shel
+l&#8217;s rc file and svn repo has recursive g+rwx.
+
+After that, you may want to have mail notifications for your commits like perforce has.
+
+You need mailer.py script, so you either install svnmailer package, or compile from ports (mail/svnmailer).
+
+After that, you will be able to use mailer.py. Sort of. First, copy it from
+/usr/local/share/subversion/hook-scripts/mailer/mailer.py to /usr/local/bin or create symlink.
+
+Then, get to /usr/local/svnrepos/studsvn/hooks and copy post-commit.tmpl to post-commit, make it executable and then edit it.
+
+You will also need mailer.conf, so copy it from /usr/local/share/subversion/hook-scripts/mailer/tests/mailer.conf to your &lt;repository_path&gt;/hooks (seems best
+to me) and edit it to suit your needs. You also need smtp server which will allow relaying. Do it yourself. Be sure to edit from_addr, to_addr and reply_to
+in mailer.conf.
+
+Enjoy massive distribute spam attack.
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-02T00:00:00+01:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2010</time></div>
+	
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/09/24/londonske-avanture-i-devsummiteurobsdconcambridge/">
+		
+			Londonske Avanture I DevSummit+EuroBSDCon@Cambridge</a>
+	</h2>
+	<div class="entry-content">
+		Dojmovi iz Japana jedva da su se slegli,  a ja sam opet negdje na 10000 m. Ovaj put u drugu stranu, gdje se sat pomice unatrag kad sletis. Enivej, na faksu koji je poceo gotovo odmah po povratku iz Japana, sam uspio biti prvi tjedan. I to ne sasvim jer sam pola predavanja ili prespavao ili je bilo toliko dosadno da sam otisao ispijat kavu i citat mailove. Odlucio i upisat Objektno Oblikovanje kod Zvone Radikalnog umjesto neceg sto sam upikao jer nije bilo niceg drugog, a nesto sam morao. Cini se Zvone OK. Tjedan proletio, ja zbrisao doma pobrat harac i posteno se zacugat (2x) prije neg opet odem.  U nedjelju stigao u Velo Misto i odjurio pogledat neki stan blizu FER-a, pa se cini da ce po povratku u domovinu past i selidba. O tom u nekom drugom postu.
+
+Jos dok sam bio u Tokiu, doletio mail od mentora najboljeg na svijetu, a u mailu se spominje London/Cambridge, EuroBSDCon i FreeBSD DevSummit. Naravno, pristao, a osim toga ubo i par dana o svom trosku u Londri. Da stvar bude jos bolja, skontao da su u isto vrijeme u Londonu i Ivana&amp;Ivana. Dok sam pristajao na put i bookirao hostel, to nisam znao pa mi bilo kiselo zamisljat kak cu to sve sam i kak ce mi bit dosadno, pa mi pao kamen sa srca kad sam skontao da cu se imat s kim druzit. Jos mi bolje bilo kad se javila Ana i rekla da i ona ide na DevSummit. Uglavnom, rano u ponedjeljak ujutro stigao na Pleso, smrknuo kavu i nakon dva sata blejanja u tepih od oblaka i neku knjigu o japanskom koju sam sfurao stizem na Gatwick Airport. Engleski travnati krajolici izgledaju predobro iz pticje perspektive. Na Gatwicku kupio adapter za UKplug (5.5 faking funti, ako netko ide, nek me pita da mu posudim) i kartu za Southern Express vlak do London Victorie i zbrisao.
+
+Vidio nes predobro sto kod nas totalno nije moguce, cak ni kad bi imali dvije zeljeznicke kompanije. Dvoje glupih Spanjolaca kupilo karte za Gatwick Express i sjelo u Southern Express. Kondukter dosao i pun razumijevanja za strane drzavljane objasnio im da mogu izac i vratit se na Gatwick pa se ukrcat na Gatwick Express ili kupit kartu za Southern pa trazit povrat love od karte za Gatwick Express kad stignu na Victoriu (radi se o odvojenim kompanijama i ne mogu prihvacati karte jedna od druge). Nakon četiri godine frekventnog putovanja s HŽ-om, imam razloga pretpostavit da bi prosjecni hrvatski kondukter ponudio 20% jeftiniju &#8220;kartu&#8221; da nitko ne vidi dok on stavlja lovu u džep, a o povratu love za drugu kartu ne treba uopce razmisljati.
+
+Oko podne dogmizao do Astor Victoria hostela, ugodnog mladenacki raspolozenog mjestasca na Belgrave Roadu. Zakljucao prtljagu i krenuo istrazivat. U međuvremenu poslao SMS Ivani&amp;Ivani. Primjetio masu Indijaca, Kineza, Japsa, raznih muslimana, crnaca, cak i Palestinca jednog. Skroz suprotnost od Tokia i totalno kewl kad na ulici mozes cut toliko jezika i vidit toliko boja i stilova odjevanja. Nasli se na Piccadillyu i glupirali se neko neodređeno vrijeme. Onda kasnije isli na koncert David Graya gdje sam u biti saznao tko je David Gray. Poslije koncerta bio mrtav pa se odmah po zavrsetku teleportirao natrag  hostel. Bio u cetvretokrevetnoj sobi na petom katu (vidi se Big Ben) s nekim likom iz Portugala. Kasnije bio i neki par iz JAR-a, ali sam njih vise-manje prespavao. Iduci dan odradili sav onaj sightseeing stuff, British Museum, London Eye, Big Ben&#8230; Bili i u tajlandskom koji je u biti zapadizirana verzija azijske kuhinje u kojoj fale zacini. Bilo dobro enivej. Navecer se druzili s Pericom i nekom curom iz Argentine koja pije ultrazakon caj. Dala mi da probam, navuko se i nastavio se natakat iako me upozoravala da bi mogao dobit ljevpro. Nisam dobio ljevpro;) Dan poslije odradio jos malo sightseeing, ukljucujci British Library i History of Medicine Museum. Navecer se nasao s Anom i Markom na King&#8217;s Crossu i krenuli put Cambridga. Prije puta kupio Ethernet kabel, 2 metra. Opet 5.5 funti. Pas mater i London.
+
+Predobro je i to sto kad ides na put koji placa netko drugi, ne ides od stanice od sobe pjeske nego taxijem. Prvu noc spavali u Selwyn Colleagueu, vrlo ugodnom mjestu koje po noci izgleda kao nekakva Harry Potter style skola, ali u biti je bolje od svih mjesta u kojima sam spavao u Engleskoj. Doruckovali Full English Breakfast, jaja, slanina, kobasice&#8230; Ostale noci spavali u Robinson Col., gdje mi sobe nisu bile bas tako kewl, ali definitivno nelose. Prva dva dana na DevSummitu vidio prezakon likova, ukljucujuci PhD ekipu cije knjige imam doma pa do autora vrlo bitnih RFC-a (ako ne znas sta je RFC, nemoj googlat, nema veze). Zabava se nastavila i na EuroBSDConu, vidio stvarno dobrih predavanja, dobio masu novih ideja&#8230; Ana bila vrlo ugodno drustvo, ne znam kak bi izdrzao sve te likove sam:). Vecerali prvu vecer u indijskom (chilli, be careful :-), drugu u japanskom (u kojem u biti rade Kinezi), trecu imali veceru u Clare Colleague (ne znaci da nije dobro ako nije egzoticno) i kasnije zavrsili u baru, a cetvrtu jeo cips i mars delight. Do japanskog restorana smo se vozili camcima (famozni punting, nije rijetkost da netko i zapliva :-) cija stabilnost ne ulijeva mnogo povjerenja, pogotovo kad se lik od stotinjak kila s praznom bocom skupog vina ljulja lijevo-desno i bas mu je zabavno. Cambridge sam po sebi izgleda vrlo oldstyle, sa svim onim kewl zgradama, kapelicama, no mozda ipak malo preakademski za moj ukus. Malo nocnog zivota ne bi skodilo.
+
+Zadnje jutro, odradio shopping u Cambridgu, klisnuo na vlak do King&#8217;s Crossa u Londonu i spiskao ostatak love na Oxford Streetu. Skupio prtljagu i predvecer stigao na Heathrow. Zadnje sitnise uvalio u zamjenu za duty-free Lindt i Toblerone. Kraj mene u avionu sjedio neki Japanac pa ga udavio. Vratio se u domovinu oko 23h po lokalnom vremenu.
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-24T00:00:00+02:00" pubdate data-updated="true">Sep 24<span>th</span>, 2009</time></div>
+	
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/09/15/japan-series-onsen-okinawa-bar-i-let-doma/">
+		
+			Japan Series: Onsen, Okinawa Bar I Let Doma</a>
+	</h2>
+	<div class="entry-content">
+		Posljednja dva radna dana odradili prilicno laganim tempom. U nedjelju stigao i Yang iz Taiwana, skroz smjesan lik od nekih 40-ak godina, orijentiran na kurve i tjedno uređivanje frizure svog psa. Jesam vec rekao da su Azijati bizarni?
+
+&#8220;&#8230; Osmi dan, shvati Bog da je O.K., ali da moze bolje. I tad, stvori onsen, umoci dupe unutra i zaboravi na svijet. I tako bi do dana danasnjega. Kadgod netko napusti svijet, pridruzi se Bogu u onsenu, kojeg ljudi nazvase raj.&#8221;
+
+Enivej, kraj rada na drvenoj kucici obiljezili tako da nas je Kazuko-san odvela u onsen. Onsen sam po sebi zasluzuje poseban post, ali meni se ne da. Uglavnom, radi se o prirodnim izvorima ljekovite vode od koje su Japanci napravili odmaralista za duh i tijelo. Ima ih u cijelom Japanu, a kako se radi o dobrom biznisu, u zadnje vrijeme se kopaju i umjetni onseni. Voda je ista, pa kog briga jel izasla sama na povrsinu ili su joj malo pomogli. Onsen u kojem smo mi bili se zove King of Bath, a ima 16 razlicitih kupelji, dvije saune, totalno opremljeno predvorje sa ogromnim stolicama koje masiraju svaki dio tijela (ovo se posebno placa)&#8230; Postoje i mjesani, ali onseni uglavnom imaju poseban dio za zene, poseban za muske jerbo se unutra hoda gol, ono ko od majke rođen. Bitno je naglasit da ljudi s tetovazama nisu dobrodosli, jer su u Japanu tetovirani uglavnom Yakuze, a s njima ne treba imat posla. Temperatura u bazencicima je prilicno visoka, al se u toj vodi tijelo tako opusti da je to nevjerojatno. Osim bazencica imaju i mramorne fotelje u koje sjednes, a vrela vodi klizi ledjima, rukama&#8230; Mene najvise dojmile plitke kade u koje legnes na ledja, pola tijela je u vreloj vodi, a pola vani. Taj, kao i jos nekih je u dijelu koji je vani u vrtu. Mi smo bili navecer, pa je dozivljaj predobar. Lezis u vreloj vodi do pola, nije ti ni prehladno ni pretoplo, glava ti je natkrivena, a pada i lagana kisa po prednjem dijelu nogu koji nije u vodi (ovo je dio koji nije feature onsena, pa javna zahvala Zoranu Molekuli i njegovim carobnim mocima), a vidis i zvijezde. Ukratko, selim se u Japan cim prije.
+
+U srijedu uzeli dan off i odlucili spiskat ostatak para i pokupovat suvenire. Uzeli bicikle i pravac Tachikawa. Besciljno cruisali i trosili&#8230; Na kraju dana, Kazuko-san nas odvela u dvoranu da gledamo kendo trening. Kendo sensei ima oko 80 godina, a treniraju i njegova zena i sin. Zenski dio populacije bio vidno odusevljen prisustvom zapadnjaka, a drugi sensei koji prica engleski nam objasnio osnove kendoa i dao nam shinoi (mac od bambusa) da malo probamo. Totalno japansko iskustvo. Obecali mu da cemo doc sljedece ljeto jer sutra idemo doma i nastavili do Okinawa bara gdje nas ceka ostatak ekipe, Hiro i Kazuko, Saigusa, Yang, Sarah i Joel.
+
+Kako i Sarah/Ling ide doma u cetvrtak, njena zelja za oprostajku je bio Okinawa bar. Uglavnom, Okinawa je otok prilicno udaljen od Japana, cak blize Kini, ali i dalje dio Japana. Zbog kineskog utjecaja ima prilicno karakteristicnu glazbu i obicaje. Jedan tip odande zivi sa curom 5 min od Kazuko i tamo kuha Okinawa hranu i svira shamisen, tradicionalni instrument sa tri zice (pogledat video1 2 3 4 5..) U Okinawi jedu svinjske nogice pa morali i to probat, kao i  jos hrpu raznih jela. I pili kojesta, sake, pivu, vino od rize, jos neku cugu kojoj ne znam imena&#8230; Krenulo se i pjevat i svirat, pa se cak i dogodilo u jednom trenutku da Branko i ja iz sveg glasa pjevamo himnu, rvacku pravu. Nisam siguran da postoji video toga, ali ako ga ikad dobijem, nikom ga necu pokazat. Dosli doma, napisali jedni drugima vrlo dirljiva pisamca i posakrivali ih po raznim mjestima&#8230;
+
+U cetvrtak, probudili se u 5 ujutro po Tokyo vremenu, potukli ostatak cornflakesa, bacili tus i nasli se s Ling pred kucom. Izasli i Hiro, Kazuko i Saegussa pozdravit se. Kazuko nas odbacila do Hino Stationa i Branko, Ling i ja napustili Hino. Na Narita Terminal 2 se rastali s Ling, ona put Hong Konga na nastavak turneje, a Branko i ja na Terminal 1, pa Pariz i na kraju Zagreb. Na Nariti svratili u McDonalds na hamburgere s okusom rastanka. Zadnje papirnate yene podrobili na novo upotpunjenje kucnih biblioteka. Nakon 12 sati u Boeingu 777, koji je malko skuceniji od Airbusa s kojim smo dosli, stizemo na Charles De Gaulle u ponoc po Tokyo,  a 17 poslijepodne po pariskom vremenu. Malo svrljali po trgovinama, ukrcali se na novi avion i sretno stigli u Zagreb oko 21:30.
+
+All in all, pricat da je bilo jednostavno otic u Japan na mjesec dana je prilicna bajka, pocevsi od duljine leta, klime, hrane&#8230; Al se isplati :) I&#8217;ll be back Tokyo, Kyo no hiva sayonara, mata ne :)
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-15T00:00:00+02:00" pubdate data-updated="true">Sep 15<span>th</span>, 2009</time></div>
+	
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/09/09/japan-series-kamakura-fujisawa-enoshima-ginza-i-asakusa/">
+		
+			Japan Series: Kamakura, Fujisawa, Enoshima, Ginza I Asakusa</a>
+	</h2>
+	<div class="entry-content">
+		S početkom četvrtog po redu radnog tjedna u Japanu postalo nam jasno da otić radit mjesec dana na drugom kraju planete i nije tako jednostavno kao otic u Tuheljske toplice. Branko je priznao da se zasitio sljakanja i da mu fali domovina, racunalo, pekara&#8230; I kod mene je bilo slicno. U biti postali svjesni da je proslih tri tjedna proletjelo u sekundi i da ce se isto dogoditi i s nadolazecim. S jedne strane dobro jer idemo kuci, a s druge strane lose, jer, naravno, idemo kuci. Odlucio se ne zamarat i uzivat u boravku. Vjerojatno i Branko.
+
+Jednu vecer isli jest u sushi bar. Iskustvo je prefakin dobro, kao i hrana koju mozes tamo pojest. Uglavnom stvar izgleda ovako: dodjes i prijavis se. Onda cekas i jos malo cekas. Onda te prozovu i svaka ekipa dobije svoj stol. Pored stola je pokretna traka po kojoj se voze sirovi stanovnici mora u svim bojama, okusima i oblicima. Jedes koliko god stane. Mozes i narucivat malo vise fora stvari. Na kraju prezderavanja, dodje konobarica i prebroji tanjure i napise cifru. Onda se skamenis, al brzo te prodje jer placa Kazuko-san.
+
+Nezaobilazni dio japanskog iskustva su i karaoke. Ni Branko ni ja nismo neki pjevaci i odlazak na karaoke je isprva ostavljao dojam samo sanse za dobrano se obrukat, al nakon dvije sekunde pogledavanja, obojici je bilo jasno da smo tu da probamo sve sto postoji. Stoga, Kazuko-san vodi Joela, Saru, Branka i mene u obliznji karaoke. Situacija slicna sushi baru, dodjes, prijavis se, cekas, jos malo cekas i onda dobijes svoju sobu. Sokovi s aparata bespla, oni bolji za nofce. Poslagali se po kaucima i krenuli se kreveljit. Na kraju skontali da bi Sarah mogla bit pro pjevacica, da nije lako otpjevat Losing My Religion i da je pjevani mandarin kineski nes najljepse sto postoji. Sve u svemu, zabavio se ko nikad do sad. Definitivno treba probat. Ima i <a href="http://www.youtube.com/watch?v=5_EUPau0Cdg">video1</a> i <a href="http://www.youtube.com/watch?v=vDBIX3Yj-68">video2</a>.
+
+Vidjeli jos nest zastrasujuce. Kad odes navecer u Alps po sladoled s pastom od Azuki graha (ne zvuci tako, al je predobro), umoran se vracas doma i pogledas prema istoku, vidis izlazak sunca u ponoc. Naravno, radi se neonskim reklamama Shinjukua, Shibuye, Akihabare&#8230;, a svjetlo je toliko jako da nebo izgleda kao da se spusta NLO.
+
+E da, nesto sto kod nas nije obicaj je i da u japanskom javnom prijevozu nije pristojno/poželjno pričat na mob dok se voziš, kao ni da se cuje da zvoni. Stoga, automatska teta koja prica engleski i japanski, nakon sto kaze koja je sljedeca stanica i na koje sve linije mozes presjest,  lijepo ce zamolit da stavis mob u silent mode i ne pricas na mob,  odnosno da ga sasvim ugasis ako stojis pored priority seatova, mjesta rezerviranih za trudnice, starije, bolesne&#8230; Ne bi to napisao da se nisam sad vozio 7-com u Novom Zagrebu, a čovjek pored mene pije Žuju iz staklene boce i na opće oduševljenje nekih klinki pušta glasno cajke s moba.
+
+Jedan dan Branko ostao radit u Claire jerbo je kuhao veceru, a Sarah isla s nama na konstraksn sajt i ponela fotic pa imamo i slike s heavy-duty posla, dok jedemo sladoled, dok imamo power nap (muska inacica beauty sleepa), a ima i koja s pistoljima za cavle i tak. Branko slozio grah corbu za prste polizat. Japanci i ostali nisu ozbiljno shvatili uputu da se to jede s kruhom:-) Nakon toga, Branko napravio tradicionalni sirotinjski desert zvan &#8220;Zbuceno jaje&#8221;, a radi se o umiksanim sirovim žumanjcima sa secerom. Ili o seceru sa umiksanim sirovim zumanjcima. Uglavnom, bilo im super, al nisu mogli puno jer nisu navikli na tako jake okuse. Cak i Joel-san, koji moze pojest vise nego svi mi zajedno i opcenito pojede sve sto ostane poslije vecere, o cemu god da se radi, nije mogao dovrsiti zbuceno jaje. Hura za Branka, jerbo je grah podsjetio na domovinu i sluzio kao dobar predah od rize i povrca koje vidim prvi put u zivotu.
+
+Inace, tamo smo pojeli stvari za koje nisam ni znao da postoje. Od sluzavog povrca, gljiva, skoljki pa do japanskog krumpira, ribljih jajasaca, lotosovog korijena, samurajskog mochi kolaca od rize s azuki grahom&#8230;
+
+Posljednji vikend u Japanu pred nama. Nakon analize troskova i vremena, odlucili ic do Kamakure, malog gradica koji je u Kamakura periodu bio glavni grad Japana. Jeftina opcija prijevoza bila je Odakyu Line. Nakon par presjedanja, stizemo do Fujisawe, gdje trebamo presjest na prastari Enoden Line. Subina je htjela da se u polupospanom stanju prevarimo i nastavimo Enoshima Lineom do Enoshime. Izazimo van, nemamo pojma gdje smo, ali to uopce nije bitno jer je oko nas hrpa japanskih djevojaka u odjeci za plazu. Bilo je i muskih, ali mozdani receptori nisu reagirali. Izbuljenih ociju prelazimo most i setamo do otoka Enoshime odakle plaza izgleda totalno predobro. Kako smo tamo zavrsili totalno slucajno, rucnike nismo imali, a i voda bila malo puzgava, pa se nismo okupali, ali definitivno odlucili doc sutra. Kolicina Japanki koje izgledaju predobro je naprosto odusevljavajuca. Prije nastavka puta do Kamakure svratili do McDonaldsa, a jedini tip unutra koji je pricao engleski je s odusevljenjem pogledao nas stol i ispalio  &#8220;All that for two persons!?&#8221;.
+
+Kasnije nam postalo jasno zasto nismo nasli Enoden Line. Radi se o jednoj od najstarijih linija i uopce nije unutar stanice, nego treba izac van, pitat prvog lika, ic dalje, pitat drugog lika, odjebat ga jer ne zna objasnit, pitat treceg lika i onda jos malo hodat i onda doc do posebne stanice.  S dobranim zakasnjenjem stizemo do Daibutsua (Great Buddha), koji je bio glavni razlog posjeta Kamakuri. Radi se o divovskom kipu Buddhe, mislim drugog po velicini u Japanu. Eksli, mozes uc u kip i procitat kak su imali napredne metode gradnje. Jos se malo debilirali po Kamakuri i lagano krenuli doma jerbo ima dosta do Tokya.  U Fujisawi stali kupit sladoled, sjedili na plazi i gledali kako ekipa surfa. Nabasali i na neki lokalni festival i jos prosetali, izgubili se i oko 20h nasli stanicu i krenuli put Shinjukua.Tamo se utopili u zdjeli rize s przenom jeguljom i sve preliveno meko kuhanim jajetom.
+
+U nedjelju ipak ostali vjerni staroj tradiciji &#8220;nikad isto mjesto dva puta&#8221; i odustali od Enoshime i plaze. U biti vrijeme bilo u banani, ovo je samo bio izgovor. Stigli na Shinjuku, Branko otisao potraziti book shop, a ja odradit posao u net kafe. Nakon toga repetirali jegulju od sinoc, kupili kisobrane i krenuli na Ginzu, dio Tokya s najekskluzivnijim trgovinama koje postoje. Branko voli saksofone pa usli u ogromnu Yamaha trgovinu sa svim sto postoji i otkidali na cijene instrumenata. Upali i u Sony Building i tamo jos slinili i gledali 3D akvarij. Na kraju dana otisli do Asakuse pogledat Sensoji Temple. Hram se nazalost restaurirao, ali shrine i pagoda izgledaju predobro. Unutra drze sutre (budisticke tekstove), a ima i spika da imaju i Buddhin zub. Uletio tajfun i padala opaka kisa pa krenuli kuc. Na Shinjuku jos otkrili ogromni Book1st pa popunili kucnu biblioteku.
+
+Nedjelja se blizila kraju, a s njom i kraj naseg boravka u Japanu. Pred nama su ostali jos radni ponedjeljak i utorak, slobodna srijeda i let za doma u cetvrtak u podne.
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-09T00:00:00+02:00" pubdate data-updated="true">Sep 9<span>th</span>, 2009</time></div>
+	
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/09/07/japan-series-mt-takao-national-museum-i-ueno-park/">
+		
+			Japan Series: Mt. Takao, National Museum I Ueno Park</a>
+	</h2>
+	<div class="entry-content">
+		Nakon Kyota, pocetkom radnog tjedna osjetilo se na raspolozenju da je Stephen otisao. Tugu utopili u zalihama evropskih slatkisa koje smo pofurali u Japan ( Natasa, hvala na savjetima, poneo sam i strik za vjesat ves i kvacice, pomoglo je ).  Uglavnom, odradili ostatak tjedna i jedva docekali petak. I sljakanje bilo malo zamarajuce. Na posao se vozio sa Saegussa-sanom, koji bi me svako jutro na putu do tamo ispretresao japanske rijeci i fraze koje me naucio dok smo se vozili doma dan prije. Preko tjedna navecer uglavnom divljali biciklima po Tachikawi. Jedan dan u tjednu Branko ostao doma i pravio veceru, a Sarah iU petak odlucili kao prenocit u net kafeu jerbo je to dio japanskog iskustva. Joel-san to radi, pa kao i mi cemo (Branko i ja). Na kraju ipak odustali od plana i ostali od 9 do 2 ujutro. Provjerili i kolekciju pornica. Bespla je u net kafeu, kao i sokovi&#8230; Net kafe ima i kuhalo za ramen koji moras platit, kao i tuseve. Enivej, poslije net kafea, isli u 2 ujutro kupit kekse u 7&amp;Eleven. Dok smo bili u net kafeu, Branko skinuo masu glazbe na moj mob (koji ovdje koristimo za provjerit mail prek wlana i slusat muziku, dok bespla ili krekane mape za bilokoji oblik GPS softwarea nismo nasli). Uglavnom, kupili hrpu cokoladnog keksa, vozimo se biciklima (u Japanu je kao jako neuljudno jest na ulici), s mobitela tutnji Seve i Gas Gas, a nas dvojica vristimo od smijeha. Naravno, za nama gazi policajac na biciklu. Branko ga skonta i kao javlja se na mob koji zvoni (LOL na kvadrat). Upirao je i Branka nesto za svjetlo, al mu rekli da su japanske baterije krepale i da mi u Europi imamo baterije koje traju 7 puta duze. Lik rekao &#8220;sugoi&#8221; i otpilio. U subotu, trecu po redu u Japanu, probudili se totalno zgazeni, a mlitavom raspolozenju islo je u prilog i uzasna sparina, karakteristicna za ljetni Tokyo. Doruckovali, krenuli se dogovarat kud cemo, probudili se, krenuli se dogovarat kud cemo, probudili se, otisli prosetat po Hinu i vratili se doma. Probudili se po ko zna koji put taj dan i na kraju poslijepodne otfurali na Takao, neku kewl planinu u blizini.
+
+Mt. Takao je poznat po slapovima, pa ponijeli i sugamane, jerbo mozda se okupamo u ledenoj planinskoj vodi. Doletjeli vlakom i nakon kraceg 15-minutnog analiziranja karte odlucili pratit route 6 do vrha. Vjerne stare Salomonke nakon prvog kilometra postigle radnu temperaturu i poprimile nezuljajuci oblik slican stopalu. Vidjeli i slap, koji je na nase opce razocaranje bio ogradjen, a oko njega skrpan omanji hram. Enivej, uspjesno svladali japansko blato i sklisko kamenje i valjda okinuli rekord staze. Dosli gore morki do koze. Malo prodavali zjake i piljili u neke dvije cure koje su sjedile do nas. Kad su otisle, krenuli dolje drugom rutom trazec drugi veliki slap. Naravno, pogubili se, al zato nasli totalno kewl budisticki hram. Vidjeli i svecenika. Nakon hrama, odlucili pozurit doma da stignemo na novi festival u Tachikawi. U cik-cak trku trcimo nizbrdo (svi normalni ljudi su hodali), a s nas kapa znoj ko da pada kisa. Patike postigle temperaturu prilicno vecu od radne. Mokri ko misevi stizemo na Takao Station, a neke lokalne curke se sa sigurne udaljenosti dive znojnim majcama i blatu na nasim patikama.
+
+Po dolasku doma, odlucujem se tusirat dok mi se prsti ne smezuraju, jerbo smo se prilicno dobro ubili na Takau. Nakon minute uzivanja u vreloj vodi, u kucu upada Kazuko-san i hoce nas vodit na neki dernek. Pet minuta kasnije, s mene jos kaplje voda od tusiranja, a mi sjedimo u obliznjem sumarku, gdje je ekipa slozila koncert, zderacinu i neki show sa svjetlecim skulpturama koji smo preskocili zbog mirisa ikayaki, przenih 20-centimetarskih lignji. Gledali malo koncert (<a href="http://www.youtube.com/watch?v=jc96E8jRfvU">video1</a> i <a href="http://www.youtube.com/watch?v=9Q_qpTIz3NI">video2</a>), bilo kewl, a onda zakasnili do Tachikawe na festival. Enivej, vidjeli i tamo koncert na kojem se muska ekipa, na opce zadovoljstvo publike, obuce u poznate cure sa japanske estrade koje su prije bile muskarci i pokusava pjevat njihove pjesme. Nema slika toga jer sam jeo  sladoled i nije mi se slikalo.
+
+Zaintrigiralo nas kako se na TV-u stalno vrte neki polupoznati treba i lik u vijestima. Saegussa nam objasnio da su im nasle neke droge negdje, tipa ulovili, a cura zbirsala, no ulovili je za tjedan dana. Kasnije jos neki polupoznati tip postao poznat jerbo su i njemu nasli neke opijate i javno ga lincovali na TV-u, tjedan dana. Japansko pravosuđe ne pravi razliku između trave i heroina, pa s cim god da nekog ulove, isto mu se pise. I to ne dobro jer su kazne vrlo opake kad je droga u pitanju. Drugim rijecima, drogu ne treba nosit ili je trazit u Japanu.
+
+Nedjelja pocela ko i subota, nakon sto smo se nekoliko puta probudili, krenuli put Ueno Parka u kojem se nalazi vise dobrih muzeja, ukljucujuci i National Museum i Science Museum. Ovaj prvi je toliko velik da do drugog nismo dosli. Prije muzeja bili u kineskom restoranu. Nije bilo menija na engleskom pa smo odabrali nesto sa slikice, sto se pokazalo fatalnom pogreskom. Dobili vrlo ukusne noodle i povrce u juhi koju jedes tako da uzmes zlicu juhe pa gutljaj vode. Naravno, kineske konobarice ce ti dolijevati vodu samo dok cekas jelo, a onda dok jedes i lice ti mjenja boju u crvenu, one ce se cerekat i ocekivat da narucis sok ili caj. Nakon par sati u muzeju, sjedim u muzejskom wc-u, je*em 5 koljena rodbine kineskom kuharu, kineskim konobaricama i 2 milijarde ostalih kineza. Muzej je kewl pa ima wc-skoljke s ugradjenim peracem anusa. Ubuduce oprezno s &#8220;jedes pece, seres pece&#8221; jelima.
+
+National Museum je jedno od kewljih mjesta koje smo vidjeli. Unutra je mnostvo katana, skulptura Buddhe i ostalih, shogun odijela i neznamcegsvene. Osim stvari koje su na slikama na faceu, ima i mnostvo onih koje se ne smije slikat, a te su uglavnom vise kewl. Kako smo u Japanu vec treci tjedan, poceo sam bit civiliziran i pridrzavat se tih pravila.
+
+Nakon muzeja, jos prosetali hramom oko kojeg je mocvara sa lotos cvjetovima, pored Ueno Parka. Enivej, u Ueno Parku prvi put vidjeli i beskucnike. Osim kosih ociju, prilicno su slicni ovima kod nas. Prosli i kroz Harajuku u nadi da cemo vidjeti cosplay u punom izdanju, al bilo kasno pa opet vidjeli samo par cudno obucenih. Spustili se pjeske do Shibuye, ubili zdjeletinu rize s tankim listicima svinjetine i miso juhu i oduzeti krenuli doma. Na presjedanju s Yamanote Linea na Chuo Line na Shinjuku Stationu cudna scena. Nakon sto dekriptiramo mapu da vidimo koliko kosta karta doma, do nas stize tip od nekih 40-ak godina, sasvim normalnog izgleda i nudi pomoc. Zahvaljujemo se i kazemo da smo skontali i da smo kupili kartu vec. Tip kao nes mumlja i u sljedecem trenutku iz sveg glasa urla &#8220;Please give me five hundred (500) yen&#8221; i klekne ispred nas i stavlja ruke u molitvenu pozu iznad glave. Kad se to dogodi u Shinjuku Stationu koji je poput mravinjaka, osjecas vrlo neugodnu pozornost na sebi, oprilike kao kad glumis u kazalisnoj predstavi i pred prepunom publikom ne samo zaboravis tekst nego jos i slucajno prdnes na sav glas. U prvom trenu ne znamo koji vrag se događa, a u sljedecem shvacamo da je lik prilicno zahtjevan jer je 500 yena oko 25 kn i otprilike toliko nam kosta karta do doma. Za tu lovu se moze prilicno dobro jest u restoranu, a u trgovini kupit jela za cijeli dan. Na kraju mu kiselog lica dali svaki po 100-njak yena samo da skinemo pozornost sa sebe i nestanemo u gomili.
+
+Zakrmili u vlaku do doma. Jedva docekali utopit se u krevetu s klimom na 17 °C.
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-07T00:00:00+02:00" pubdate data-updated="true">Sep 7<span>th</span>, 2009</time></div>
+	
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/08/27/japan-series-obon-festival-i-put-u-kyoto/">
+		
+			Japan Series: Obon Festival I Put U Kyoto</a>
+	</h2>
+	<div class="entry-content">
+		Osim onog lokalnog festivala na kojem smo bili u Tachikawi, u Japanu je tijeku bio i tjedni Obon festival. Vjeruje se da za vrijeme Obona preci dolaze iz raja i svrljaju ovdje. Uglavnom, prvi dan festivala ih pozovu da dodju s dｉｍｏｍ koji se digne u raj pa onda ovi dolete doma. Na kraju festivala ih treba potjerat nazad u raj pa opet posalju neki dim da duhovi otpile. Zadnji dan je kulminacija festivala koja se u Kyotou obiljezava kao poseban festival pod nazivom Gozan no Okuribi.
+
+Ne bi mi bili mi da nismo otisli u Kyoto. Uglavnom, dogovorili se za ic u Kyoto Sarah, Branko i ja.　Ｍｏｒａｌｉ　ｉ　ｓｒｅｄｉｔ　ｄａ　ｒａｄｉｍｏ　ｓｕｂｏｔｕ　ｐａ　ｎｅ　ｒａｄｉｍｏ　ｐｏｎｅｄｊｅｌｊａｋ　ｄａ　ｍｏｚｅｍｏ　ｉｃ． Pripreme trajale cijeli tjedan prije, jerbo je totalna guzva i zajebano je nac karte (Obon je u Japanu skoro kao kod nas Uskrs). U pripremama je sudjelovala Sarah, Branko i ja nismo. Uglavnom, Kyoto je prilicno daleko, a busom do tamo treba oko 7 sati u normalnim uvjetima. Sad nisu normalni uvjeti jer je zbog Obona sva ekipa nekud putuje, pa bi voznja mogla trajat 10 sati. Osim toga i kisa skenjala glavni autoput, pa odjebali bus. Zabavnija opcija je shinkansen vlakic, turbo ultra brzi najkewl vlak ikad. Na cijenu karte se mogu primjenit isti atributi. Enivej, SuperSarah otkrila neku totalno kewl ponudu u kojoj dobijemo roundtrip karte shinkansenom do Kyotoa i jednu noc u hotelu za manje para nego sto bi nas izasla roundtrip karta u normalnim uvjetima. Kako Singapur Sarah kineskog podrijetla nikad nije dijelila sobu s muskima, ona uzela posebnu sobu, al ne bili pizde pa podijelili troskove na tri jednaka dijela. Enivej, to ne zvuci toliko kavalirski dok ne kazem da nas je put sa smjestajem izasao vise od minimalne rvacke place，　ｐｏ　ｏｓｏｂｉ. Komentare tipa &#8220;mogao si kupit napisi-proizvoljnu-stvar-ovdje za te pare&#8221; ili &#8220;ja od toga zivim xx mjeseci&#8221; odjebajen na veliko, jerbo sam cijelu godinu crncio ko rob i sad cu uzivat kako ja hocu. Uglavnom, jutro poslije burnog izlaska izmigoljili iz kreveta, sacekali Stephena　ｄａ　ｓｐａｋｉｒａ　ｓｔｖａｒｉ　ｉ　ｐｒｏｍｊｅｎｉｌｉ　ｎｏｖｅ　ｅｕｒｅ　ｕ　ｊｅｎｅ．　Ｎａ　Ｓｈｉｎｊｕｋｕ　ｓｅ　ｒａｓｔａｌｉ　ｉ　ｐｏｚｄｒａｖｉｌｉ　ｓａ　Ｓｔｅｐｈｅｎｏｍ．　Ｏｎ　ｐｕｔ　Ｎａｒｉｔａ　Ａｉｒｐｏｒｔａ　ｐａ　ｎａ　Ｆｌｏｒｉｄｕ，　ａ　ｍｉ　ｐｕｔ　Ｔｏｋｙｏ　Ｓｔａｔｉｏｎａ　ｐａ　ｕ　Ｋｙｏｔｏ．　Ｐｒｉｊｅ　ｖｌａｋａ　ｋｕｐｉｌｉ　ｒｕｃａｋ，　ｊｅｒｂｏ　ｊｅ　ｕ　Ｊａｐａｎｕ　ｔｏｔａｌｎｏ　ｎｏｒｍａｌｎｏ　ｒｕｃａｔ　ｕ　ｖｌａｋｕ．　Ｎｏｒｍａｌｎｏ　ｄａ　ｓｅ　ｎｅｍｏｓ　ｖｏｚｉｔ　ｕ　ｅｌｉｔｎｏｍ　ｖｌａｋｕ　ｉ　ｊｅｓｔ　ｓｍｅｃｅ，　ｐａ　ｋｕｐｉｏ　ｂｅｎｔｏ　（ｒｕｃａｋ）　ｓ　ｕｎａｇｉ　（ｊｅｇｕｌｊａ），　ｓｐｅｃｉｊａｌｉｔｅｔｏｍ　ｋｏｊｅｇ　ｏｄａｖｎｏ　ｚｅｌｉｍ　ｐｒｏｂａｔ．　Ｔｏｌｉｋｏ　ｊｅ　ｋｅｗｌ　ｄａ　ｕ　ｂｅｎｔｏｕ　ｄｏｂｉｊｅｓ　ｐａｋｅｔ　ｚａｇｒｉｊａｎｉｈ　ｋａｍｅｎｃｉｃａ　ｋｏｊｉ　ｃｕｖａｊｕ　ｔｏｐｌｉｎｕ．　Ｖｏｚｉｔ　ｓｅ　ｕ　ｓｈｉｎｋａｎｓｅｎ　ｖｌａｋｕ　ｊｅ　ｉｓｔｏ　ｚａｋｏｎ，　ｐｏｇｏｔｏｖｏ　ａｋ　ｓｊｅｄｉｓ　ｄｏ　ｐｒｏｚｏｒａ．　Ｏｂａｖｅｚｎｏ　ｐｏｇｌｅｄａｔ　ｆｉｌｍｉｃｅ (<a href="http://www.youtube.com/watch?v=_rxXXKTMyiA">video2</a> i <a href="http://www.youtube.com/watch?v=IhMiALurOFI">video3</a>)．　Ｎａｋｏｎ　2h i 40 min voznje ｓｔｉｚｅｍｏ　ｕ　Ｋｙｏｔｏ　ｉ　ｃｈｅｃｋ－ｉｎａｍｏ　ｓｅ　ｕ　ｈｏｔｅｌ，　ｏｄｍａｈ　ｐｒｅｋｏ　ｐｕｔａ　Ｋｙｏｔｏ　Ｓｔａｔｉｏｎａ．　Ｔｏ　ｊｅ　ｉ　ｔｒｅｎｕｔａｋ　ｋａｄ　ｓａｚｎａｊｅｍｏ　ｄａ　ｓｅ　Ｓａｒａｈ　ｎｅ　ｚｏｖｅ　Ｓａｒａｈ　ｎｅｇｏ　Ｌｉｎｇ，　ａ　Ｓａｒａｈ　ｊｏｊ　ｊｅ　ｋｒｓｃａｎｓｋｏ　ｉｍｅ．　Ａｚｉｊａｔｉ　ｓｕ　ｆａｋａｔ　ｃｕｄｎａ　ｒａｊａ．　Ｐｏｓｅｂｎｏ　Ｋｉｎｅｚｉ．　Ｈｏｔｅｌ　ｉｓｔｏ　ｔｏｔａｌｋｏ　ｐｒｅｋｅｗｌ．　Ｍｏｒａｌｉ　ｏｄｍａｈ　ｒａｄｉｔ　ｓｒａｎｊａ　ｓ　ＷＣ－ｏｍ　ｋｏｊｉ　ｐｅｒｅ　ｇｕｚｕ．　Ｐｏｇｌｅｄａｔ　<a href="http://www.youtube.com/watch?v=1-BN9KvT9xk">filmic</a>．　Ｋａｚｕ，　”ｍｏｚｅ　Ｂａｌｋａｎａｃ　ｓ　Ｂａｌｋａｎａ，　ａｌｉ　Ｂａｌｋａｎ　ｉｚ　Ｂａｌｋａｎｃａ　ｎｉｋａｄ”．　Ｍｏｒａｌｉ　ｐｒｏｂａｔ　ｉ　ｏｇｒｔａｃｅ．　Ｈｉｎｔ：　ｐｏｇｌｅｄａｔ　ｓｌｉｋｅ　ｎａ　ｆａｃｅｕ．　Ｏｓｔａｌｏ　ｎａｍ　ｎｅｓｔｏ　ｖｒｅｍｅｎａ　ｐｒｉｊｅ　ｆｅｓｔｉｖａｌａ　ｐａ　ｋｒｅｎｕｌｉ　ｒａｚｇｌｅｄａｖａｔ．　Ｉｎａｃｅ，　Ｋｙｏｔｏ　ｊｅ　Ｍｅｋａ　ｚａ　ｓａｊｔｓｉｉｎｇ，　ｊｅｒｂｏ　ｉｍａ　ｍｏｒｅ　ｄｖｏｒａｃａ，　ｈｒａｍｏｖａ　ｉ　ｓｈｒｉｎｅｏｖａ．　Ｐｏｇｌｅｄａｌｉ　Ｉｍｐｅｒｉａｌ　Ｐａｌａｃｅ，　ｓｔｏ　ｊｅ　ｂｉｏ　ｔｏｔａｌｎｏ　ｋｒｉｖｉ　ｉｚｂｏｒ　ｊｅｒ　ｍｏｚｅｓ　ｓａｍｏ　ｇｌｅｄａｔ　ｚｉｄｏｖｅ，　ｋｏｊｉｍａ　ｋａｄ　ｓｅ　ｐｒｉｂｌｉｚｉｓ，　ａｕｔｏｍａｔｓｋａ　ｔｅｔａ　ｋａｚｅ　”ｏｄｂｉｊ ｍａｌｉ”　ｉ　ｕｐａｌｉ　ｓｅ　ａｌａｒｍ　ｉ　ｎｏｒｍａｌｎｉ　Ｊａｐａｎｃｉ　ｔｅ　ｇｌｅｄａｊｕ　”ｓｅｌｊａｃｉｎｏ　ｇａｉｊｉｎｓｋａ”　ｐｏｇｌｅｄｏｍ．Ｏｎｉ　ｍａｎｊｅ　ｎｏｒｍａｌｎｉ　ｓｅ　ｈｏｃｅ　ｓｌｉｋａｔ　ｓ　ｔｏｂｏｍ．　Ｏｄｕｓｔａｌｉ　ｏｄ　ｐａｌａｃｅ　ｉ　ｋｒｅｎｕｌｉ　ｎａｃ　ｈｒａｎｕ．　Ｒｕｌｊａ　ｓｅ　ｐｏｌａｋｏ　ｐｏｃｅｌａ　ｓｐｒｅｍａｔ　ｚａ　ｆｅｓｔｉｖａｌ，　ａ　ｍｉ　ｏｋｒｅｎｕｌｉ　Ｔａｋｏ　Ｙａｋｉ，　ｇｒｉｌｌａｎｕ　ｈｏｂｏｔｎｉｃｕ．　Ｐｏｇｌｅｄａｔ　<a href="http://www.youtube.com/watch?v=TadtPDNqVYk">video</a> ｌｉｋａ　ｋｏｊｉ　ｔｏ　ｐｒｉｐｒｅｍａ，　ｐｒｅｋｅｗｌ．
+
+Ｖｒａｔｉｍｏ　ｓｅ　ｆｅｓｔｉｖａｌｕ．　Ｒａｄｉ　ｓｅ　ｐｒｉｌｉｃｎｏ　ｓｔａｒｏｊ　ｔｒａｄｉｃｉｊｉ　ｐａｌｊｅｎｊａ　ｖａｔｒｅ　ｕ　ｏｂｌｉｋｕ　ｚｎａｋｏｖａ　ｊａｐａｎｓｋｏｇ　ｐｉｓｍａ　ｎａ　ｐｌａｎｉｎａｍａ　ｏｋｏ　Ｋｙｏｔｏａ．　Ｚａｄｒｚａｌａ　ｓｅ　ｄｏ　ｄａｎａｓ，　ａ　ｓａｍｏ　ｎｅｋｏｌｉｋｏ　ｏｄａｂｒａｎｉｈ　ｏｂｉｔｅｌｊｉ　ｔｏｋｏｍ　ｇｏｄｉｎｅ　ｐｒｏｖｅｄｅ　ｍａｓｕ　ｖｒｅｍｅｎａ　ｓｐｒｅｍａｊｕｃ　ｓｅ　ｚａ　ｆｅｓｔｉｖａｌ．Ｉｍａ　５　ｚｎａｋｏｖａ　ｎａ　５　ｒａｚｌｉｃｉｔｉｈ　ｍｊｅｓｔａ　ｉ　ｎｅ　ｖｉｄｅ　ｓｅ　ｓｖｉ　ｓａ　ｊｅｄｎｏｇ　ｍｊｅｓｔａ，　ｐａ　ｖｉｄｊｅｔｉ　ｓｖｅ　ｐｊｅｓｋｅ　ｊｅ　ｐｒｉｌｉｃｎｏ　ｚａｊｅｂａｎｏ，　ｓｔｏ　ｚｂｏｇ　ｋｒａｔｋｏｇ　ｒａｚｍａｋａ　ｕ　ｐａｌｊｅｎｊｕ，　ｓｔｏ　ｚｂｏｇ　ｄｅｚｏｒｉｊｅｎｔｉｒａｎｏｓｔｉ　ｉｌｉ　ｕｄａｌｊｅｎｏｓｔｉ．　Ｕｇｌａｖｎｏｍ，　ｖｉｄｊｅｌｉ　Ｄａｉｍｏｎｊｉ，　Ｈｉｄａｒｉ　Ｄａｉｍｏｎｊｉ　ｉ　Ｆｕｎａｇａｔａ，　ｂｒｏｄｉｃ．Ｐｏｇｌｅｄａｔ　ｓｌｉｋｅ　ｎａ　ｆａｃｅｕ，　ｋｅｗｌ　ｊｅ．　Ｎａｋｏｎ　ｎａｐｏｒｎｏｇ　ｄａｎａ，　ｔｒａｚｉｌｉ　ｏｎｓｅｎ，　ａｌ　ｋｉｔｕ．　Ｖｒａｔｉｌｉ　ｓｅ　ｕ　ｈｏｔｅｌ，　Ｓａｒａｈ　ｔｊ．　Ｌｉｎｇ　ｉｓｌａ　ｋｒｍｉｔ，　Ｂｒａｎｋｏ　ｍｏｒａｏ　ｋｅｎｊａｔ，　ａ　ｊａ　ｂｌｅｓｐｌａ　ｓｕｒｆａｏ　ｕ　ｐｒｅｄｖｏｒｊｕ．　Ｐｒｅｋａｓｎｏ　ｐｏｐｉｏ　ｋａｖｕ　ｐａ　ｃｉｔａｏ　Ｂｕｄｄｈｉｓｔ　Ｔｅａｃｈｉｎｇｓ　ｄｏ　２　ｕｊｕｔｒｏ．　Ｔｏ　ｄｏｂｉｊｅｓ　ｕ　ｓｏｂｉ，　ｚａｊｅｄｎｏ　ｓ　Ｎｏｖｉｍ　Ｚａｖｊｅｔｏｍ．　Ｄｏｇｏｖｏｒｉｌｉ　ｓｅ　ｋｒｅｎｕｔ　ｕ　ｒａｚｇｌｅｄａｖａｎｊｅ　ｕ　８　ｕｊｕｔｒｏ，　ａｌ　Ｌｉｎｇ　ｋａｓｎｉｌａ　ｐａ　ｋｒｅｎｕｌｉ　ｕ　ｐｏｌ　10. Vidjeli ｔｏｔａｌｎｏ　ａｗｅｓｏｍｅ　Nijo Castle．　Ｕｎｕｔｒａ　ｎｅ　ｓｍｉｊｅｓ　ｓｌｉｋａｔ，　ｐａ　ｎｅｍａ　ｆｏｔｋｉ　ｉｚｎｕｔｒａ，ａｌ　ｓｍｉｊｅｓ　ｂｌｏｇａｔ．　Ｕｇｌａｖｎｏｍ，　ｊａｐａｎｓｋｉ　ｍａｊｓｔｏｒｉ　ｓｕ　ｖｅｃ　ｔａｄ　ｉｍａｌｉ　ｔｚｖ．　Ｓｌａｖｕｊｅｖ　ｐｏｄ，　ｋｏｊｉ　ｊｅ　ｎａｐｒａｖｌｊｅｎ　ｔａｋｏ　ｄａ　ｓｋｒｉｐｉ　ｋｏ　ｓｌａｖｕｊ　ｋａｄ　ｎｅｔｋｏ　ｈｏｄａ，　ｐａ　ｓｅ　ｎｉｔｋｏ　ｎｅ　ｍｏｚｅ　ｕｓｕｌｊａｔ．　Ｓｔａｖｉｌｉ　ｓｕ　ｖｏｓｔａｎｅ　ｆｉｇｕｒｅ　ｇｄｊｅ　ｓｈｏｇｕｎ　ｒｕｌａ　ｄｖｏｒｃｅｍ，　ｏｋｏ　ｎｊｅｇａ　ｎｅｋｉ　ｔｒａｄｉｃｉｏｎａｌｎｉ　ｌａｎｄｌｏｒｄｏｖｉ，　ｔｒｅｂｅ　ｉ　ｏｓｔａｌａ　ｅｋｉｐａ．　Ｓｋｒｐａｌｉ　ｓｅ　ｎｅｋｉｍ　Ｓｐａｎｊｏｌｃｉｍａ，　ｐａ　ｉｍａｌｉ　ｔｕｒｕ　ｓ　ｖｏｄｉｃｅｍ．　Ｉｓｔｉｎａ　ｎａ　ｓｐａｎｊｏｌｓｋｉｍ，　ａｌ　ｂａｒｅｍ　ｎｅｓｔｏ．　Ｎａ　ｂｒｚｉｎｕ　ｉｓｆｏｔｋａｌｉ　ｏｋｏｌｉｃｕ　ｄｖｏｒｃａ　ｉ　ｋｒｅｎｕｌｉ　ｄａｌｊｅ，　ｊｅｒｂｏ　ｊｅ　ｓｕｎｃｅ　ｕ　Ｋｙｏｔｏｕ　ｐｒｉｌｉｎｏ　ｇａｄｎｏ，　ｚａ　ｒａｚｌｉｋｕ　ｏｄ　Ｔｏｋｙａ，　ｋｏｊｉ　ｊｅ　ｕ　ｏｖｏ　ｖｒｉｊｅｍｅ　ｎｅｐｒｅｖｒｕｃ，　ａｌｉ　ｊｅ　ｖｌａｚｎｏｓｔ　ｕ　ｚｒａｋｕ　ｏｐａｋａ，　ｐｏｓｅｂｎｏ　ｋａｄ　ｉｚａｄｊｅｓ　ｉｚ　ｋｌｉｍａｔｉｚｉｒａｎｏｇ　ｐｒｏｓｔｏｒａ　（ｃｉｔａｊ，　ｓｖｅ　ｏｓｉｍ　ｎａｓｅ　ｋｕｈｉｎｊｅ　ｉ　ｋｕｐａｏｎｅ， ｕｋｌｊｕｃｕｊｕｃ　ｔｒｇｏｖｉｎｅ，　１００－ｙｅｎ　ｓｈｏｐｏｖｅ，　ｊａｖｎｉ　ｐｒｉｊｅｖｏｚ．．．）．　Ｎａｋｏｎ　ｔｏｇａ，　ｃｏｐｉｌｉ　ｂｕｓ　ｉ　ｐｒａｖａｃ　Ｋｉｎｋａｋｕｊｉ　Ｔｅｍｐｌｅ．　Ｒｅｃ　ｃｕ　ｓａｍｏ　ｄａ　ｋｉｎ　ｚｎａｃｉ　ｚｌａｔｏ　ｉ　ｄａ　hram　ｊａｋｏ　ｓｊａｊｉ　ｎａ　ｓｕｎｃｕ．Ｔｋｏ　ｎｉｊｅ　ｓｋｕｚｉｏ，　ｐｏｇｌｅｄａｔ　ｓｌｉｋｅ　ｎａ　ｆａｃｅｕ，　ｓｔａｎｉ　ｋａｄ　ｖｉｄｉｓ　ｚｕｔｕ　ｇｒａｄｊｅｖｉｎｕ．　Ｏｓｉｍ　ｔｏｇａ，　ｏｔｉｓｌｉ　ｉ　ｄｏ　Ｒｙｏａｎｊｉ　ｈｒａｍａ　ｕ　ｋｏｊｅｍ　ｓｅ　ｎａｌａｚｉ　ｊｅｄａｎ　ｏｄ　ｎａｊｐｏｚｎａｔｉｊｉｈ　ｋａｍｅｎｉｈ　ｚｅｎ　ｖｒｔｏｖａ．　Ｎｅｌｏｓｅ．　Ｕ　ｔｏ　ｄｏｂａ，　ｂｉｌｏ　ｖｅｃ　ｐｏｓｌｉｊｅｐｏｄｎｅ　ｉ　ｐｒｅｖｌａｄａｌａ　ｇｌａｄ．　Ｂｒａｎｋｏ　ｉ　ｊａ　ｏｓｌｉ　ｕｂｉｔ　ｃｕｒｒｙ　ｎｏｏｄｌｓｅ，　ａ　Ｌｉｎｇ　ｏｓｌａ　ｄｏ　Ｆｕｓｈｉｍｉ　Ｉｎａｒｉ　Ｓｈｒｉｎｅａ．　Ｍｅｎｉ　ｓｅ　ｎｉｊｅ　ｉｓｌｏ　ｊｅｒｂｏ　ｊｅ　ｓｈｒｉｎｅ　ｓｈｉｎｔｏ，　ａ　ｎｅ　ｂｕｄｉｓｔｉｃｋｉ，　ａ　ｔｏｇａ　ｓａｍ　ｓｅ　ｐｒｉｋｌｉｃｎｏ　ｄｏｖｏｌｊｎｏ　ｎａｇｌｅｄａｏ　ｕ　ｚａｄｎｊｉｈ　ｐａｒ　ｔｊｅｄａｎａ．　Ｉｍａｍｏ　ｃａｋ　ｊｅｄｎｏｇ　ｏｄｍａｈ　ｐｏｒｅｄ　ｋｕｃｅ．
+
+Ｅｎｉｖｅｊ，　ｐｏｎｅｄｊｅｌｊａｋ　ｓｅ　ｌａｇａｎｏ　ｂｌｉｚｉｏ　ｋｒａｊｕ，ｋａｏ　ｉ　ｖｒｉｊｅｍｅ　ｐｏｌａｓｋａ　ｖｌａｋａ　ｎａｚａｄ　ｕ　Ｔｏｋｙｏ．　Ｂｒａｎｋｏ　ｉ　ｊａ　ｉｚａｓｌｉ　ｎａ　Ｓｈｉｎｊｕｋｕ，　ｊａ　ｏｄｒａｄｉｔ　ｐｏｓａｏ　ｕ　ｎｅｔ　ｃａｆｅ，　ａ　ｏｎ　ｓｖｒｌｊａｔ　ｉ　ｐｒｏｖｊｅｒｉｔ　ｐｏｓｔｏ　ｓｕ　ｋｕｒｂｅ．　Ｎａｓｌｉ　ｓｅ　ｎａｋｏｎ　ｄｖａ　ｓａｔａ　ｉ　ｍｒｔｖｉ　ｏｓｌｉ　ｄｏｍａ．
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-27T00:00:00+02:00" pubdate data-updated="true">Aug 27<span>th</span>, 2009</time></div>
+	
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/08/26/japan-series-tachikawa-adventures/">
+		
+			Japan Series: Tachikawa Adventures</a>
+	</h2>
+	<div class="entry-content">
+		Drugi tjedan u Tokiu krenuo sasvim ugodno. Prvi dio tjedna nastavili raditi na drvenoj kuci, a onda povodom pocetka OBon festivala glavni drvodjelac otisao na godisnji pa se preselili raditi noge za stolice u Hiro-sanovom wrkshopu, odma prekoputa. Enivej, kad smo vec kod glavnog drvodjelca, zove se Saigusa (wtf), ima 50 godina i ne izgleda nista bolje od obicnog rvackog sljakera. No, za razliku od ovih kod nas, ovaj je prije spomenutog godisnjeg imao drugi godisnji, tjedan dana je svrljao po Skandinaviji, samo metropole. Ako je takva placa u drvodjelca&#8230; Tip je totalno kewl, krmi s nama u WWOOF hausu, a preko vikenda ide doma zeni. Dok se vozimo do konstraksn sajta u njegovom kamioncicu, poucava nas japanski s naglaskom na uletavanje trebama. Osim toga, naucio je i par nasih fraza koje zapisuje u na zadnju stranicu englesko-japanskog rjecnika. Kad se probudi, vice &#8220;Dobro juutroo&#8221;. Ima i video gdje svira gitaru, al to uploadam kad dodjem doma.
+
+Enivej, pocetkom tjedna nekako nas napustila i cura sa Tajlanda, a dosla druga s Tajvana. Zove se JinJun (!?) i zbrisala je nakon par dana. Uglavnom, zloglasni tajfun koji je harao Azijom joj je razvalio hometown. Mi se nadali da ce malo opalit i kod nas da ne moramo nist radit. Tajfun obisao Tokyo, al za utjesnu nagradu nas probudio novi potres. Bilo totalno kewl, okrenuli se i nastavili spavat. Bio neki dan poslije jos jedan, al taj me nije probudilo. Uglavnom, ostali Sarah (kineskinja iz Singapura), Joel (Saipon), Stephen (SAD al rodom iz Austrije), Branko i ja.
+
+Bili jednu vecer na rijeci gledat vatromet, sto je kao totalno popularno. Mene obradovala i hrpa tradicionalne klope koju smo ponijeli sa sobom. Tad probao drugu po redu japansku pivu,Yebisu. Ime odgovara prvoj asocijaciji na rvackom, stoga, ovu pivu izbjegavat. Enivej, vratimo se festivalima. U petak i subotu navecer isli u Tachikawu gdje se odrzavao neki festival kojem ne znam ime, ali je bilo uzasno zakon. Eto i <a href="http://www.youtube.com/watch?v=ksnMisHoPm0">video</a>. Ekipa se obuce u tradicionalnu obleku, isfuraju bubnjeve i urlaju i skacu ko manijaci. Sloze i papirnate skulpture da turisti mogu slikat, peku lignje i svast. Japanke u kimonu izgledaju predobro. A i inace izgledaju jako dobro :), odusevljeni smo. Prvi put isli nekud biciklima i skontali da je to najbolje prijevozno sredstvo za krace rute po Tokyu. (Za vise od jedne stanice bolje ic vlakom). U petak bili Sarah, Joel, Branko, Ryuichi ( sin Kazuko-san) i ja. Stephen isao s nekom trebom na Shinjuku, al nije nis ubo, vratio se doma 10 min poslije nas :P.  U petak mu bila zadnja noc u Japanu pa odlucili napravit show. On, Branko i ja uzeli hrpu love, bicikle i pravac Tachikawa. Prvo se glupirali na festivalu. Mahala nam dva slatkisa u kimonu, al nismo znali kak cjelobrojno podijelit tri sa dva, a da nitko ne ostane suh, pa ih samo slikali i kupili sladoled i sok u 7&amp;Elevenu prekoputa, umjesto iz njihove skrinje. Krenuli trazit mjesto za popit pivu i idiotizirali se biciklima. Prije nego nastavim pricu, treba napomenut da smo sve bicikle posudili od Kazuko-san i da su svi bicikli u Japanu registrirani. Enivej, vozimo se po nekim ulicicama, Stephen urla &#8220;record me with your camera while I do power slide&#8221; (pogledaj <a href="http://www.youtube.com/watch?v=71S6_JjiHxM">video</a>), a od tada na dalje Stephen se vozi na ispustenoj zadnjoj gumi. Ko za vraga, prolazimo kraj dva policajca koji nekoj ekipi provjeravaju broj sasije. Naravno, zaustavilo i nas. Dva lika, ko i vecina ljudi u Japanu, ne znaju beknut engleskog, krenuli nam svjetlit baterijom u bicikle, a Stephen gura zadnju gumu uz bankinu da mu ne skontaju 3cm posjekotine, jerbo to ne vole vidit i ne daju ti da se nastavis vozit. Ja i Branko pricamo Rvacki i ljuljamo se lijevo desno, a tip koji idlea nas gleda pogledom &#8220;na kojim ste vi opijatima&#8221;. Uspijeva izdrobit &#8220;where you from&#8221;&#8230; Na prvu nema pojma, al kad spomenemo Mirko CroCop Filipovic, komentira &#8220;Sugoi, Sugoi&#8221;, a dok mu faca poprima izraz &#8220;mogao bi ja i najebat, ovi nisu cisti&#8221;, lagano se odmice od nas. Ovaj drugi zove Kazuko-san jerbo misli da smo drapnuli bicikle. Na kraju sve normalka i krecemo dalje. Upadamo u neki lounge bar, al nas zena uredno moli da odjebemo jer je dolje privatni parti za starije. Kontamo ubit sat u net cafeu, al ne znamo ni jedan u tom dijelu Tachikawe, pa nakon kraceg cruisanja, nalazimo jednog. Parkiramo bicikle, udjemo unutra, a zidovi obljepljeni fotografijama obnazenih japanki. Stephen se sporazumijeva s pijanim likom, a ovaj mu objasnjava da smo dosli u mjesto u kojem vas tip/djecak koji bi kod nas mogao proc za ministranta, lagano odmjeri i odvede do mjesta gdje za novce dobijes sex. Dan prije smo vidjeli kurbe koje rade same, al su ruzne i vjerojatno su kineskinje.  Odjebavamo predvorje kupleraja i krecemo dalje. Eh da, treba napomenut da Japanci vole ic u karaoke barove u koje se placa upad. Vozikamo se ispred biciklima i gledamo ekipu koja stoji u cekaonici jer je kao previse ekipe pa ih ne puste. Odlucili ne ic ovaj put u to, jer smo, za razliku od lokalne ekipe, dosli biciklima, a i tako smo obuceni. Za oko mi zapinje soul bar u mracnoj ulicici. Stajemo ispred, nema zive duse, kontamo ocemo-necemo&#8230;   U tom trenu, ulazi mlada teta s pregacom u mase nam da udjemo. Branko i ja parkiramo bicikle, a Stephen komentira &#8220;I will laugh at you after you get assfucked by nigerian guys&#8221;. Na kraju i on upada s nama u prilicno kewl bar. Unutra neka lokalna ekipa sastavljena od par likova,  2 konobarice i valjda vlasnika. Vlasnik s afro zurkom stize za nas stol i vrlo brzo s japanskog engleskog prelazi na japanski. Stephen ga nekako lovi, al Branko i ja lapimo i pijuckamo Sapporo, trece pivo po redu ko sam probao. Na ljestvici dobrote je prvo, potegnuli ih pet. Nesto kasnije, ulecu tip i cura, novi u bircu, al i dalje su svi ista ekipa. Doslo jos nekih smjesnih likova. Tip i cura sjedaju za nas stol. Cura prica engleski, dok lik prvo blijedo gleda, a kasnije mu ona melje na japanskom. Enivej, tip radi kao ramen majstor u restoranu (nacrtali nam kartu, al predaleko je, ionako jedemo instant ramen)、a cura je instruktorica ashtanga joge i povremeno ide u Indiju. Imali o cem pricat. Osim toga, jedna konobarica slavila rodjendan pa smo bespla dobili tortu i neki zao alkohol. Moras iskapit. Ni dobro. Uglavnom, pisali od smijeha s njih dvoje dok pokusavaju izgovorit &#8220;ponedjeljak&#8221; ili &#8220;prodavacica&#8221;.  Kao slag na bespla tortu, stigao aitu programeru (IT programmer). Tip radi u Appleu i kodira appse za ajfon. Uglavnom, totalno je udaren, kao i svi japanci ima fetis na srednjoskolke u suknjicama i zaboravili ga pitat kolika je placa u japanskih developera. Obavezno pogledat slike na faceu, to je onaj lik s pljugom u ustima i mrljama na majci. U lagano blazenom stanju, oko pol tri ujutro, napustamo soul bar i pozdravljamo se s ekipicom. Ashtanga joga teta nam ponovo crta kartu da znamo opet doc. Bauljamo biciklima prema monorail　stranici (vracamo se doma tak da pratimo prugu biciklima), ali glad prevladava. Pakiramo konje pred McShitom, Stephen casti s 9 hamburgera i cugom po izboru. Teta na blagajni pada s nogu kad se vratimo dolje i uzimamo jos 6 cheeseburgera da imamo sta jest po putu (15 min biciklom). Treba napomenut da McShit radi 24 sata, a kosookima koji su fulali zadnji vlak je poseban gust doc i narucit 100-yen meni (5 kn), otic gore pojest i ko fol slucajno zaspat do jutra. Mrtvi se vracamo doma u ko zna koje doba. Najbolja noc u Tokyu do sada.
+
+U sljedecem postu: Ling, Branko i Ivor u Kyotou.
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-26T00:00:00+02:00" pubdate data-updated="true">Aug 26<span>th</span>, 2009</time></div>
+	
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/08/17/japan-series-prvi-vikend-off/">
+		
+			Japan Series: Prvi Vikend Off</a>
+	</h2>
+	<div class="entry-content">
+		Ola. Bok mama, dobro sam.
+
+Krece kratki prelet od pocetka proslog vikenda kad sam napisao zadnji post. Enivej, tu subotu bio prvi vikend off pa Branko i ja krenuli istrazivat. Naravno, sva rulja prvo ide na Shinjuku i Shibuyu, dvije najpopularnije cetvrti Tokia u kojima ima gro neonskih reklama, cudno obucenih ljudi, trgovina i tralala.
+
+Daklem, prva postaja bila Shinjuku, odakle su stigla prva dva posta. Nakon toga prosetali nekim totalno kewl parkom, poklali nas komarci, hodali po travi koju zelim imat doma umjesto tepiha&#8230; Mislili otic na Tokyo Tower, ali nas izdao GPS i sposobnost orijentacije. Odjebali park i dopjesacili na Shibuyu. Totalno odvalili na crnce (uglavnom Nigerijci) koji ekipu nagovaraju da dodju u njihovu trgovinu kupit patike. Branku su rekli &#8220;big size no problem&#8221;. Enivej, njih se treba klonit. Nije da aludiram da crnci gdje god bili, samo rade probleme, ali ovi su uzasno naporni i treba ih se otarasit u startu, jerbo culi gro prica o ljudima koji su isli vidit sta ima pa izasli iz trgovine desetak soma jena laksi, sa hrpom majci do koljena i slicnog nepotrebnog smeca. Tamo nas udavile tri zene iz nekakve japanske krscanske sekte da idemo u njihovu crkvu primit blagoslov (wtf). Odlucno odjebali i krenuli dalje lutat u nepoznatom smjeru. Branko se pravio da zna kud zeli ici, al u ocima mu se vidjelo da ga nasa pozicija na karti sve vise iznenadjuje. Vidjeli totalno kewl nebodere, debilirali se u Shinto hramu i na kraju mrtvi umorni dosli na Akihabaru, mjesto rezervirano za prodaju elektronicke opreme. Malo svrljali, na gledali ulicni performace nekog madjionicara, utukli lignje i Asahi pivo(koje je eksli bolje od vecine piva koje sam ikad pio) i osli doma.
+
+U nedjelju isao i Stephen s nama. Smrknuli brzinsku kavu s aparata (u Japanu se kava inace  pije hladna, iz konzerve ili tetrapaka, ovo zadnje definitivo izbjegavat). Dosli na Harajuku (cetvrt u kojoj se okupljaju najcudniji ljudi koje mozes srest u Tokiu). Oducili krenut polako pa vidjeli obliznji Meiji Shrine, hram u Shinto stilu. Vidjeli i tradicionalno vjencanje, bilo prezakon. Kasnije isli do parka snimit Rockabilly ekipu. Obavezno pogledat prilozeni <a href="http://www.youtube.com/watch?v=Z06M_JQFGHg">video</a>.Uglavnom, japanci obuku kozne hlace, sloze aerodinamicnu frizuru, odvale glazbu u parku i plesu. Isplati se vidit. Blizu je i mjesto gdje se okupe totalno bolesno obucene djevojcice, al malo bilo mutno vrijeme pa nist od toga. Bilo ih samo par, al bizarnost nadoknadio totalno spaljeni lik. Pogledat <a href="http://www.youtube.com/watch?v=8ythdytQxfg">video</a>. Krenuli jest, progurali se nekom ulicom u kojoj prodaju apsolutno sve, sreli opet nigerijce&#8230; Bizarnosti nije nedostajalo pa otisli jest na Shibuyu. Jeli rizu, sirova jaja, svinjetinu, tko zna jos sta&#8230; Uslikao jerbo mislio da mi je to mozda posljednja vecera. Onda upali u neki fensi bar sa smooth jazzom i ekipom koja ima satove po 5 soma dolara. To nas nije sprijecilo u isprobavanju wc-a koji pere i susi guzicu. Branko je otkrio da tipka na kojoj je nacrtana cura moze izazvat erekciju. Moras voljet Japan. Tad prvi put primjetio da gotovo svi mladi i malo stariji Japanci (a hrpa ih pusi) uopce ne uvlace dim, nego se samo isfuravaju. Sjedimo u tom baru, pored nas cura i tip, roba na njima kosta vjerojatno vise nego sve sto Stephen, Branko i ja posjedujemo, a ja se ne mogu prestat smijat dok ih gledam kako puse kao ja u sedmom razredu&#8230;
+
+Otisli i u Book-Off, stali u porno odjelu i umirali od smijeha gledajuc kako bolesna ova ekipa moze biti. Kao u Japanu je zabranjeno snimati intimne dijelove tijela, pa ih ili zamagle, ili jednostavno koriste jegulje&#8230; Necu dalje komentirat.
+
+Poslije toga odzujali na Roppongi, gledali totalno zakon nebodere i nakon kraceg debiliranja otisli se popet na Tokyo Tower. Tek sa 150 m visine otkrijes koliko je bolesno velik Tokyo. Kasnije saznali da je bio i potres dok smo bili gore. Nije da smo nesto osjetili, al mi bas nije bilo svejedno kad sam cuo. Enivej, par filmica s Tokyo Towera. <a href="http://www.youtube.com/watch?v=Q4Hx9VrKJYA">video1</a> <a href="http://www.youtube.com/watch?v=s2Ph18LAZGc">video2</a>
+
+Totalni mrtvi osli kuc, jerbo je ponedjeljak bio na vratima, a s njim i ustajanje u 7.
+
+Disklejmr: sljedeci post pokrije prosli tjedan i ovaj vikend. Bilo je burno, vikend trajao do danas (ponedjeljak navecer). Valjda uspijem malo sortirat slike pa stavim i to.
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-17T00:00:00+02:00" pubdate data-updated="true">Aug 17<span>th</span>, 2009</time></div>
+	
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/08/08/japan-series-let-dolazak-i-prvi-dojmovi/">
+		
+			Japan Series: Let, Dolazak I Prvi Dojmovi</a>
+	</h2>
+	<div class="entry-content">
+		Disklejmr: Postovi su na rvackom jerbo ne zelimo zagorcavat zivot mojoj majci koja ceka poruku na Skypu, a meni se bas i ne da :)
+
+I tak, u nedjelju poslijepodne napustio Malo Misto, stigao u Metropolu i krenuo prepakiravat kofere. Malo kasnije, stigli Branko, Riba i Goran, a s njima i hrpa pizze, pive i ko zna sta jos sve ne. Kao mali farewell party. Goran se ubrzo sprijateljio s kaucem i papirnatim Balicem u prirodnoj velicini, ja bio ubijen pa zakrmio, a Riba i Branko setali kvartom u 3 ujutro, na opce cudjenje lokalnih cugera. Oko 4 ujutro cirkus u stanu, Branko i Riba u stilu gregorijanskih zborova Goranu pjevaju nabolesniju pjesmu za budjenje ikad. Pakiramo stvari i lagani pokret, paranoidno kljucam ulazna vrata nakon sto sam tri puta provjerio sve prozore i roletne. Nabrijani Golf Duja tiho bruji pospanim gradom, a lagana kisa i Marchelov Puzzle Shock nas prate dok napustamo Metropolu. Oko pol 6 stizemo na Pleso, odradili check-in i predali prtljagu. Avion za Pariz kasni 50 minuta u polasku, pa sjedamo na kavu (18 kn?) . Pozdravljamo se s Goranom i Ribom, a Branko i ja se debiliramo u obliznjem PBZ igralistu.  Jos uvijek nisam siguran hocu li te slike ikada nekom pokazati. Jos se malo debiliramo u restoranu, nakon cega kontamo da bi mogli zakasnit na let koji i sam po sebi kasni. Ulecemo i guramo se kroz red, tip koji gleda karte nam spominje tri koljena rodbine, dok zena dolje na izlasku urla nasa prezimena i vjerojrno imena ostatka rodbine koja su promakla prethodno spomenutom gospodinu. Enivej, ipak uletili u avioncic za Pariz.
+
+Nakon nekih sat i pol, stizemo na Charles De Gaulle. Aerodrom je ogroman i izgleda uzasno kewl nasuprot Plesa. Downside toga je to sto se malo zajebano snaci dok nadjes svoj terminal (put ukljucuje vozikanje aerodromskom zeljeznicom, kupovanje hrpe cokolade, haxanje web terminala i kojesta drugo). Enivej, ukrcali se na Airbus A340 i krece let do Narite.  Iako nema bas previse mjesta, puno je udobnije od bojlera s krilima s kojim smo letjeli s Plesa. U sjedalu imas svoj mali LCD u kojem se moze pogledat X-Men ili novi Star Trek, a mozes gledat i putno racunalo koje ti kaze sve zakon stvari o letu. Na moje opce iznenadjenje, avion ne leti iznad Indije i Kine, nego fura do Baltika, Finske pa okine Ruskom obalom i kasnije se preko Sibira spusti do Japana. Svejedno, kad se vozis oko 1000 km/h na visini od 10km, temperatura vani je -50 C. Od vegetarijanskog rucka nisam bas puno ocekivao, pa se nisam niti previse razocarao. Nije da trazim sabji na gujaratski nacin, ali riza se moze malo bolje zacinit. Zeludac se razveselio kad su stjuardese pocele nositi japanske noodle  u miso juhi, ali naravno, hrpa iritantnih Spanjolaca je bila brza pa ispusili i to. Nakon gadnih 12 sati leta, stizemo na Narita aerodrom u 6.50 po lokalnom vremenu. Ostavljamo sliku i otiske,  lazemo da cemo si trazit hostel i bez problema prolazimo imigracijske provjere.
+
+Mjenjamo lovu i kupujemo kartu za ugodno klimatiziran i prilicno skup jutarnji vlak koji nas vozi do Tokyo Stationa, odakle se vozimo lokalnim vlakom do Hino Stationa. Iako smo mislili da se radi o selendri, Hino City je prilicno kewl dio Tokya, iako puno mirniji od susjedne Tachikawe ili Shibuye i Shinjukua. Zovemo Kazuko-san i to je trenutak u kojem nam dolazi do mozga da je Kazuko-san zena i da smo napravili totalni zajeb kad smo uz knjigu od Rvackoj kupili kravatu. Enivej, Kazuko-san nas pobrala nekim kombijem, svratili po bento, pokazala nam di je budisticki hram pa krenuli domeka.
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-08T00:00:00+02:00" pubdate data-updated="true">Aug 8<span>th</span>, 2009</time></div>
+	
+
+
+	
+</div></article>
+
+<nav id="pagenavi">
+    
+        <a href="/" class="prev">Prev</a>
+    
+    
+        <a href="/blog/page/3/" class="next">Next</a>
+    
+    <div class="center"><a href="/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Ivor Prebeg
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</body>
+</html>

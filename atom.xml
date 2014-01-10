@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Ivor Prebeg]]></title>
+  <link href="http://iprebeg.github.io/atom.xml" rel="self"/>
+  <link href="http://iprebeg.github.io/"/>
+  <updated>2014-01-10T13:31:08+01:00</updated>
+  <id>http://iprebeg.github.io/</id>
+  <author>
+    <name><![CDATA[Ivor Prebeg]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Dolphins]]></title>
+    <link href="http://iprebeg.github.io/blog/2013/11/16/dolphins/"/>
+    <updated>2013-11-16T22:00:00+01:00</updated>
+    <id>http://iprebeg.github.io/blog/2013/11/16/dolphins</id>
+    <content type="html"><![CDATA[<p>Seems like I&rsquo;ll be providing my iOS skills to help marine biologists to track dolphins.</p>
+
+<p>More updates to come&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[in the clouds]]></title>
+    <link href="http://iprebeg.github.io/blog/2013/10/27/in-the-clouds/"/>
+    <updated>2013-10-27T23:26:00+01:00</updated>
+    <id>http://iprebeg.github.io/blog/2013/10/27/in-the-clouds</id>
+    <content type="html"><![CDATA[<h2>modern vcs</h2>
+
+<p>Recently moved all my stuff from weird place hosted Subversion repo to github and bitbucket. Bitbucket only to host private repos I can&rsquo;t just share around, like previous freelance work, coursera homeworks and stuff.</p>
+
+<h2>continuous integration</h2>
+
+<p>OK, honestly I&rsquo;d have more private stuff on bitbucket, but I just couldn&rsquo;t resist goodie-goodies from Travis-CI. Seems that it is <strong>the</strong> best free cloud based CI option available, due to the deployment options to popular PaaS services and obj-c capabilities. You can also ask for help on #travis when your job hangs, thanks guys. Works just for public github repos in free plan, but that is all I actually need.</p>
+
+<h2>paas</h2>
+
+<p>Anyway, in efforts to ditch hosting which <del>houses</del> housed my blog and Spring Roo stack that powers REST APIs that my iOS apps use, I&rsquo;ve begun to experiment with Heroku and Openshift. Currently in process of migrating my iOS apps to iOS 7 and relinking urls to Openshift and REST stack is already set-up. What is so cool about it, I don&rsquo;t have to upload war files, which are not famous for their small footprint, no more downgrading JEE Stack to &lsquo;02 version to be able to run it against Tomcat-5, only option available in cPanel. What?! Wait, what? It&rsquo;s 2013 guys, how &#8216;bout a little upgrade.</p>
+
+<h2>blog</h2>
+
+<p>I didn&rsquo;t know what to do with hosted wordpress instance that had all my blog entries from Japan trip &ndash; only actually valuable thing on this blog. Saw jekyll somewhere, put in action with octopress &ndash; still not sure whether to go with twitter bootstrap option or not and hosted it in github pages. Could go with openshift or heroku, but I wanted to save free slugs there for future use, github does good job here.</p>
+
+<h2>era of powerful cli</h2>
+
+<p>All that stuff I can do just using command line. Monitor travis builds, deploy to openshift on my own even I have travis configured to do that automatically, write blog entries in markdown. I also started using CocoaPods, xctool for obj-c work, super easy.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Amazon Seattle and H1B hell]]></title>
+    <link href="http://iprebeg.github.io/blog/2013/06/27/amazon-seattle-and-h1b-hell/"/>
+    <updated>2013-06-27T22:40:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2013/06/27/amazon-seattle-and-h1b-hell</id>
+    <content type="html"><![CDATA[<p>Late March 2013 I visited Amazon offices in Seattle for interview. Got an offer few days after flying out. WHOAT ACCEPTED!?!1!!</p>
+
+<p>Then I got email from immigration attorney asking me to send my documents as soon as possible. Sure. What lottery?! Gee, there is frickin&#8217; lottery for H1B as well!? My chances were around 60%. Didn&rsquo;t get through, was never much of a gambler. Better luck next year. Damn!</p>
+
+<p>Thing I regret is not visiting Bruce Lee&rsquo;s grave to pay respects while I was there. Not gonna miss it next time.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Lesssions learned: How to sell your Mac (for iOS devs)]]></title>
+    <link href="http://iprebeg.github.io/blog/2012/07/04/lesssions-learned-how-to-sell-your-mac-for-ios-devs/"/>
+    <updated>2012-07-04T00:00:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2012/07/04/lesssions-learned-how-to-sell-your-mac-for-ios-devs</id>
+    <content type="html"><![CDATA[<strong>Backup</strong>
+<p>
+Be sure to have latest backup in TimeMachine. This can keep your transfer to new machine much easier.
+</p>
+
+<strong>KeyChain</strong>
+<p>
+Be sure to back up your private keys, certificates&#8230; Make sure you know passphrase on your private key. These took me few hours of sweating on new machine to realize I used one of my regular passwords with little typo. This is nasty shit, loosing private keys is hell.
+</p>
+<strong>Passwords and browsing data</strong>
+<p>
+Clean all data on browser you have installed, including Skype, MSN, Jabbers&#8230;
+</p>
+<strong>iTunes</strong>
+<p>
+Log out from iTunes Store and deauthorize computer you are about to sell. You are limited to 5 authorized computers by Apple.
+</p>
+<strong>Sensitive data</strong>
+<p>
+Not talking here about your music collection, I&#8217;m talking about projects you work on. Maybe there is local svn copy of one of your company&#8217;s secret projects or project you signed NDA for. Think about leaking cPanel or Apple Developer Program credentials of your clients, maybe company&#8217;s disk image you did forensics on and that kind of stuff.
+</p>
+<strong>Data Recovery</strong>
+<p>
+Do not just erase your disk, you have to erase it in safe way. Even if files are deleted, data can be restored with bCheck security options in Mac OS X, not to mention EnCase stuff. Usual zeroing device is fine if you are regular user, but if you work for high-profile clients, don&#8217;t hesitate to leave your computer writing clever random patterns 47 times all over your storage devices. Or just take these out and do not sell them.
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Decrypting outgoing IPSec traffic]]></title>
+    <link href="http://iprebeg.github.io/blog/2012/02/16/decrypting-outgoing-ipsec-traffic/"/>
+    <updated>2012-02-16T00:00:00+01:00</updated>
+    <id>http://iprebeg.github.io/blog/2012/02/16/decrypting-outgoing-ipsec-traffic</id>
+    <content type="html"><![CDATA[Sniffing plaintext traffic on IPSec endpoint works for incoming traffic, since it&#8217;s already decrypted, but outgoing traffic can not be sniffed in original form but only as ESP packets with encapsulated original. This also means that these packages can&#8217;t be sniffed with dst address of real destination, but address of IPSec peer.
+
+You need to get some traffic with tcpdump/Wireshark/tshark/whateva, but when you analye it, you will need Wireshark built with gcrypt support.
+
+So, fire up your favourite pcap compatible sniffer and get outgoing packets by setting dst address filter with address of IPSec peer. While sniffing, get encryption and authentication keys and algos by hitting
+<code>
+ip xfrm state
+</code>
+or
+<code>
+racoonctl show-sa esp
+</code>
+
+There is also nice perl script written by <a title="Anon guys explains this crap" href="http://www.wireshark.org/lists/wireshark-users/201103/msg00084.html">some anon dude on wireshark mailing list</a>. Script prepares above command output to Wireshark friendly form. Play with it a little. *BEWARE* you IPSec/IKE daemon is probably rekeying every half an hour so you might need to split sniff and analyze separately with different keys.
+
+<code>
+open(RACOON, "racoonctl show-sa esp|") || die "can't execute racoonctl successfully\n";</code>
+
+$sa = 1;
+
+while (&lt;RACOON&gt;) {
+
+chop();
+
+# look for a line starting with an IP addr&#8230; yes, I know there are
+# better regexps&#8230; but racoon seems to only have one line starting with&#8230;
+if (/^[0-9]/) {
+($ip1, $ip2) = split(/\s+/, $_);
+# print the SA #1 line for wireshark
+print &#8220;SA #$sa:\t\t\tIPv4|$ip1|$ip2|*\n&#8221;;
+$sa++;
+}
+if (/^\s*E: aes-cbc/) {
+if (!$aes_1) {
+# print &#8220;AES-1:\t0x&#8221;;
+print &#8220;Encryption Key #1:\t0x&#8221;;
+($x, $x, $x, $one, $two, $three, $four) = split(/\s+/, $_);
+$aes_1 = &#8220;$one$two$three$four&#8221;;
+# print &#8220;AES-1: $aes_1\n&#8221;;
+print &#8220;$aes_1\n&#8221;;
+}
+else {
+# print &#8220;AES-2:\t0x&#8221;;
+print &#8220;Encryption Key #2:\t0x&#8221;;
+($x, $x, $x, $one, $two, $three, $four) = split(/\s+/, $_);
+$aes_2 = &#8220;$one$two$three$four&#8221;;
+# print &#8220;AES-2: $aes_2\n&#8221;;
+print &#8220;$aes_2\n&#8221;;
+}
+}
+
+if (/^\s*A: hmac-sha1/) {
+if (!$hmac_1) {
+# print &#8220;HMAC-1:\t0x&#8221;;
+print &#8220;Authentication Key #1:\t0x&#8221;;
+($x, $x, $x, $one, $two, $three, $four, $five) = split(/\s+/, $_);
+$hmac_1 = &#8220;$one$two$three$four$five&#8221;;
+# print &#8220;HMAC-1: $hmac_1\n&#8221;;
+print &#8220;$hmac_1\n&#8221;;
+}
+else {
+# print &#8220;HMAC-2:\t0x&#8221;;
+print &#8220;Authentication Key #2:\t0x&#8221;;
+($x, $x, $x, $one, $two, $three, $four, $five) = split(/\s+/, $_);
+$hmac_2 = &#8220;$one$two$three$four$five&#8221;;
+# print &#8220;HMAC-2: $hmac_2\n&#8221;;
+print &#8220;$hmac_2\n&#8221;;
+}
+}
+
+}
+
+Fire up wireshark and open your sniff
+Just paste these values into Preferences-&gt;Protocols-&gt;ESP, enable decryption too and hit apply. Enjoy your plaintext traffic.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Thailand Series: Vodic za balkanca]]></title>
+    <link href="http://iprebeg.github.io/blog/2012/01/31/thailand-series-vodic-za-balkanca/"/>
+    <updated>2012-01-31T00:00:00+01:00</updated>
+    <id>http://iprebeg.github.io/blog/2012/01/31/thailand-series-vodic-za-balkanca</id>
+    <content type="html"><![CDATA[<strong>Kada ici na Thailand?</strong>
+
+Najbolje vrijeme za otic na Thailand je od početka studenog do kraja veljace kada je razdoblje hladne klime. U ostatku godine, Thailand nije ugodno mjesto za ljude naviknute na nasu, balkansku klimu zbog ogromne vlage u zraku pa se boravak na otvorenom može pretvoriti u pakleno iskustvo s otežnim disanjem. FYI na tajlandu nema 4 godisnja doba kao kod nas, nego ima hladno, toplo i kisno. Klima je tropska.
+
+<strong>Kako otici na Thailand?</strong>
+
+Avionom! No shit Sherlock. Svakako izbjegavati Aeroflot, normalna cijena povratne karte po osobi je oko 5k kn, a ako malo zakasnite s bookiranjem, penje se i do 8k ili 10k. Planirajte put barem 6 mjeseci ranije, dogovorite na vrijeme godisnji na poslu (tocne dane) i bookirajte kartu sto prije. Isto vrijedi i za hotele i resorte koji nude popuste (10-15%) ako bookirate sobe ranije.
+
+<strong>Kako putovati Thailandom? </strong>
+
+Opet, avionom! Za vrijeme sezone, busevi i vlakovi kasne i po nekoliko sati, a da biste stigli od Bangkoka do, recimo, Ko Phi Phia, trebate kombinirati vlak (s krevetom), pa privatni taxi do busa, pa bus, pa opet privatni taxi do pjera i katamaran/trajekt/brod. Ako vam vlak kasni, necete uloviti dogovoreni prijevoz sto ce rezultirati opcim kaosom i u najboljem slucaju cete izgubiti samo pola dana zasluzenog odmora na plazi. Generalno, vlak je ok sredstvo prijevoza, ima aircon i krevete, cist je i siguran. Ali za sigurnost vlastitog uma i zivaca, vozite se lijepo avionom i kupite karte na vrijeme pa nece ni biti skupe. Air Asia i Bangkok Airlines imaju ok lokalne linije, a vecina popularnih mjesta na moru ili otocima ima zracnu luku. Ako pak zelite ili morate ici zemljanim putevima, imate agenciju  na stanici za vlak u Hua Lampong, Bangkok koji ce vam organizirati lokalno putovanje (karte za vlakove, brodove, buseve, smjestaj&#8230; bez provizije).
+
+<strong> Što vidjeti u Bangkoku?</strong>
+<ul>
+	<li>Tapkajući po Bangkoku shvatiš da je cijeli grad jedan veliki buvljak. Recimo na Sukhumvit Roadu možeš kupiti dildo, šlape, dres od Barcelone, kopiju viagre u bilo koje doba dana ili noći na uličnim štandovima. Svakako mjesto koje treba posjetiti je Chatuchak Weekend Market, ogromni Hrelić veličine&#8230; hm, nemam pojma. Uglavnom, ogroman je. Prodaje se sve, od polovnih knjiga, umjetnina, lažnih Armani satova, kućnih ljubimaca&#8230; Market radi samo subotom i nedjeljom i ogromna je guzva.</li>
+	<li>Bangkok obiluje hramovima, a oni koje se svakako isplati pogledati su Wat Phra Kaew i Grand Palace, Wat Arun, Wat Pho i Golden Mount. Kad prelazis Chao Praya rijeku do Wat Arun hrama, nije lose svratiti ni muzeja medicinskog fakulteta gdje je izlozena zanimljiva zbirka konzerviranih sijamskih blizanaca i tijela osakacenih na vrlo zivopisne nacine.</li>
+	<li>Barem jedan zalazak sunca u Bangkoku treba docekati na 8x. katu Baiyoke Sky Hotela gdje se nalazi rotirajuca kupola, lounge itd. Baiyoke je najvisa zgrada u Bangkoku i pogled odande je must see.</li>
+	<li>Vožnja tuktukom od mjesta do mjesta lako pređe u naviku, ne treba ju platiti vise od 150THB, a u suprotnom su vas preveslali. I ovako su vas preveslali, al jebiga. Inace vozaci tuktukova su specijalna gamad, pokusati ce trejdat ultrajeftinu voznju pod uvjetom da vas odbace do svog draguljara ili krojaca. *NE IDITE* tamo jer se necete izvuci bez da kupite moronsko odijelo ili lazno kamenje. Dakle, tuktuk od tocke A do tocke B, nema stajanja. U pravilu ce vas vozac voziti kroz shortcute i ulicice gdje hrpa lokalnih likova nesto utovara, pretovara, odvozi, dovozi i u takvim ulicima obicno bude zastoj u prometu pa drzite vrijedne stvari na vidiku.</li>
+	<li>Sukhumvit Road je poznat po kurvaluku, prosetajte se ulicom i bez problema cete nesto ubosti, s tim da se prvo treba opijati. WARNING: shemale se na Thaiu kaze <em>kathoey/ ladyboy</em>, a ima ih u post-operation i pre-operation stanju. Ko pita ne skita.</li>
+	<li>Day trip do Ayuthaye za sve ljubitelje hramova i povjesnih siteova. Ne znam u kakvom je stanju poslije popave, ali sigurno se ima sto za vidjeti.</li>
+</ul>
+<strong>Kuda na kupanjac? </strong>
+
+Najbliže Bangkoku nalazi se Hua Hin, nekakav ok resort u kojem nisam bio, a kojeg mi je preporucila frendica iz Singapura, tamo valjda si idu u Hua Hin.Na istocnoj obali, u Tajlandskom zaljevu nalaze se Koh Samui, Koh Pha Ngan i Koh Tao. Na zapadnoj obali, u Andamanskom moru je Koh Phi Phi Don (Beach s DiCaprijem je sniman na Koh Phi Phi Lay, to je otocic krajem), Ko Lanta i Phuket. Bili samo na Phi Phiu i Samuiu i iskreno mi je Samui puno bolje sjeo. Phi Phi je mrtav u 22h, nista ne radi, plaza je lijepa ali nije za kupanje jer je ogradjeni dio preplitak. Samui je puno zivlji, a nije toliko iskomercijaliziran i umjetan kao Phi Phi. Pored je Koh Tao, raj za svakog tko voli ronjenje.
+
+&nbsp;
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to write nice, pseudo device independent obj-C for iOS]]></title>
+    <link href="http://iprebeg.github.io/blog/2011/12/20/how-to-write-nice-pseudo-device-independent-obj-c-for-ios/"/>
+    <updated>2011-12-20T00:00:00+01:00</updated>
+    <id>http://iprebeg.github.io/blog/2011/12/20/how-to-write-nice-pseudo-device-independent-obj-c-for-ios</id>
+    <content type="html"><![CDATA[When developing iOS app that works on both iPhone and iPad, there are probably many places where you have to apply different size of image, font, button, whatever&#8230; If you insert device discrimination snippets, code becomes dirty and unreadable. What you want is to have as much code as possible to look like there is no any difference whether running on iPad or iPhone. Since macros are resolved even before compile time, but besides @2x and ~ipad image nomenclature, there is no some magical way to decide which size of cell, label, button (&#8230;) to use, iPhone one or iPad. You have to do that in runtime using one of built-in calls to iOS API.
+
+Check this ugly example:
+<code><pre>
+#define IMAGE_WIDTH_IPAD 100
+#define IMAGE_HEIGHT_IPAD 100
+#define IMAGE_WIDTH_IPHONE 80
+#define IMAGE_HEIGHT_IPHONE 80
+- (void)doSomething
+{
+  ...
+  // if device iPad, use large height and width, if iPhone, use small
+  float IMAGE_WIDTH = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) ? IMAGE_WIDTH_IPHONE : IMAGE_WIDTH_IPAD;
+  float IMAGE_HEIGHT = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) ? IMAGE_HEIGHT_IPHONE : IMAGE_HEIGHT_IPAD;
+  iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, IMAGE_WIDTH, IMAGE_HEIGHT)];
+  ...
+}
+</pre></code>
+Of source, you can put that huge call into another MACRO that evaluates device discrimination, but still, there are two variables that make code fuzzy.
+Now, check this example:
+<code><pre>
+#define IMAGE_WIDTH_IPAD 100
+#define IMAGE_HEIGHT_IPAD 100
+#define IMAGE_WIDTH_IPHONE 80
+#define IMAGE_HEIGHT_IPHONE 80
+//CRUCIAL
+#define DEVICE_IS_IPHONE ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
+#define IMAGE_WIDTH (DEVICE_IS_IPHONE ? IMAGE_WIDTH_IPHONE : IMAGE_WIDTH_IPAD)
+#define IMAGE_HEIGHT (DEVICE_IS_IPHONE ? IMAGE_HEIGHT_IPHONE : IMAGE_HEIGHT_IPHONE)
+- (void)doSomething
+{
+  ...
+  // nice code, if you read it you have no clue which crap is going on behind simple looking macro
+  iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, IMAGE_WIDTH, IMAGE_HEIGHT)];
+  ...
+}
+</pre></code>There, DEVICE_IS_IPHONE is a macro evaluated before compile time, but actual evaluation of expression is happened at run-time. Therefore, every time you use constant defined this way, call is made determine which device is app running on, if there isn&#8217;t too many of them, it&#8217;s not a problem. And code is readable :)
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[T-Com scam series: MaxADSL QoS]]></title>
+    <link href="http://iprebeg.github.io/blog/2011/09/07/t-com-scam-series-maxadsl-qos/"/>
+    <updated>2011-09-07T00:00:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2011/09/07/t-com-scam-series-maxadsl-qos</id>
+    <content type="html"><![CDATA[Toliko dugo ne živim u Đakovu da se još vrlo malo smatram Đakovčanom. Kako god, svako malo, tipa jednom u dva mjeseca, kapnem doma do svojih, vidjet starce i sestru, par frendova do kojih mi je još stalo itd itd&#8230; Enivej, nije se još dogodio takav posjet Đakovu, a da nije uključivao rješavanje problema s MaxTV-om, ADSL-om, ruterima, antenama, laptopima i svim ostalim sranjima za koje moja okolina smatra da sam ekspert i da baš volim tražit drivere za printere, defragmentirat diskove i brisat viruse, a posebno razgovarati s T-Com službom za podršku&#8230; sigh&#8230; Tu dolazimo i do današnje epizdoe, ali prije toga, mali uvod u problematiku&#8230;
+
+<strong>Kako živi T-Com?</strong>
+Tko imalo zna kretanje cijena Internet i IPTV usluga u Rvata, vjerojatno se pitao kako T-Com uspijeva opstati pored Optime, Bneta, BTNeta, Iskona, Metroneta, H1 i inih koje više ne znam niti nabrojati, a svi redom nude usluge po cijena prema kojima T-Com izgleda kao&#8230; kao T-Com, valjda nema  boljeg primjera. E pa, sva ta sila, nazovimo ih tako, inih operatera nema svoju infrastrukturu u svim malim vukojebinama i bespućima Lijepe Naše, nego je T-Com još uvijek tata-mata i nema druge alternative nego se lijepo naguzit, duboko udahnit i platit da &#8220;Živimo zajedno&#8221;. Eto, valjda tako živi T-Com.
+
+<strong>Srž problema</strong>
+To nas dovodi i do problema naše priče. Stari je bio isfrustriran malim brojema kanala na telki, meni dopizdilo svaki put kad dodjem doma hakiravat susjedov wlan ili wireless udrugu da bi pročitao mailove (nije tad još bilo ajfona) i stari doneo povijesnu odluku da ubodu 3u1 u T-Comu. Bilo to sve divno i krasno mjesec dva dana, telka malo štekala, smrzlo bi se tu i tamo, ali jebiga, tehnologija u nastanku, ovo ono. Bili T-Comovi inženjeri (LMFAO), mijenjali rutere, mjerkali ovo, mjerkali ono, pa sve kao u redu, al niš ne valja. Stari im jebao rodbinu ne do sedmog koljena nego do sedmog stoljeca pa kao pocela telka radit bez smrzavanja. Internet kako tako, ali eto&#8230; Prošla ljeta i zime, vukla se nekako sva ta tehnologija, malo naprijed, malo nazad. 
+
+<strong>Brezobrazluk</strong>
+Zadnjih nekoliko puta kako sam bio doma, bio mi nekako Internet sporiji, al mi se nije dalo još i s tim zajebavat, ionako dođem na dan, dva, proletim ko vihor i uteknem nazad u Metropolu. Silom prilike, tjedan dana sam doma. Link zakucan na 150 KB, nekako mi smrdi sve da ću opet nazvat 0800 9000. Tako i bi, zovem ja sad, javi se lik, kažem mu link mi je zakucan na 150 KB, šta se događa&#8230; pokušava on samnom debagirat WLAN ovo ono, kao možda sam daleko, možda ovo možda ono&#8230; Nekako mu uspijevam objasnit da dobro znam kako mi mreža doma izgleda i da nema s njom problema, ide on probat izmjerit brzinu linka. Kaže, izmjerio je 5Mbita na parici što nije dosta za MaxTV i ADSL na 4Mbita&#8230; Pa naravno da nije, pas vam mater T-Comovsku. 
+
+<strong>Vrhunac</strong>
+Uglavnom, ustanovili smo da su T-Comovi inženjeri limitirali MaxADSL link na 1Mbit (4Mbit flat je ono što plaćamo), kako se ne bi pojavljivali problemi na MaxTV-u, kojem treba isto 4Mbita. Jednostavno matematikom, ako imas 5 jabuka, a trebas 8, imas problem. Evidentno je to da T-Com mjesecima naplaćuje uslugu koju nije u stanju isporučiti (i to su znali i prešutno postavili limit na MaxADSL). Tip s kojim sam razgovarao mi je rekao da je prijavio kvar te da mogu poslati pismeni zahtjev da nam smanje iznos mjesečne pretplate. I šta sad, nije meni krivo što, jebiga, ne valja parica, ne skida se nešto ovako brzo ili onako brzo, nego što netko od lopova nije nazvao i rekao &#8220;gle, ne može internet onako baš brzo kako mi kažemo da može, nego malo sporije, aj ak oćeš pa ti smanjimo pretplatu&#8221; i svima srce na mjestu. Ovo smatram prijevarom najpodlijeg oblika. Zadnje što želim je moliti ih da mi smanje pretplatu, ionako istječe uskoro 2 godine ugovora pa zbogom T-Come, jednom za svagda, želim ti dugu starost i tešku bolest.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS app ratings]]></title>
+    <link href="http://iprebeg.github.io/blog/2011/09/05/ios-app-ratings/"/>
+    <updated>2011-09-05T00:00:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2011/09/05/ios-app-ratings</id>
+    <content type="html"><![CDATA[Partially inspired by this <a href="http://www.stumbleupon.com/su/1xgrfW/mobileorchard.com/improving-your-app-store-rating/">great article</a>. 
+
+AppStore rating system isn&#8217;t something developers like, generally. There are several problems which I found myself:
+
+<strong>1. Developer will not receive any notification about new rating/review.</strong> There is no problem if all ratings are 5-star, but let&#8217;s be more reallistic&#8230; Bad ratings are omnipresent and usually tackle a problem with your application. In some cases, bad ratings are actually feature requests rather than bug reports. So, if developer doesn&#8217;t often check ratings, someone can report a bug that stays untouched until dev sees it. AppStore rating/review maybe wants to be both, but it actually isn&#8217;t any of it.
+
+<strong>2. Developer can&#8217;t reply to a rating.</strong> If someone writes a review telling &#8220;I want (imagine some feature) in this app&#8221;, you can&#8217;t tell him that you are working on it and it will be there in next update. You can just hope that this user will keep this app and download your next update.
+
+<strong>3. Bad ratings.</strong> Every rated app will receive at least one bad rating. This is not something Apple should bother with, but no one wants a bad rating to make new shiny app unpopular.
+
+<strong>How to tackle all 3in1?</strong> Make in-app links (buttons, whateva&#8230;) to redirect happy user to rate app on the AppStore and unsatisfied user to send you an email. So, you removed a bad rating from AppStore, you got notified about something bad in you app instantly and you know who sent you email and you can respond directly to unsatisfied user. Awesome!
+
+<strong>Instrusive or not?</strong> I really hate those pop-ups asking me to rate app. I don&#8217;t want to bother a user who is using my app to rate it when he wants to use the app. So, I still use Appirater, which I found to be one of greatest open source frameworks for iOS SDK, but I just don&#8217;t make a callbacks to Appirater. What I do is using Appirater config and method to open AppStore url, but when user wants to rate, e.g. tapping a button.
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Xcode4.0.x and source control]]></title>
+    <link href="http://iprebeg.github.io/blog/2011/09/04/xcode4-0-x-and-source-control/"/>
+    <updated>2011-09-04T00:00:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2011/09/04/xcode4-0-x-and-source-control</id>
+    <content type="html"><![CDATA[I can remember my early days of colleague when students were gathered into a small teams working on a week-projects. We all know these Node_FinalVersionThisIsReallyFinalOkNowItsFinalFixedv47.cpp files shared via e-mail and how confusing all this could get. Along with computer-aided software development in general, source control software evolved from crappy CVS to GIT and others which got so nicely integrated into IDEs (Eclipse Team) and file managers so people started to use it not just for software versioning but versioning and sharing of any files.
+
+Since I discovered beautys of SVN in my early days, I use personal repository to store some small projects source code, bunch of simple bash and perl scripts, old code that I may reuse sometimes, random files I need very often (like CV), artwork&#8230; It may be an overuse, but this suites my needs and I don&#8217;t have any issues with current setup for couple of years. Few times I considered  moving to GIT, but eventually gave up as I didn&#8217;t have real need to make a step into it. And because of laziness too&#8230;
+
+Anyway, lately I&#8217;m using Xcode on daily basis for iPhone development. Xcode has few diseases but in bottom line, it&#8217;s one fine IDE, comparable to Eclipse/STS I use daily too. What I really can&#8217;t understand is why Xcode can be so awesome and still suck at one of basic features that any IDE must have. Several times I tried to setup repositories in Organizer to handle my code, ending shit-pissed off and confused with such idiotic design and implementation of such a simple (ok, it&#8217;s not so simple, but anyway&#8230;) feature. Still today, I&#8217;m using Terminal commands to commit/update code and really hope that in some of future realeses, Xcode would do VCS better&#8230;
+
+P.S. Xcode now hangs with &#8220;Checking source control status&#8221; message&#8230; blegh
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Updating iPhone from VirtualBox machine]]></title>
+    <link href="http://iprebeg.github.io/blog/2011/03/10/updating-iphone-from-virtualbox-machine/"/>
+    <updated>2011-03-10T00:00:00+01:00</updated>
+    <id>http://iprebeg.github.io/blog/2011/03/10/updating-iphone-from-virtualbox-machine</id>
+    <content type="html"><![CDATA[If you run some soft of Linux and you have iPhone which you sync in virtual machine in VirtualBox, you may run into problems when updating iPhone firmware&#8230; 
+When iPhone gets into recovery mode, usb can&#8217;t be attached to virtual machine in VirtualBox&#8230; 
+
+Finally, I found out that you have to run VirtualBox as root!
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Setting up Subversion server with SSH login and mail notifications on FreeBSD]]></title>
+    <link href="http://iprebeg.github.io/blog/2010/03/02/setting-up-subversion-server-with-ssh-login-and-mail-notifications-on-freebsd/"/>
+    <updated>2010-03-02T00:00:00+01:00</updated>
+    <id>http://iprebeg.github.io/blog/2010/03/02/setting-up-subversion-server-with-ssh-login-and-mail-notifications-on-freebsd</id>
+    <content type="html"><![CDATA[I combined few tutorial I found on interwebs to set this up and don&#8217;t wanna loose it, so I puttin it here&#8230;
+
+Make sure you have installed OpenSSH server and Subversion packages.
+
+First, create user &#8220;svnadm&#8221; for admin and group &#8220;svnusers&#8221;.
+Then add svnadm to svnusers group.
+
+pw usermod svnadm -G svnusers
+
+All users that are supposed to use svn should have umask 002 in .cshrc or .bashrc. That prevents destroying group write permissions during SSH session.
+
+
+Make directory where you want to store your repos, let&#8217;s say /usr/local/svnrepos
+
+mkdir /usr/local/svnrepos
+
+Next, we will restrict access to this area only for root and svn users:
+
+chown -R root:svnusers /usr/local/svnrepos
+chmod -R u+wrx,g+wrx,o-wrx /usr/local/svnrepos
+
+Then, rename svnserve binary to svnserve.bin and create svnserve script wrapper and make it executable:
+
+########### svnserve #######
+#!/bin/sh
+
+exec /usr/local/bin/svnserve.bin -r /path/to/repos/root &#8220;$@&#8221;
+############################
+
+
+After that, su to svnadm user and create repo, named, let&#8217;s say, studsvn.
+
+su - svnadm
+svnadmin create /usr/local/svnrepos/studsvn
+chmod -R o-rwx /usr/local/svnrepos/studsvn
+
+Configure repository
+
+cd /usr/local/svnrepos/studsvn/conf
+
+edit svnserve.conf and make it look like this (just uncomment stuff):
+[general]
+
+anon-access = none
+auth-access = write
+
+Test your connection like this:
+
+svn list svn+ssh://&lt;user-id&gt;@&lt;host&gt;/studsvn
+
+If it doesn&#8217;t work, you probably screwed some permissions, so make sure that your users are in svnusers group, that they have umask 002 in their default shel
+l&#8217;s rc file and svn repo has recursive g+rwx.
+
+After that, you may want to have mail notifications for your commits like perforce has.
+
+You need mailer.py script, so you either install svnmailer package, or compile from ports (mail/svnmailer).
+
+After that, you will be able to use mailer.py. Sort of. First, copy it from
+/usr/local/share/subversion/hook-scripts/mailer/mailer.py to /usr/local/bin or create symlink.
+
+Then, get to /usr/local/svnrepos/studsvn/hooks and copy post-commit.tmpl to post-commit, make it executable and then edit it.
+
+You will also need mailer.conf, so copy it from /usr/local/share/subversion/hook-scripts/mailer/tests/mailer.conf to your &lt;repository_path&gt;/hooks (seems best
+to me) and edit it to suit your needs. You also need smtp server which will allow relaying. Do it yourself. Be sure to edit from_addr, to_addr and reply_to
+in mailer.conf.
+
+Enjoy massive distribute spam attack.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Londonske avanture i DevSummit+EuroBSDCon@Cambridge]]></title>
+    <link href="http://iprebeg.github.io/blog/2009/09/24/londonske-avanture-i-devsummiteurobsdconcambridge/"/>
+    <updated>2009-09-24T00:00:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2009/09/24/londonske-avanture-i-devsummiteurobsdconcambridge</id>
+    <content type="html"><![CDATA[Dojmovi iz Japana jedva da su se slegli,  a ja sam opet negdje na 10000 m. Ovaj put u drugu stranu, gdje se sat pomice unatrag kad sletis. Enivej, na faksu koji je poceo gotovo odmah po povratku iz Japana, sam uspio biti prvi tjedan. I to ne sasvim jer sam pola predavanja ili prespavao ili je bilo toliko dosadno da sam otisao ispijat kavu i citat mailove. Odlucio i upisat Objektno Oblikovanje kod Zvone Radikalnog umjesto neceg sto sam upikao jer nije bilo niceg drugog, a nesto sam morao. Cini se Zvone OK. Tjedan proletio, ja zbrisao doma pobrat harac i posteno se zacugat (2x) prije neg opet odem.  U nedjelju stigao u Velo Misto i odjurio pogledat neki stan blizu FER-a, pa se cini da ce po povratku u domovinu past i selidba. O tom u nekom drugom postu.
+
+Jos dok sam bio u Tokiu, doletio mail od mentora najboljeg na svijetu, a u mailu se spominje London/Cambridge, EuroBSDCon i FreeBSD DevSummit. Naravno, pristao, a osim toga ubo i par dana o svom trosku u Londri. Da stvar bude jos bolja, skontao da su u isto vrijeme u Londonu i Ivana&amp;Ivana. Dok sam pristajao na put i bookirao hostel, to nisam znao pa mi bilo kiselo zamisljat kak cu to sve sam i kak ce mi bit dosadno, pa mi pao kamen sa srca kad sam skontao da cu se imat s kim druzit. Jos mi bolje bilo kad se javila Ana i rekla da i ona ide na DevSummit. Uglavnom, rano u ponedjeljak ujutro stigao na Pleso, smrknuo kavu i nakon dva sata blejanja u tepih od oblaka i neku knjigu o japanskom koju sam sfurao stizem na Gatwick Airport. Engleski travnati krajolici izgledaju predobro iz pticje perspektive. Na Gatwicku kupio adapter za UKplug (5.5 faking funti, ako netko ide, nek me pita da mu posudim) i kartu za Southern Express vlak do London Victorie i zbrisao.
+
+Vidio nes predobro sto kod nas totalno nije moguce, cak ni kad bi imali dvije zeljeznicke kompanije. Dvoje glupih Spanjolaca kupilo karte za Gatwick Express i sjelo u Southern Express. Kondukter dosao i pun razumijevanja za strane drzavljane objasnio im da mogu izac i vratit se na Gatwick pa se ukrcat na Gatwick Express ili kupit kartu za Southern pa trazit povrat love od karte za Gatwick Express kad stignu na Victoriu (radi se o odvojenim kompanijama i ne mogu prihvacati karte jedna od druge). Nakon četiri godine frekventnog putovanja s HŽ-om, imam razloga pretpostavit da bi prosjecni hrvatski kondukter ponudio 20% jeftiniju &#8220;kartu&#8221; da nitko ne vidi dok on stavlja lovu u džep, a o povratu love za drugu kartu ne treba uopce razmisljati.
+
+Oko podne dogmizao do Astor Victoria hostela, ugodnog mladenacki raspolozenog mjestasca na Belgrave Roadu. Zakljucao prtljagu i krenuo istrazivat. U međuvremenu poslao SMS Ivani&amp;Ivani. Primjetio masu Indijaca, Kineza, Japsa, raznih muslimana, crnaca, cak i Palestinca jednog. Skroz suprotnost od Tokia i totalno kewl kad na ulici mozes cut toliko jezika i vidit toliko boja i stilova odjevanja. Nasli se na Piccadillyu i glupirali se neko neodređeno vrijeme. Onda kasnije isli na koncert David Graya gdje sam u biti saznao tko je David Gray. Poslije koncerta bio mrtav pa se odmah po zavrsetku teleportirao natrag  hostel. Bio u cetvretokrevetnoj sobi na petom katu (vidi se Big Ben) s nekim likom iz Portugala. Kasnije bio i neki par iz JAR-a, ali sam njih vise-manje prespavao. Iduci dan odradili sav onaj sightseeing stuff, British Museum, London Eye, Big Ben&#8230; Bili i u tajlandskom koji je u biti zapadizirana verzija azijske kuhinje u kojoj fale zacini. Bilo dobro enivej. Navecer se druzili s Pericom i nekom curom iz Argentine koja pije ultrazakon caj. Dala mi da probam, navuko se i nastavio se natakat iako me upozoravala da bi mogao dobit ljevpro. Nisam dobio ljevpro;) Dan poslije odradio jos malo sightseeing, ukljucujci British Library i History of Medicine Museum. Navecer se nasao s Anom i Markom na King&#8217;s Crossu i krenuli put Cambridga. Prije puta kupio Ethernet kabel, 2 metra. Opet 5.5 funti. Pas mater i London.
+
+Predobro je i to sto kad ides na put koji placa netko drugi, ne ides od stanice od sobe pjeske nego taxijem. Prvu noc spavali u Selwyn Colleagueu, vrlo ugodnom mjestu koje po noci izgleda kao nekakva Harry Potter style skola, ali u biti je bolje od svih mjesta u kojima sam spavao u Engleskoj. Doruckovali Full English Breakfast, jaja, slanina, kobasice&#8230; Ostale noci spavali u Robinson Col., gdje mi sobe nisu bile bas tako kewl, ali definitivno nelose. Prva dva dana na DevSummitu vidio prezakon likova, ukljucujuci PhD ekipu cije knjige imam doma pa do autora vrlo bitnih RFC-a (ako ne znas sta je RFC, nemoj googlat, nema veze). Zabava se nastavila i na EuroBSDConu, vidio stvarno dobrih predavanja, dobio masu novih ideja&#8230; Ana bila vrlo ugodno drustvo, ne znam kak bi izdrzao sve te likove sam:). Vecerali prvu vecer u indijskom (chilli, be careful :-), drugu u japanskom (u kojem u biti rade Kinezi), trecu imali veceru u Clare Colleague (ne znaci da nije dobro ako nije egzoticno) i kasnije zavrsili u baru, a cetvrtu jeo cips i mars delight. Do japanskog restorana smo se vozili camcima (famozni punting, nije rijetkost da netko i zapliva :-) cija stabilnost ne ulijeva mnogo povjerenja, pogotovo kad se lik od stotinjak kila s praznom bocom skupog vina ljulja lijevo-desno i bas mu je zabavno. Cambridge sam po sebi izgleda vrlo oldstyle, sa svim onim kewl zgradama, kapelicama, no mozda ipak malo preakademski za moj ukus. Malo nocnog zivota ne bi skodilo.
+
+Zadnje jutro, odradio shopping u Cambridgu, klisnuo na vlak do King&#8217;s Crossa u Londonu i spiskao ostatak love na Oxford Streetu. Skupio prtljagu i predvecer stigao na Heathrow. Zadnje sitnise uvalio u zamjenu za duty-free Lindt i Toblerone. Kraj mene u avionu sjedio neki Japanac pa ga udavio. Vratio se u domovinu oko 23h po lokalnom vremenu.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Japan Series: Onsen, Okinawa bar i let doma]]></title>
+    <link href="http://iprebeg.github.io/blog/2009/09/15/japan-series-onsen-okinawa-bar-i-let-doma/"/>
+    <updated>2009-09-15T00:00:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2009/09/15/japan-series-onsen-okinawa-bar-i-let-doma</id>
+    <content type="html"><![CDATA[Posljednja dva radna dana odradili prilicno laganim tempom. U nedjelju stigao i Yang iz Taiwana, skroz smjesan lik od nekih 40-ak godina, orijentiran na kurve i tjedno uređivanje frizure svog psa. Jesam vec rekao da su Azijati bizarni?
+
+&#8220;&#8230; Osmi dan, shvati Bog da je O.K., ali da moze bolje. I tad, stvori onsen, umoci dupe unutra i zaboravi na svijet. I tako bi do dana danasnjega. Kadgod netko napusti svijet, pridruzi se Bogu u onsenu, kojeg ljudi nazvase raj.&#8221;
+
+Enivej, kraj rada na drvenoj kucici obiljezili tako da nas je Kazuko-san odvela u onsen. Onsen sam po sebi zasluzuje poseban post, ali meni se ne da. Uglavnom, radi se o prirodnim izvorima ljekovite vode od koje su Japanci napravili odmaralista za duh i tijelo. Ima ih u cijelom Japanu, a kako se radi o dobrom biznisu, u zadnje vrijeme se kopaju i umjetni onseni. Voda je ista, pa kog briga jel izasla sama na povrsinu ili su joj malo pomogli. Onsen u kojem smo mi bili se zove King of Bath, a ima 16 razlicitih kupelji, dvije saune, totalno opremljeno predvorje sa ogromnim stolicama koje masiraju svaki dio tijela (ovo se posebno placa)&#8230; Postoje i mjesani, ali onseni uglavnom imaju poseban dio za zene, poseban za muske jerbo se unutra hoda gol, ono ko od majke rođen. Bitno je naglasit da ljudi s tetovazama nisu dobrodosli, jer su u Japanu tetovirani uglavnom Yakuze, a s njima ne treba imat posla. Temperatura u bazencicima je prilicno visoka, al se u toj vodi tijelo tako opusti da je to nevjerojatno. Osim bazencica imaju i mramorne fotelje u koje sjednes, a vrela vodi klizi ledjima, rukama&#8230; Mene najvise dojmile plitke kade u koje legnes na ledja, pola tijela je u vreloj vodi, a pola vani. Taj, kao i jos nekih je u dijelu koji je vani u vrtu. Mi smo bili navecer, pa je dozivljaj predobar. Lezis u vreloj vodi do pola, nije ti ni prehladno ni pretoplo, glava ti je natkrivena, a pada i lagana kisa po prednjem dijelu nogu koji nije u vodi (ovo je dio koji nije feature onsena, pa javna zahvala Zoranu Molekuli i njegovim carobnim mocima), a vidis i zvijezde. Ukratko, selim se u Japan cim prije.
+
+U srijedu uzeli dan off i odlucili spiskat ostatak para i pokupovat suvenire. Uzeli bicikle i pravac Tachikawa. Besciljno cruisali i trosili&#8230; Na kraju dana, Kazuko-san nas odvela u dvoranu da gledamo kendo trening. Kendo sensei ima oko 80 godina, a treniraju i njegova zena i sin. Zenski dio populacije bio vidno odusevljen prisustvom zapadnjaka, a drugi sensei koji prica engleski nam objasnio osnove kendoa i dao nam shinoi (mac od bambusa) da malo probamo. Totalno japansko iskustvo. Obecali mu da cemo doc sljedece ljeto jer sutra idemo doma i nastavili do Okinawa bara gdje nas ceka ostatak ekipe, Hiro i Kazuko, Saigusa, Yang, Sarah i Joel.
+
+Kako i Sarah/Ling ide doma u cetvrtak, njena zelja za oprostajku je bio Okinawa bar. Uglavnom, Okinawa je otok prilicno udaljen od Japana, cak blize Kini, ali i dalje dio Japana. Zbog kineskog utjecaja ima prilicno karakteristicnu glazbu i obicaje. Jedan tip odande zivi sa curom 5 min od Kazuko i tamo kuha Okinawa hranu i svira shamisen, tradicionalni instrument sa tri zice (pogledat video1 2 3 4 5..) U Okinawi jedu svinjske nogice pa morali i to probat, kao i  jos hrpu raznih jela. I pili kojesta, sake, pivu, vino od rize, jos neku cugu kojoj ne znam imena&#8230; Krenulo se i pjevat i svirat, pa se cak i dogodilo u jednom trenutku da Branko i ja iz sveg glasa pjevamo himnu, rvacku pravu. Nisam siguran da postoji video toga, ali ako ga ikad dobijem, nikom ga necu pokazat. Dosli doma, napisali jedni drugima vrlo dirljiva pisamca i posakrivali ih po raznim mjestima&#8230;
+
+U cetvrtak, probudili se u 5 ujutro po Tokyo vremenu, potukli ostatak cornflakesa, bacili tus i nasli se s Ling pred kucom. Izasli i Hiro, Kazuko i Saegussa pozdravit se. Kazuko nas odbacila do Hino Stationa i Branko, Ling i ja napustili Hino. Na Narita Terminal 2 se rastali s Ling, ona put Hong Konga na nastavak turneje, a Branko i ja na Terminal 1, pa Pariz i na kraju Zagreb. Na Nariti svratili u McDonalds na hamburgere s okusom rastanka. Zadnje papirnate yene podrobili na novo upotpunjenje kucnih biblioteka. Nakon 12 sati u Boeingu 777, koji je malko skuceniji od Airbusa s kojim smo dosli, stizemo na Charles De Gaulle u ponoc po Tokyo,  a 17 poslijepodne po pariskom vremenu. Malo svrljali po trgovinama, ukrcali se na novi avion i sretno stigli u Zagreb oko 21:30.
+
+All in all, pricat da je bilo jednostavno otic u Japan na mjesec dana je prilicna bajka, pocevsi od duljine leta, klime, hrane&#8230; Al se isplati :) I&#8217;ll be back Tokyo, Kyo no hiva sayonara, mata ne :)
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Japan Series: Kamakura, Fujisawa, Enoshima, Ginza i Asakusa]]></title>
+    <link href="http://iprebeg.github.io/blog/2009/09/09/japan-series-kamakura-fujisawa-enoshima-ginza-i-asakusa/"/>
+    <updated>2009-09-09T00:00:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2009/09/09/japan-series-kamakura-fujisawa-enoshima-ginza-i-asakusa</id>
+    <content type="html"><![CDATA[S početkom četvrtog po redu radnog tjedna u Japanu postalo nam jasno da otić radit mjesec dana na drugom kraju planete i nije tako jednostavno kao otic u Tuheljske toplice. Branko je priznao da se zasitio sljakanja i da mu fali domovina, racunalo, pekara&#8230; I kod mene je bilo slicno. U biti postali svjesni da je proslih tri tjedna proletjelo u sekundi i da ce se isto dogoditi i s nadolazecim. S jedne strane dobro jer idemo kuci, a s druge strane lose, jer, naravno, idemo kuci. Odlucio se ne zamarat i uzivat u boravku. Vjerojatno i Branko.
+
+Jednu vecer isli jest u sushi bar. Iskustvo je prefakin dobro, kao i hrana koju mozes tamo pojest. Uglavnom stvar izgleda ovako: dodjes i prijavis se. Onda cekas i jos malo cekas. Onda te prozovu i svaka ekipa dobije svoj stol. Pored stola je pokretna traka po kojoj se voze sirovi stanovnici mora u svim bojama, okusima i oblicima. Jedes koliko god stane. Mozes i narucivat malo vise fora stvari. Na kraju prezderavanja, dodje konobarica i prebroji tanjure i napise cifru. Onda se skamenis, al brzo te prodje jer placa Kazuko-san.
+
+Nezaobilazni dio japanskog iskustva su i karaoke. Ni Branko ni ja nismo neki pjevaci i odlazak na karaoke je isprva ostavljao dojam samo sanse za dobrano se obrukat, al nakon dvije sekunde pogledavanja, obojici je bilo jasno da smo tu da probamo sve sto postoji. Stoga, Kazuko-san vodi Joela, Saru, Branka i mene u obliznji karaoke. Situacija slicna sushi baru, dodjes, prijavis se, cekas, jos malo cekas i onda dobijes svoju sobu. Sokovi s aparata bespla, oni bolji za nofce. Poslagali se po kaucima i krenuli se kreveljit. Na kraju skontali da bi Sarah mogla bit pro pjevacica, da nije lako otpjevat Losing My Religion i da je pjevani mandarin kineski nes najljepse sto postoji. Sve u svemu, zabavio se ko nikad do sad. Definitivno treba probat. Ima i <a href="http://www.youtube.com/watch?v=5_EUPau0Cdg">video1</a> i <a href="http://www.youtube.com/watch?v=vDBIX3Yj-68">video2</a>.
+
+Vidjeli jos nest zastrasujuce. Kad odes navecer u Alps po sladoled s pastom od Azuki graha (ne zvuci tako, al je predobro), umoran se vracas doma i pogledas prema istoku, vidis izlazak sunca u ponoc. Naravno, radi se neonskim reklamama Shinjukua, Shibuye, Akihabare&#8230;, a svjetlo je toliko jako da nebo izgleda kao da se spusta NLO.
+
+E da, nesto sto kod nas nije obicaj je i da u japanskom javnom prijevozu nije pristojno/poželjno pričat na mob dok se voziš, kao ni da se cuje da zvoni. Stoga, automatska teta koja prica engleski i japanski, nakon sto kaze koja je sljedeca stanica i na koje sve linije mozes presjest,  lijepo ce zamolit da stavis mob u silent mode i ne pricas na mob,  odnosno da ga sasvim ugasis ako stojis pored priority seatova, mjesta rezerviranih za trudnice, starije, bolesne&#8230; Ne bi to napisao da se nisam sad vozio 7-com u Novom Zagrebu, a čovjek pored mene pije Žuju iz staklene boce i na opće oduševljenje nekih klinki pušta glasno cajke s moba.
+
+Jedan dan Branko ostao radit u Claire jerbo je kuhao veceru, a Sarah isla s nama na konstraksn sajt i ponela fotic pa imamo i slike s heavy-duty posla, dok jedemo sladoled, dok imamo power nap (muska inacica beauty sleepa), a ima i koja s pistoljima za cavle i tak. Branko slozio grah corbu za prste polizat. Japanci i ostali nisu ozbiljno shvatili uputu da se to jede s kruhom:-) Nakon toga, Branko napravio tradicionalni sirotinjski desert zvan &#8220;Zbuceno jaje&#8221;, a radi se o umiksanim sirovim žumanjcima sa secerom. Ili o seceru sa umiksanim sirovim zumanjcima. Uglavnom, bilo im super, al nisu mogli puno jer nisu navikli na tako jake okuse. Cak i Joel-san, koji moze pojest vise nego svi mi zajedno i opcenito pojede sve sto ostane poslije vecere, o cemu god da se radi, nije mogao dovrsiti zbuceno jaje. Hura za Branka, jerbo je grah podsjetio na domovinu i sluzio kao dobar predah od rize i povrca koje vidim prvi put u zivotu.
+
+Inace, tamo smo pojeli stvari za koje nisam ni znao da postoje. Od sluzavog povrca, gljiva, skoljki pa do japanskog krumpira, ribljih jajasaca, lotosovog korijena, samurajskog mochi kolaca od rize s azuki grahom&#8230;
+
+Posljednji vikend u Japanu pred nama. Nakon analize troskova i vremena, odlucili ic do Kamakure, malog gradica koji je u Kamakura periodu bio glavni grad Japana. Jeftina opcija prijevoza bila je Odakyu Line. Nakon par presjedanja, stizemo do Fujisawe, gdje trebamo presjest na prastari Enoden Line. Subina je htjela da se u polupospanom stanju prevarimo i nastavimo Enoshima Lineom do Enoshime. Izazimo van, nemamo pojma gdje smo, ali to uopce nije bitno jer je oko nas hrpa japanskih djevojaka u odjeci za plazu. Bilo je i muskih, ali mozdani receptori nisu reagirali. Izbuljenih ociju prelazimo most i setamo do otoka Enoshime odakle plaza izgleda totalno predobro. Kako smo tamo zavrsili totalno slucajno, rucnike nismo imali, a i voda bila malo puzgava, pa se nismo okupali, ali definitivno odlucili doc sutra. Kolicina Japanki koje izgledaju predobro je naprosto odusevljavajuca. Prije nastavka puta do Kamakure svratili do McDonaldsa, a jedini tip unutra koji je pricao engleski je s odusevljenjem pogledao nas stol i ispalio  &#8220;All that for two persons!?&#8221;.
+
+Kasnije nam postalo jasno zasto nismo nasli Enoden Line. Radi se o jednoj od najstarijih linija i uopce nije unutar stanice, nego treba izac van, pitat prvog lika, ic dalje, pitat drugog lika, odjebat ga jer ne zna objasnit, pitat treceg lika i onda jos malo hodat i onda doc do posebne stanice.  S dobranim zakasnjenjem stizemo do Daibutsua (Great Buddha), koji je bio glavni razlog posjeta Kamakuri. Radi se o divovskom kipu Buddhe, mislim drugog po velicini u Japanu. Eksli, mozes uc u kip i procitat kak su imali napredne metode gradnje. Jos se malo debilirali po Kamakuri i lagano krenuli doma jerbo ima dosta do Tokya.  U Fujisawi stali kupit sladoled, sjedili na plazi i gledali kako ekipa surfa. Nabasali i na neki lokalni festival i jos prosetali, izgubili se i oko 20h nasli stanicu i krenuli put Shinjukua.Tamo se utopili u zdjeli rize s przenom jeguljom i sve preliveno meko kuhanim jajetom.
+
+U nedjelju ipak ostali vjerni staroj tradiciji &#8220;nikad isto mjesto dva puta&#8221; i odustali od Enoshime i plaze. U biti vrijeme bilo u banani, ovo je samo bio izgovor. Stigli na Shinjuku, Branko otisao potraziti book shop, a ja odradit posao u net kafe. Nakon toga repetirali jegulju od sinoc, kupili kisobrane i krenuli na Ginzu, dio Tokya s najekskluzivnijim trgovinama koje postoje. Branko voli saksofone pa usli u ogromnu Yamaha trgovinu sa svim sto postoji i otkidali na cijene instrumenata. Upali i u Sony Building i tamo jos slinili i gledali 3D akvarij. Na kraju dana otisli do Asakuse pogledat Sensoji Temple. Hram se nazalost restaurirao, ali shrine i pagoda izgledaju predobro. Unutra drze sutre (budisticke tekstove), a ima i spika da imaju i Buddhin zub. Uletio tajfun i padala opaka kisa pa krenuli kuc. Na Shinjuku jos otkrili ogromni Book1st pa popunili kucnu biblioteku.
+
+Nedjelja se blizila kraju, a s njom i kraj naseg boravka u Japanu. Pred nama su ostali jos radni ponedjeljak i utorak, slobodna srijeda i let za doma u cetvrtak u podne.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Japan Series: Mt. Takao, National Museum i Ueno Park]]></title>
+    <link href="http://iprebeg.github.io/blog/2009/09/07/japan-series-mt-takao-national-museum-i-ueno-park/"/>
+    <updated>2009-09-07T00:00:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2009/09/07/japan-series-mt-takao-national-museum-i-ueno-park</id>
+    <content type="html"><![CDATA[Nakon Kyota, pocetkom radnog tjedna osjetilo se na raspolozenju da je Stephen otisao. Tugu utopili u zalihama evropskih slatkisa koje smo pofurali u Japan ( Natasa, hvala na savjetima, poneo sam i strik za vjesat ves i kvacice, pomoglo je ).  Uglavnom, odradili ostatak tjedna i jedva docekali petak. I sljakanje bilo malo zamarajuce. Na posao se vozio sa Saegussa-sanom, koji bi me svako jutro na putu do tamo ispretresao japanske rijeci i fraze koje me naucio dok smo se vozili doma dan prije. Preko tjedna navecer uglavnom divljali biciklima po Tachikawi. Jedan dan u tjednu Branko ostao doma i pravio veceru, a Sarah iU petak odlucili kao prenocit u net kafeu jerbo je to dio japanskog iskustva. Joel-san to radi, pa kao i mi cemo (Branko i ja). Na kraju ipak odustali od plana i ostali od 9 do 2 ujutro. Provjerili i kolekciju pornica. Bespla je u net kafeu, kao i sokovi&#8230; Net kafe ima i kuhalo za ramen koji moras platit, kao i tuseve. Enivej, poslije net kafea, isli u 2 ujutro kupit kekse u 7&amp;Eleven. Dok smo bili u net kafeu, Branko skinuo masu glazbe na moj mob (koji ovdje koristimo za provjerit mail prek wlana i slusat muziku, dok bespla ili krekane mape za bilokoji oblik GPS softwarea nismo nasli). Uglavnom, kupili hrpu cokoladnog keksa, vozimo se biciklima (u Japanu je kao jako neuljudno jest na ulici), s mobitela tutnji Seve i Gas Gas, a nas dvojica vristimo od smijeha. Naravno, za nama gazi policajac na biciklu. Branko ga skonta i kao javlja se na mob koji zvoni (LOL na kvadrat). Upirao je i Branka nesto za svjetlo, al mu rekli da su japanske baterije krepale i da mi u Europi imamo baterije koje traju 7 puta duze. Lik rekao &#8220;sugoi&#8221; i otpilio. U subotu, trecu po redu u Japanu, probudili se totalno zgazeni, a mlitavom raspolozenju islo je u prilog i uzasna sparina, karakteristicna za ljetni Tokyo. Doruckovali, krenuli se dogovarat kud cemo, probudili se, krenuli se dogovarat kud cemo, probudili se, otisli prosetat po Hinu i vratili se doma. Probudili se po ko zna koji put taj dan i na kraju poslijepodne otfurali na Takao, neku kewl planinu u blizini.
+
+Mt. Takao je poznat po slapovima, pa ponijeli i sugamane, jerbo mozda se okupamo u ledenoj planinskoj vodi. Doletjeli vlakom i nakon kraceg 15-minutnog analiziranja karte odlucili pratit route 6 do vrha. Vjerne stare Salomonke nakon prvog kilometra postigle radnu temperaturu i poprimile nezuljajuci oblik slican stopalu. Vidjeli i slap, koji je na nase opce razocaranje bio ogradjen, a oko njega skrpan omanji hram. Enivej, uspjesno svladali japansko blato i sklisko kamenje i valjda okinuli rekord staze. Dosli gore morki do koze. Malo prodavali zjake i piljili u neke dvije cure koje su sjedile do nas. Kad su otisle, krenuli dolje drugom rutom trazec drugi veliki slap. Naravno, pogubili se, al zato nasli totalno kewl budisticki hram. Vidjeli i svecenika. Nakon hrama, odlucili pozurit doma da stignemo na novi festival u Tachikawi. U cik-cak trku trcimo nizbrdo (svi normalni ljudi su hodali), a s nas kapa znoj ko da pada kisa. Patike postigle temperaturu prilicno vecu od radne. Mokri ko misevi stizemo na Takao Station, a neke lokalne curke se sa sigurne udaljenosti dive znojnim majcama i blatu na nasim patikama.
+
+Po dolasku doma, odlucujem se tusirat dok mi se prsti ne smezuraju, jerbo smo se prilicno dobro ubili na Takau. Nakon minute uzivanja u vreloj vodi, u kucu upada Kazuko-san i hoce nas vodit na neki dernek. Pet minuta kasnije, s mene jos kaplje voda od tusiranja, a mi sjedimo u obliznjem sumarku, gdje je ekipa slozila koncert, zderacinu i neki show sa svjetlecim skulpturama koji smo preskocili zbog mirisa ikayaki, przenih 20-centimetarskih lignji. Gledali malo koncert (<a href="http://www.youtube.com/watch?v=jc96E8jRfvU">video1</a> i <a href="http://www.youtube.com/watch?v=9Q_qpTIz3NI">video2</a>), bilo kewl, a onda zakasnili do Tachikawe na festival. Enivej, vidjeli i tamo koncert na kojem se muska ekipa, na opce zadovoljstvo publike, obuce u poznate cure sa japanske estrade koje su prije bile muskarci i pokusava pjevat njihove pjesme. Nema slika toga jer sam jeo  sladoled i nije mi se slikalo.
+
+Zaintrigiralo nas kako se na TV-u stalno vrte neki polupoznati treba i lik u vijestima. Saegussa nam objasnio da su im nasle neke droge negdje, tipa ulovili, a cura zbirsala, no ulovili je za tjedan dana. Kasnije jos neki polupoznati tip postao poznat jerbo su i njemu nasli neke opijate i javno ga lincovali na TV-u, tjedan dana. Japansko pravosuđe ne pravi razliku između trave i heroina, pa s cim god da nekog ulove, isto mu se pise. I to ne dobro jer su kazne vrlo opake kad je droga u pitanju. Drugim rijecima, drogu ne treba nosit ili je trazit u Japanu.
+
+Nedjelja pocela ko i subota, nakon sto smo se nekoliko puta probudili, krenuli put Ueno Parka u kojem se nalazi vise dobrih muzeja, ukljucujuci i National Museum i Science Museum. Ovaj prvi je toliko velik da do drugog nismo dosli. Prije muzeja bili u kineskom restoranu. Nije bilo menija na engleskom pa smo odabrali nesto sa slikice, sto se pokazalo fatalnom pogreskom. Dobili vrlo ukusne noodle i povrce u juhi koju jedes tako da uzmes zlicu juhe pa gutljaj vode. Naravno, kineske konobarice ce ti dolijevati vodu samo dok cekas jelo, a onda dok jedes i lice ti mjenja boju u crvenu, one ce se cerekat i ocekivat da narucis sok ili caj. Nakon par sati u muzeju, sjedim u muzejskom wc-u, je*em 5 koljena rodbine kineskom kuharu, kineskim konobaricama i 2 milijarde ostalih kineza. Muzej je kewl pa ima wc-skoljke s ugradjenim peracem anusa. Ubuduce oprezno s &#8220;jedes pece, seres pece&#8221; jelima.
+
+National Museum je jedno od kewljih mjesta koje smo vidjeli. Unutra je mnostvo katana, skulptura Buddhe i ostalih, shogun odijela i neznamcegsvene. Osim stvari koje su na slikama na faceu, ima i mnostvo onih koje se ne smije slikat, a te su uglavnom vise kewl. Kako smo u Japanu vec treci tjedan, poceo sam bit civiliziran i pridrzavat se tih pravila.
+
+Nakon muzeja, jos prosetali hramom oko kojeg je mocvara sa lotos cvjetovima, pored Ueno Parka. Enivej, u Ueno Parku prvi put vidjeli i beskucnike. Osim kosih ociju, prilicno su slicni ovima kod nas. Prosli i kroz Harajuku u nadi da cemo vidjeti cosplay u punom izdanju, al bilo kasno pa opet vidjeli samo par cudno obucenih. Spustili se pjeske do Shibuye, ubili zdjeletinu rize s tankim listicima svinjetine i miso juhu i oduzeti krenuli doma. Na presjedanju s Yamanote Linea na Chuo Line na Shinjuku Stationu cudna scena. Nakon sto dekriptiramo mapu da vidimo koliko kosta karta doma, do nas stize tip od nekih 40-ak godina, sasvim normalnog izgleda i nudi pomoc. Zahvaljujemo se i kazemo da smo skontali i da smo kupili kartu vec. Tip kao nes mumlja i u sljedecem trenutku iz sveg glasa urla &#8220;Please give me five hundred (500) yen&#8221; i klekne ispred nas i stavlja ruke u molitvenu pozu iznad glave. Kad se to dogodi u Shinjuku Stationu koji je poput mravinjaka, osjecas vrlo neugodnu pozornost na sebi, oprilike kao kad glumis u kazalisnoj predstavi i pred prepunom publikom ne samo zaboravis tekst nego jos i slucajno prdnes na sav glas. U prvom trenu ne znamo koji vrag se događa, a u sljedecem shvacamo da je lik prilicno zahtjevan jer je 500 yena oko 25 kn i otprilike toliko nam kosta karta do doma. Za tu lovu se moze prilicno dobro jest u restoranu, a u trgovini kupit jela za cijeli dan. Na kraju mu kiselog lica dali svaki po 100-njak yena samo da skinemo pozornost sa sebe i nestanemo u gomili.
+
+Zakrmili u vlaku do doma. Jedva docekali utopit se u krevetu s klimom na 17 °C.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Japan Series: Obon festival i put u Kyoto]]></title>
+    <link href="http://iprebeg.github.io/blog/2009/08/27/japan-series-obon-festival-i-put-u-kyoto/"/>
+    <updated>2009-08-27T00:00:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2009/08/27/japan-series-obon-festival-i-put-u-kyoto</id>
+    <content type="html"><![CDATA[Osim onog lokalnog festivala na kojem smo bili u Tachikawi, u Japanu je tijeku bio i tjedni Obon festival. Vjeruje se da za vrijeme Obona preci dolaze iz raja i svrljaju ovdje. Uglavnom, prvi dan festivala ih pozovu da dodju s dｉｍｏｍ koji se digne u raj pa onda ovi dolete doma. Na kraju festivala ih treba potjerat nazad u raj pa opet posalju neki dim da duhovi otpile. Zadnji dan je kulminacija festivala koja se u Kyotou obiljezava kao poseban festival pod nazivom Gozan no Okuribi.
+
+Ne bi mi bili mi da nismo otisli u Kyoto. Uglavnom, dogovorili se za ic u Kyoto Sarah, Branko i ja.　Ｍｏｒａｌｉ　ｉ　ｓｒｅｄｉｔ　ｄａ　ｒａｄｉｍｏ　ｓｕｂｏｔｕ　ｐａ　ｎｅ　ｒａｄｉｍｏ　ｐｏｎｅｄｊｅｌｊａｋ　ｄａ　ｍｏｚｅｍｏ　ｉｃ． Pripreme trajale cijeli tjedan prije, jerbo je totalna guzva i zajebano je nac karte (Obon je u Japanu skoro kao kod nas Uskrs). U pripremama je sudjelovala Sarah, Branko i ja nismo. Uglavnom, Kyoto je prilicno daleko, a busom do tamo treba oko 7 sati u normalnim uvjetima. Sad nisu normalni uvjeti jer je zbog Obona sva ekipa nekud putuje, pa bi voznja mogla trajat 10 sati. Osim toga i kisa skenjala glavni autoput, pa odjebali bus. Zabavnija opcija je shinkansen vlakic, turbo ultra brzi najkewl vlak ikad. Na cijenu karte se mogu primjenit isti atributi. Enivej, SuperSarah otkrila neku totalno kewl ponudu u kojoj dobijemo roundtrip karte shinkansenom do Kyotoa i jednu noc u hotelu za manje para nego sto bi nas izasla roundtrip karta u normalnim uvjetima. Kako Singapur Sarah kineskog podrijetla nikad nije dijelila sobu s muskima, ona uzela posebnu sobu, al ne bili pizde pa podijelili troskove na tri jednaka dijela. Enivej, to ne zvuci toliko kavalirski dok ne kazem da nas je put sa smjestajem izasao vise od minimalne rvacke place，　ｐｏ　ｏｓｏｂｉ. Komentare tipa &#8220;mogao si kupit napisi-proizvoljnu-stvar-ovdje za te pare&#8221; ili &#8220;ja od toga zivim xx mjeseci&#8221; odjebajen na veliko, jerbo sam cijelu godinu crncio ko rob i sad cu uzivat kako ja hocu. Uglavnom, jutro poslije burnog izlaska izmigoljili iz kreveta, sacekali Stephena　ｄａ　ｓｐａｋｉｒａ　ｓｔｖａｒｉ　ｉ　ｐｒｏｍｊｅｎｉｌｉ　ｎｏｖｅ　ｅｕｒｅ　ｕ　ｊｅｎｅ．　Ｎａ　Ｓｈｉｎｊｕｋｕ　ｓｅ　ｒａｓｔａｌｉ　ｉ　ｐｏｚｄｒａｖｉｌｉ　ｓａ　Ｓｔｅｐｈｅｎｏｍ．　Ｏｎ　ｐｕｔ　Ｎａｒｉｔａ　Ａｉｒｐｏｒｔａ　ｐａ　ｎａ　Ｆｌｏｒｉｄｕ，　ａ　ｍｉ　ｐｕｔ　Ｔｏｋｙｏ　Ｓｔａｔｉｏｎａ　ｐａ　ｕ　Ｋｙｏｔｏ．　Ｐｒｉｊｅ　ｖｌａｋａ　ｋｕｐｉｌｉ　ｒｕｃａｋ，　ｊｅｒｂｏ　ｊｅ　ｕ　Ｊａｐａｎｕ　ｔｏｔａｌｎｏ　ｎｏｒｍａｌｎｏ　ｒｕｃａｔ　ｕ　ｖｌａｋｕ．　Ｎｏｒｍａｌｎｏ　ｄａ　ｓｅ　ｎｅｍｏｓ　ｖｏｚｉｔ　ｕ　ｅｌｉｔｎｏｍ　ｖｌａｋｕ　ｉ　ｊｅｓｔ　ｓｍｅｃｅ，　ｐａ　ｋｕｐｉｏ　ｂｅｎｔｏ　（ｒｕｃａｋ）　ｓ　ｕｎａｇｉ　（ｊｅｇｕｌｊａ），　ｓｐｅｃｉｊａｌｉｔｅｔｏｍ　ｋｏｊｅｇ　ｏｄａｖｎｏ　ｚｅｌｉｍ　ｐｒｏｂａｔ．　Ｔｏｌｉｋｏ　ｊｅ　ｋｅｗｌ　ｄａ　ｕ　ｂｅｎｔｏｕ　ｄｏｂｉｊｅｓ　ｐａｋｅｔ　ｚａｇｒｉｊａｎｉｈ　ｋａｍｅｎｃｉｃａ　ｋｏｊｉ　ｃｕｖａｊｕ　ｔｏｐｌｉｎｕ．　Ｖｏｚｉｔ　ｓｅ　ｕ　ｓｈｉｎｋａｎｓｅｎ　ｖｌａｋｕ　ｊｅ　ｉｓｔｏ　ｚａｋｏｎ，　ｐｏｇｏｔｏｖｏ　ａｋ　ｓｊｅｄｉｓ　ｄｏ　ｐｒｏｚｏｒａ．　Ｏｂａｖｅｚｎｏ　ｐｏｇｌｅｄａｔ　ｆｉｌｍｉｃｅ (<a href="http://www.youtube.com/watch?v=_rxXXKTMyiA">video2</a> i <a href="http://www.youtube.com/watch?v=IhMiALurOFI">video3</a>)．　Ｎａｋｏｎ　2h i 40 min voznje ｓｔｉｚｅｍｏ　ｕ　Ｋｙｏｔｏ　ｉ　ｃｈｅｃｋ－ｉｎａｍｏ　ｓｅ　ｕ　ｈｏｔｅｌ，　ｏｄｍａｈ　ｐｒｅｋｏ　ｐｕｔａ　Ｋｙｏｔｏ　Ｓｔａｔｉｏｎａ．　Ｔｏ　ｊｅ　ｉ　ｔｒｅｎｕｔａｋ　ｋａｄ　ｓａｚｎａｊｅｍｏ　ｄａ　ｓｅ　Ｓａｒａｈ　ｎｅ　ｚｏｖｅ　Ｓａｒａｈ　ｎｅｇｏ　Ｌｉｎｇ，　ａ　Ｓａｒａｈ　ｊｏｊ　ｊｅ　ｋｒｓｃａｎｓｋｏ　ｉｍｅ．　Ａｚｉｊａｔｉ　ｓｕ　ｆａｋａｔ　ｃｕｄｎａ　ｒａｊａ．　Ｐｏｓｅｂｎｏ　Ｋｉｎｅｚｉ．　Ｈｏｔｅｌ　ｉｓｔｏ　ｔｏｔａｌｋｏ　ｐｒｅｋｅｗｌ．　Ｍｏｒａｌｉ　ｏｄｍａｈ　ｒａｄｉｔ　ｓｒａｎｊａ　ｓ　ＷＣ－ｏｍ　ｋｏｊｉ　ｐｅｒｅ　ｇｕｚｕ．　Ｐｏｇｌｅｄａｔ　<a href="http://www.youtube.com/watch?v=1-BN9KvT9xk">filmic</a>．　Ｋａｚｕ，　”ｍｏｚｅ　Ｂａｌｋａｎａｃ　ｓ　Ｂａｌｋａｎａ，　ａｌｉ　Ｂａｌｋａｎ　ｉｚ　Ｂａｌｋａｎｃａ　ｎｉｋａｄ”．　Ｍｏｒａｌｉ　ｐｒｏｂａｔ　ｉ　ｏｇｒｔａｃｅ．　Ｈｉｎｔ：　ｐｏｇｌｅｄａｔ　ｓｌｉｋｅ　ｎａ　ｆａｃｅｕ．　Ｏｓｔａｌｏ　ｎａｍ　ｎｅｓｔｏ　ｖｒｅｍｅｎａ　ｐｒｉｊｅ　ｆｅｓｔｉｖａｌａ　ｐａ　ｋｒｅｎｕｌｉ　ｒａｚｇｌｅｄａｖａｔ．　Ｉｎａｃｅ，　Ｋｙｏｔｏ　ｊｅ　Ｍｅｋａ　ｚａ　ｓａｊｔｓｉｉｎｇ，　ｊｅｒｂｏ　ｉｍａ　ｍｏｒｅ　ｄｖｏｒａｃａ，　ｈｒａｍｏｖａ　ｉ　ｓｈｒｉｎｅｏｖａ．　Ｐｏｇｌｅｄａｌｉ　Ｉｍｐｅｒｉａｌ　Ｐａｌａｃｅ，　ｓｔｏ　ｊｅ　ｂｉｏ　ｔｏｔａｌｎｏ　ｋｒｉｖｉ　ｉｚｂｏｒ　ｊｅｒ　ｍｏｚｅｓ　ｓａｍｏ　ｇｌｅｄａｔ　ｚｉｄｏｖｅ，　ｋｏｊｉｍａ　ｋａｄ　ｓｅ　ｐｒｉｂｌｉｚｉｓ，　ａｕｔｏｍａｔｓｋａ　ｔｅｔａ　ｋａｚｅ　”ｏｄｂｉｊ ｍａｌｉ”　ｉ　ｕｐａｌｉ　ｓｅ　ａｌａｒｍ　ｉ　ｎｏｒｍａｌｎｉ　Ｊａｐａｎｃｉ　ｔｅ　ｇｌｅｄａｊｕ　”ｓｅｌｊａｃｉｎｏ　ｇａｉｊｉｎｓｋａ”　ｐｏｇｌｅｄｏｍ．Ｏｎｉ　ｍａｎｊｅ　ｎｏｒｍａｌｎｉ　ｓｅ　ｈｏｃｅ　ｓｌｉｋａｔ　ｓ　ｔｏｂｏｍ．　Ｏｄｕｓｔａｌｉ　ｏｄ　ｐａｌａｃｅ　ｉ　ｋｒｅｎｕｌｉ　ｎａｃ　ｈｒａｎｕ．　Ｒｕｌｊａ　ｓｅ　ｐｏｌａｋｏ　ｐｏｃｅｌａ　ｓｐｒｅｍａｔ　ｚａ　ｆｅｓｔｉｖａｌ，　ａ　ｍｉ　ｏｋｒｅｎｕｌｉ　Ｔａｋｏ　Ｙａｋｉ，　ｇｒｉｌｌａｎｕ　ｈｏｂｏｔｎｉｃｕ．　Ｐｏｇｌｅｄａｔ　<a href="http://www.youtube.com/watch?v=TadtPDNqVYk">video</a> ｌｉｋａ　ｋｏｊｉ　ｔｏ　ｐｒｉｐｒｅｍａ，　ｐｒｅｋｅｗｌ．
+
+Ｖｒａｔｉｍｏ　ｓｅ　ｆｅｓｔｉｖａｌｕ．　Ｒａｄｉ　ｓｅ　ｐｒｉｌｉｃｎｏ　ｓｔａｒｏｊ　ｔｒａｄｉｃｉｊｉ　ｐａｌｊｅｎｊａ　ｖａｔｒｅ　ｕ　ｏｂｌｉｋｕ　ｚｎａｋｏｖａ　ｊａｐａｎｓｋｏｇ　ｐｉｓｍａ　ｎａ　ｐｌａｎｉｎａｍａ　ｏｋｏ　Ｋｙｏｔｏａ．　Ｚａｄｒｚａｌａ　ｓｅ　ｄｏ　ｄａｎａｓ，　ａ　ｓａｍｏ　ｎｅｋｏｌｉｋｏ　ｏｄａｂｒａｎｉｈ　ｏｂｉｔｅｌｊｉ　ｔｏｋｏｍ　ｇｏｄｉｎｅ　ｐｒｏｖｅｄｅ　ｍａｓｕ　ｖｒｅｍｅｎａ　ｓｐｒｅｍａｊｕｃ　ｓｅ　ｚａ　ｆｅｓｔｉｖａｌ．Ｉｍａ　５　ｚｎａｋｏｖａ　ｎａ　５　ｒａｚｌｉｃｉｔｉｈ　ｍｊｅｓｔａ　ｉ　ｎｅ　ｖｉｄｅ　ｓｅ　ｓｖｉ　ｓａ　ｊｅｄｎｏｇ　ｍｊｅｓｔａ，　ｐａ　ｖｉｄｊｅｔｉ　ｓｖｅ　ｐｊｅｓｋｅ　ｊｅ　ｐｒｉｌｉｃｎｏ　ｚａｊｅｂａｎｏ，　ｓｔｏ　ｚｂｏｇ　ｋｒａｔｋｏｇ　ｒａｚｍａｋａ　ｕ　ｐａｌｊｅｎｊｕ，　ｓｔｏ　ｚｂｏｇ　ｄｅｚｏｒｉｊｅｎｔｉｒａｎｏｓｔｉ　ｉｌｉ　ｕｄａｌｊｅｎｏｓｔｉ．　Ｕｇｌａｖｎｏｍ，　ｖｉｄｊｅｌｉ　Ｄａｉｍｏｎｊｉ，　Ｈｉｄａｒｉ　Ｄａｉｍｏｎｊｉ　ｉ　Ｆｕｎａｇａｔａ，　ｂｒｏｄｉｃ．Ｐｏｇｌｅｄａｔ　ｓｌｉｋｅ　ｎａ　ｆａｃｅｕ，　ｋｅｗｌ　ｊｅ．　Ｎａｋｏｎ　ｎａｐｏｒｎｏｇ　ｄａｎａ，　ｔｒａｚｉｌｉ　ｏｎｓｅｎ，　ａｌ　ｋｉｔｕ．　Ｖｒａｔｉｌｉ　ｓｅ　ｕ　ｈｏｔｅｌ，　Ｓａｒａｈ　ｔｊ．　Ｌｉｎｇ　ｉｓｌａ　ｋｒｍｉｔ，　Ｂｒａｎｋｏ　ｍｏｒａｏ　ｋｅｎｊａｔ，　ａ　ｊａ　ｂｌｅｓｐｌａ　ｓｕｒｆａｏ　ｕ　ｐｒｅｄｖｏｒｊｕ．　Ｐｒｅｋａｓｎｏ　ｐｏｐｉｏ　ｋａｖｕ　ｐａ　ｃｉｔａｏ　Ｂｕｄｄｈｉｓｔ　Ｔｅａｃｈｉｎｇｓ　ｄｏ　２　ｕｊｕｔｒｏ．　Ｔｏ　ｄｏｂｉｊｅｓ　ｕ　ｓｏｂｉ，　ｚａｊｅｄｎｏ　ｓ　Ｎｏｖｉｍ　Ｚａｖｊｅｔｏｍ．　Ｄｏｇｏｖｏｒｉｌｉ　ｓｅ　ｋｒｅｎｕｔ　ｕ　ｒａｚｇｌｅｄａｖａｎｊｅ　ｕ　８　ｕｊｕｔｒｏ，　ａｌ　Ｌｉｎｇ　ｋａｓｎｉｌａ　ｐａ　ｋｒｅｎｕｌｉ　ｕ　ｐｏｌ　10. Vidjeli ｔｏｔａｌｎｏ　ａｗｅｓｏｍｅ　Nijo Castle．　Ｕｎｕｔｒａ　ｎｅ　ｓｍｉｊｅｓ　ｓｌｉｋａｔ，　ｐａ　ｎｅｍａ　ｆｏｔｋｉ　ｉｚｎｕｔｒａ，ａｌ　ｓｍｉｊｅｓ　ｂｌｏｇａｔ．　Ｕｇｌａｖｎｏｍ，　ｊａｐａｎｓｋｉ　ｍａｊｓｔｏｒｉ　ｓｕ　ｖｅｃ　ｔａｄ　ｉｍａｌｉ　ｔｚｖ．　Ｓｌａｖｕｊｅｖ　ｐｏｄ，　ｋｏｊｉ　ｊｅ　ｎａｐｒａｖｌｊｅｎ　ｔａｋｏ　ｄａ　ｓｋｒｉｐｉ　ｋｏ　ｓｌａｖｕｊ　ｋａｄ　ｎｅｔｋｏ　ｈｏｄａ，　ｐａ　ｓｅ　ｎｉｔｋｏ　ｎｅ　ｍｏｚｅ　ｕｓｕｌｊａｔ．　Ｓｔａｖｉｌｉ　ｓｕ　ｖｏｓｔａｎｅ　ｆｉｇｕｒｅ　ｇｄｊｅ　ｓｈｏｇｕｎ　ｒｕｌａ　ｄｖｏｒｃｅｍ，　ｏｋｏ　ｎｊｅｇａ　ｎｅｋｉ　ｔｒａｄｉｃｉｏｎａｌｎｉ　ｌａｎｄｌｏｒｄｏｖｉ，　ｔｒｅｂｅ　ｉ　ｏｓｔａｌａ　ｅｋｉｐａ．　Ｓｋｒｐａｌｉ　ｓｅ　ｎｅｋｉｍ　Ｓｐａｎｊｏｌｃｉｍａ，　ｐａ　ｉｍａｌｉ　ｔｕｒｕ　ｓ　ｖｏｄｉｃｅｍ．　Ｉｓｔｉｎａ　ｎａ　ｓｐａｎｊｏｌｓｋｉｍ，　ａｌ　ｂａｒｅｍ　ｎｅｓｔｏ．　Ｎａ　ｂｒｚｉｎｕ　ｉｓｆｏｔｋａｌｉ　ｏｋｏｌｉｃｕ　ｄｖｏｒｃａ　ｉ　ｋｒｅｎｕｌｉ　ｄａｌｊｅ，　ｊｅｒｂｏ　ｊｅ　ｓｕｎｃｅ　ｕ　Ｋｙｏｔｏｕ　ｐｒｉｌｉｎｏ　ｇａｄｎｏ，　ｚａ　ｒａｚｌｉｋｕ　ｏｄ　Ｔｏｋｙａ，　ｋｏｊｉ　ｊｅ　ｕ　ｏｖｏ　ｖｒｉｊｅｍｅ　ｎｅｐｒｅｖｒｕｃ，　ａｌｉ　ｊｅ　ｖｌａｚｎｏｓｔ　ｕ　ｚｒａｋｕ　ｏｐａｋａ，　ｐｏｓｅｂｎｏ　ｋａｄ　ｉｚａｄｊｅｓ　ｉｚ　ｋｌｉｍａｔｉｚｉｒａｎｏｇ　ｐｒｏｓｔｏｒａ　（ｃｉｔａｊ，　ｓｖｅ　ｏｓｉｍ　ｎａｓｅ　ｋｕｈｉｎｊｅ　ｉ　ｋｕｐａｏｎｅ， ｕｋｌｊｕｃｕｊｕｃ　ｔｒｇｏｖｉｎｅ，　１００－ｙｅｎ　ｓｈｏｐｏｖｅ，　ｊａｖｎｉ　ｐｒｉｊｅｖｏｚ．．．）．　Ｎａｋｏｎ　ｔｏｇａ，　ｃｏｐｉｌｉ　ｂｕｓ　ｉ　ｐｒａｖａｃ　Ｋｉｎｋａｋｕｊｉ　Ｔｅｍｐｌｅ．　Ｒｅｃ　ｃｕ　ｓａｍｏ　ｄａ　ｋｉｎ　ｚｎａｃｉ　ｚｌａｔｏ　ｉ　ｄａ　hram　ｊａｋｏ　ｓｊａｊｉ　ｎａ　ｓｕｎｃｕ．Ｔｋｏ　ｎｉｊｅ　ｓｋｕｚｉｏ，　ｐｏｇｌｅｄａｔ　ｓｌｉｋｅ　ｎａ　ｆａｃｅｕ，　ｓｔａｎｉ　ｋａｄ　ｖｉｄｉｓ　ｚｕｔｕ　ｇｒａｄｊｅｖｉｎｕ．　Ｏｓｉｍ　ｔｏｇａ，　ｏｔｉｓｌｉ　ｉ　ｄｏ　Ｒｙｏａｎｊｉ　ｈｒａｍａ　ｕ　ｋｏｊｅｍ　ｓｅ　ｎａｌａｚｉ　ｊｅｄａｎ　ｏｄ　ｎａｊｐｏｚｎａｔｉｊｉｈ　ｋａｍｅｎｉｈ　ｚｅｎ　ｖｒｔｏｖａ．　Ｎｅｌｏｓｅ．　Ｕ　ｔｏ　ｄｏｂａ，　ｂｉｌｏ　ｖｅｃ　ｐｏｓｌｉｊｅｐｏｄｎｅ　ｉ　ｐｒｅｖｌａｄａｌａ　ｇｌａｄ．　Ｂｒａｎｋｏ　ｉ　ｊａ　ｏｓｌｉ　ｕｂｉｔ　ｃｕｒｒｙ　ｎｏｏｄｌｓｅ，　ａ　Ｌｉｎｇ　ｏｓｌａ　ｄｏ　Ｆｕｓｈｉｍｉ　Ｉｎａｒｉ　Ｓｈｒｉｎｅａ．　Ｍｅｎｉ　ｓｅ　ｎｉｊｅ　ｉｓｌｏ　ｊｅｒｂｏ　ｊｅ　ｓｈｒｉｎｅ　ｓｈｉｎｔｏ，　ａ　ｎｅ　ｂｕｄｉｓｔｉｃｋｉ，　ａ　ｔｏｇａ　ｓａｍ　ｓｅ　ｐｒｉｋｌｉｃｎｏ　ｄｏｖｏｌｊｎｏ　ｎａｇｌｅｄａｏ　ｕ　ｚａｄｎｊｉｈ　ｐａｒ　ｔｊｅｄａｎａ．　Ｉｍａｍｏ　ｃａｋ　ｊｅｄｎｏｇ　ｏｄｍａｈ　ｐｏｒｅｄ　ｋｕｃｅ．
+
+Ｅｎｉｖｅｊ，　ｐｏｎｅｄｊｅｌｊａｋ　ｓｅ　ｌａｇａｎｏ　ｂｌｉｚｉｏ　ｋｒａｊｕ，ｋａｏ　ｉ　ｖｒｉｊｅｍｅ　ｐｏｌａｓｋａ　ｖｌａｋａ　ｎａｚａｄ　ｕ　Ｔｏｋｙｏ．　Ｂｒａｎｋｏ　ｉ　ｊａ　ｉｚａｓｌｉ　ｎａ　Ｓｈｉｎｊｕｋｕ，　ｊａ　ｏｄｒａｄｉｔ　ｐｏｓａｏ　ｕ　ｎｅｔ　ｃａｆｅ，　ａ　ｏｎ　ｓｖｒｌｊａｔ　ｉ　ｐｒｏｖｊｅｒｉｔ　ｐｏｓｔｏ　ｓｕ　ｋｕｒｂｅ．　Ｎａｓｌｉ　ｓｅ　ｎａｋｏｎ　ｄｖａ　ｓａｔａ　ｉ　ｍｒｔｖｉ　ｏｓｌｉ　ｄｏｍａ．
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Japan Series: Tachikawa adventures]]></title>
+    <link href="http://iprebeg.github.io/blog/2009/08/26/japan-series-tachikawa-adventures/"/>
+    <updated>2009-08-26T00:00:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2009/08/26/japan-series-tachikawa-adventures</id>
+    <content type="html"><![CDATA[Drugi tjedan u Tokiu krenuo sasvim ugodno. Prvi dio tjedna nastavili raditi na drvenoj kuci, a onda povodom pocetka OBon festivala glavni drvodjelac otisao na godisnji pa se preselili raditi noge za stolice u Hiro-sanovom wrkshopu, odma prekoputa. Enivej, kad smo vec kod glavnog drvodjelca, zove se Saigusa (wtf), ima 50 godina i ne izgleda nista bolje od obicnog rvackog sljakera. No, za razliku od ovih kod nas, ovaj je prije spomenutog godisnjeg imao drugi godisnji, tjedan dana je svrljao po Skandinaviji, samo metropole. Ako je takva placa u drvodjelca&#8230; Tip je totalno kewl, krmi s nama u WWOOF hausu, a preko vikenda ide doma zeni. Dok se vozimo do konstraksn sajta u njegovom kamioncicu, poucava nas japanski s naglaskom na uletavanje trebama. Osim toga, naucio je i par nasih fraza koje zapisuje u na zadnju stranicu englesko-japanskog rjecnika. Kad se probudi, vice &#8220;Dobro juutroo&#8221;. Ima i video gdje svira gitaru, al to uploadam kad dodjem doma.
+
+Enivej, pocetkom tjedna nekako nas napustila i cura sa Tajlanda, a dosla druga s Tajvana. Zove se JinJun (!?) i zbrisala je nakon par dana. Uglavnom, zloglasni tajfun koji je harao Azijom joj je razvalio hometown. Mi se nadali da ce malo opalit i kod nas da ne moramo nist radit. Tajfun obisao Tokyo, al za utjesnu nagradu nas probudio novi potres. Bilo totalno kewl, okrenuli se i nastavili spavat. Bio neki dan poslije jos jedan, al taj me nije probudilo. Uglavnom, ostali Sarah (kineskinja iz Singapura), Joel (Saipon), Stephen (SAD al rodom iz Austrije), Branko i ja.
+
+Bili jednu vecer na rijeci gledat vatromet, sto je kao totalno popularno. Mene obradovala i hrpa tradicionalne klope koju smo ponijeli sa sobom. Tad probao drugu po redu japansku pivu,Yebisu. Ime odgovara prvoj asocijaciji na rvackom, stoga, ovu pivu izbjegavat. Enivej, vratimo se festivalima. U petak i subotu navecer isli u Tachikawu gdje se odrzavao neki festival kojem ne znam ime, ali je bilo uzasno zakon. Eto i <a href="http://www.youtube.com/watch?v=ksnMisHoPm0">video</a>. Ekipa se obuce u tradicionalnu obleku, isfuraju bubnjeve i urlaju i skacu ko manijaci. Sloze i papirnate skulpture da turisti mogu slikat, peku lignje i svast. Japanke u kimonu izgledaju predobro. A i inace izgledaju jako dobro :), odusevljeni smo. Prvi put isli nekud biciklima i skontali da je to najbolje prijevozno sredstvo za krace rute po Tokyu. (Za vise od jedne stanice bolje ic vlakom). U petak bili Sarah, Joel, Branko, Ryuichi ( sin Kazuko-san) i ja. Stephen isao s nekom trebom na Shinjuku, al nije nis ubo, vratio se doma 10 min poslije nas :P.  U petak mu bila zadnja noc u Japanu pa odlucili napravit show. On, Branko i ja uzeli hrpu love, bicikle i pravac Tachikawa. Prvo se glupirali na festivalu. Mahala nam dva slatkisa u kimonu, al nismo znali kak cjelobrojno podijelit tri sa dva, a da nitko ne ostane suh, pa ih samo slikali i kupili sladoled i sok u 7&amp;Elevenu prekoputa, umjesto iz njihove skrinje. Krenuli trazit mjesto za popit pivu i idiotizirali se biciklima. Prije nego nastavim pricu, treba napomenut da smo sve bicikle posudili od Kazuko-san i da su svi bicikli u Japanu registrirani. Enivej, vozimo se po nekim ulicicama, Stephen urla &#8220;record me with your camera while I do power slide&#8221; (pogledaj <a href="http://www.youtube.com/watch?v=71S6_JjiHxM">video</a>), a od tada na dalje Stephen se vozi na ispustenoj zadnjoj gumi. Ko za vraga, prolazimo kraj dva policajca koji nekoj ekipi provjeravaju broj sasije. Naravno, zaustavilo i nas. Dva lika, ko i vecina ljudi u Japanu, ne znaju beknut engleskog, krenuli nam svjetlit baterijom u bicikle, a Stephen gura zadnju gumu uz bankinu da mu ne skontaju 3cm posjekotine, jerbo to ne vole vidit i ne daju ti da se nastavis vozit. Ja i Branko pricamo Rvacki i ljuljamo se lijevo desno, a tip koji idlea nas gleda pogledom &#8220;na kojim ste vi opijatima&#8221;. Uspijeva izdrobit &#8220;where you from&#8221;&#8230; Na prvu nema pojma, al kad spomenemo Mirko CroCop Filipovic, komentira &#8220;Sugoi, Sugoi&#8221;, a dok mu faca poprima izraz &#8220;mogao bi ja i najebat, ovi nisu cisti&#8221;, lagano se odmice od nas. Ovaj drugi zove Kazuko-san jerbo misli da smo drapnuli bicikle. Na kraju sve normalka i krecemo dalje. Upadamo u neki lounge bar, al nas zena uredno moli da odjebemo jer je dolje privatni parti za starije. Kontamo ubit sat u net cafeu, al ne znamo ni jedan u tom dijelu Tachikawe, pa nakon kraceg cruisanja, nalazimo jednog. Parkiramo bicikle, udjemo unutra, a zidovi obljepljeni fotografijama obnazenih japanki. Stephen se sporazumijeva s pijanim likom, a ovaj mu objasnjava da smo dosli u mjesto u kojem vas tip/djecak koji bi kod nas mogao proc za ministranta, lagano odmjeri i odvede do mjesta gdje za novce dobijes sex. Dan prije smo vidjeli kurbe koje rade same, al su ruzne i vjerojatno su kineskinje.  Odjebavamo predvorje kupleraja i krecemo dalje. Eh da, treba napomenut da Japanci vole ic u karaoke barove u koje se placa upad. Vozikamo se ispred biciklima i gledamo ekipu koja stoji u cekaonici jer je kao previse ekipe pa ih ne puste. Odlucili ne ic ovaj put u to, jer smo, za razliku od lokalne ekipe, dosli biciklima, a i tako smo obuceni. Za oko mi zapinje soul bar u mracnoj ulicici. Stajemo ispred, nema zive duse, kontamo ocemo-necemo&#8230;   U tom trenu, ulazi mlada teta s pregacom u mase nam da udjemo. Branko i ja parkiramo bicikle, a Stephen komentira &#8220;I will laugh at you after you get assfucked by nigerian guys&#8221;. Na kraju i on upada s nama u prilicno kewl bar. Unutra neka lokalna ekipa sastavljena od par likova,  2 konobarice i valjda vlasnika. Vlasnik s afro zurkom stize za nas stol i vrlo brzo s japanskog engleskog prelazi na japanski. Stephen ga nekako lovi, al Branko i ja lapimo i pijuckamo Sapporo, trece pivo po redu ko sam probao. Na ljestvici dobrote je prvo, potegnuli ih pet. Nesto kasnije, ulecu tip i cura, novi u bircu, al i dalje su svi ista ekipa. Doslo jos nekih smjesnih likova. Tip i cura sjedaju za nas stol. Cura prica engleski, dok lik prvo blijedo gleda, a kasnije mu ona melje na japanskom. Enivej, tip radi kao ramen majstor u restoranu (nacrtali nam kartu, al predaleko je, ionako jedemo instant ramen)、a cura je instruktorica ashtanga joge i povremeno ide u Indiju. Imali o cem pricat. Osim toga, jedna konobarica slavila rodjendan pa smo bespla dobili tortu i neki zao alkohol. Moras iskapit. Ni dobro. Uglavnom, pisali od smijeha s njih dvoje dok pokusavaju izgovorit &#8220;ponedjeljak&#8221; ili &#8220;prodavacica&#8221;.  Kao slag na bespla tortu, stigao aitu programeru (IT programmer). Tip radi u Appleu i kodira appse za ajfon. Uglavnom, totalno je udaren, kao i svi japanci ima fetis na srednjoskolke u suknjicama i zaboravili ga pitat kolika je placa u japanskih developera. Obavezno pogledat slike na faceu, to je onaj lik s pljugom u ustima i mrljama na majci. U lagano blazenom stanju, oko pol tri ujutro, napustamo soul bar i pozdravljamo se s ekipicom. Ashtanga joga teta nam ponovo crta kartu da znamo opet doc. Bauljamo biciklima prema monorail　stranici (vracamo se doma tak da pratimo prugu biciklima), ali glad prevladava. Pakiramo konje pred McShitom, Stephen casti s 9 hamburgera i cugom po izboru. Teta na blagajni pada s nogu kad se vratimo dolje i uzimamo jos 6 cheeseburgera da imamo sta jest po putu (15 min biciklom). Treba napomenut da McShit radi 24 sata, a kosookima koji su fulali zadnji vlak je poseban gust doc i narucit 100-yen meni (5 kn), otic gore pojest i ko fol slucajno zaspat do jutra. Mrtvi se vracamo doma u ko zna koje doba. Najbolja noc u Tokyu do sada.
+
+U sljedecem postu: Ling, Branko i Ivor u Kyotou.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Japan Series: Prvi vikend off]]></title>
+    <link href="http://iprebeg.github.io/blog/2009/08/17/japan-series-prvi-vikend-off/"/>
+    <updated>2009-08-17T00:00:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2009/08/17/japan-series-prvi-vikend-off</id>
+    <content type="html"><![CDATA[Ola. Bok mama, dobro sam.
+
+Krece kratki prelet od pocetka proslog vikenda kad sam napisao zadnji post. Enivej, tu subotu bio prvi vikend off pa Branko i ja krenuli istrazivat. Naravno, sva rulja prvo ide na Shinjuku i Shibuyu, dvije najpopularnije cetvrti Tokia u kojima ima gro neonskih reklama, cudno obucenih ljudi, trgovina i tralala.
+
+Daklem, prva postaja bila Shinjuku, odakle su stigla prva dva posta. Nakon toga prosetali nekim totalno kewl parkom, poklali nas komarci, hodali po travi koju zelim imat doma umjesto tepiha&#8230; Mislili otic na Tokyo Tower, ali nas izdao GPS i sposobnost orijentacije. Odjebali park i dopjesacili na Shibuyu. Totalno odvalili na crnce (uglavnom Nigerijci) koji ekipu nagovaraju da dodju u njihovu trgovinu kupit patike. Branku su rekli &#8220;big size no problem&#8221;. Enivej, njih se treba klonit. Nije da aludiram da crnci gdje god bili, samo rade probleme, ali ovi su uzasno naporni i treba ih se otarasit u startu, jerbo culi gro prica o ljudima koji su isli vidit sta ima pa izasli iz trgovine desetak soma jena laksi, sa hrpom majci do koljena i slicnog nepotrebnog smeca. Tamo nas udavile tri zene iz nekakve japanske krscanske sekte da idemo u njihovu crkvu primit blagoslov (wtf). Odlucno odjebali i krenuli dalje lutat u nepoznatom smjeru. Branko se pravio da zna kud zeli ici, al u ocima mu se vidjelo da ga nasa pozicija na karti sve vise iznenadjuje. Vidjeli totalno kewl nebodere, debilirali se u Shinto hramu i na kraju mrtvi umorni dosli na Akihabaru, mjesto rezervirano za prodaju elektronicke opreme. Malo svrljali, na gledali ulicni performace nekog madjionicara, utukli lignje i Asahi pivo(koje je eksli bolje od vecine piva koje sam ikad pio) i osli doma.
+
+U nedjelju isao i Stephen s nama. Smrknuli brzinsku kavu s aparata (u Japanu se kava inace  pije hladna, iz konzerve ili tetrapaka, ovo zadnje definitivo izbjegavat). Dosli na Harajuku (cetvrt u kojoj se okupljaju najcudniji ljudi koje mozes srest u Tokiu). Oducili krenut polako pa vidjeli obliznji Meiji Shrine, hram u Shinto stilu. Vidjeli i tradicionalno vjencanje, bilo prezakon. Kasnije isli do parka snimit Rockabilly ekipu. Obavezno pogledat prilozeni <a href="http://www.youtube.com/watch?v=Z06M_JQFGHg">video</a>.Uglavnom, japanci obuku kozne hlace, sloze aerodinamicnu frizuru, odvale glazbu u parku i plesu. Isplati se vidit. Blizu je i mjesto gdje se okupe totalno bolesno obucene djevojcice, al malo bilo mutno vrijeme pa nist od toga. Bilo ih samo par, al bizarnost nadoknadio totalno spaljeni lik. Pogledat <a href="http://www.youtube.com/watch?v=8ythdytQxfg">video</a>. Krenuli jest, progurali se nekom ulicom u kojoj prodaju apsolutno sve, sreli opet nigerijce&#8230; Bizarnosti nije nedostajalo pa otisli jest na Shibuyu. Jeli rizu, sirova jaja, svinjetinu, tko zna jos sta&#8230; Uslikao jerbo mislio da mi je to mozda posljednja vecera. Onda upali u neki fensi bar sa smooth jazzom i ekipom koja ima satove po 5 soma dolara. To nas nije sprijecilo u isprobavanju wc-a koji pere i susi guzicu. Branko je otkrio da tipka na kojoj je nacrtana cura moze izazvat erekciju. Moras voljet Japan. Tad prvi put primjetio da gotovo svi mladi i malo stariji Japanci (a hrpa ih pusi) uopce ne uvlace dim, nego se samo isfuravaju. Sjedimo u tom baru, pored nas cura i tip, roba na njima kosta vjerojatno vise nego sve sto Stephen, Branko i ja posjedujemo, a ja se ne mogu prestat smijat dok ih gledam kako puse kao ja u sedmom razredu&#8230;
+
+Otisli i u Book-Off, stali u porno odjelu i umirali od smijeha gledajuc kako bolesna ova ekipa moze biti. Kao u Japanu je zabranjeno snimati intimne dijelove tijela, pa ih ili zamagle, ili jednostavno koriste jegulje&#8230; Necu dalje komentirat.
+
+Poslije toga odzujali na Roppongi, gledali totalno zakon nebodere i nakon kraceg debiliranja otisli se popet na Tokyo Tower. Tek sa 150 m visine otkrijes koliko je bolesno velik Tokyo. Kasnije saznali da je bio i potres dok smo bili gore. Nije da smo nesto osjetili, al mi bas nije bilo svejedno kad sam cuo. Enivej, par filmica s Tokyo Towera. <a href="http://www.youtube.com/watch?v=Q4Hx9VrKJYA">video1</a> <a href="http://www.youtube.com/watch?v=s2Ph18LAZGc">video2</a>
+
+Totalni mrtvi osli kuc, jerbo je ponedjeljak bio na vratima, a s njim i ustajanje u 7.
+
+Disklejmr: sljedeci post pokrije prosli tjedan i ovaj vikend. Bilo je burno, vikend trajao do danas (ponedjeljak navecer). Valjda uspijem malo sortirat slike pa stavim i to.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Japan Series: Let, dolazak i prvi dojmovi]]></title>
+    <link href="http://iprebeg.github.io/blog/2009/08/08/japan-series-let-dolazak-i-prvi-dojmovi/"/>
+    <updated>2009-08-08T00:00:00+02:00</updated>
+    <id>http://iprebeg.github.io/blog/2009/08/08/japan-series-let-dolazak-i-prvi-dojmovi</id>
+    <content type="html"><![CDATA[Disklejmr: Postovi su na rvackom jerbo ne zelimo zagorcavat zivot mojoj majci koja ceka poruku na Skypu, a meni se bas i ne da :)
+
+I tak, u nedjelju poslijepodne napustio Malo Misto, stigao u Metropolu i krenuo prepakiravat kofere. Malo kasnije, stigli Branko, Riba i Goran, a s njima i hrpa pizze, pive i ko zna sta jos sve ne. Kao mali farewell party. Goran se ubrzo sprijateljio s kaucem i papirnatim Balicem u prirodnoj velicini, ja bio ubijen pa zakrmio, a Riba i Branko setali kvartom u 3 ujutro, na opce cudjenje lokalnih cugera. Oko 4 ujutro cirkus u stanu, Branko i Riba u stilu gregorijanskih zborova Goranu pjevaju nabolesniju pjesmu za budjenje ikad. Pakiramo stvari i lagani pokret, paranoidno kljucam ulazna vrata nakon sto sam tri puta provjerio sve prozore i roletne. Nabrijani Golf Duja tiho bruji pospanim gradom, a lagana kisa i Marchelov Puzzle Shock nas prate dok napustamo Metropolu. Oko pol 6 stizemo na Pleso, odradili check-in i predali prtljagu. Avion za Pariz kasni 50 minuta u polasku, pa sjedamo na kavu (18 kn?) . Pozdravljamo se s Goranom i Ribom, a Branko i ja se debiliramo u obliznjem PBZ igralistu.  Jos uvijek nisam siguran hocu li te slike ikada nekom pokazati. Jos se malo debiliramo u restoranu, nakon cega kontamo da bi mogli zakasnit na let koji i sam po sebi kasni. Ulecemo i guramo se kroz red, tip koji gleda karte nam spominje tri koljena rodbine, dok zena dolje na izlasku urla nasa prezimena i vjerojrno imena ostatka rodbine koja su promakla prethodno spomenutom gospodinu. Enivej, ipak uletili u avioncic za Pariz.
+
+Nakon nekih sat i pol, stizemo na Charles De Gaulle. Aerodrom je ogroman i izgleda uzasno kewl nasuprot Plesa. Downside toga je to sto se malo zajebano snaci dok nadjes svoj terminal (put ukljucuje vozikanje aerodromskom zeljeznicom, kupovanje hrpe cokolade, haxanje web terminala i kojesta drugo). Enivej, ukrcali se na Airbus A340 i krece let do Narite.  Iako nema bas previse mjesta, puno je udobnije od bojlera s krilima s kojim smo letjeli s Plesa. U sjedalu imas svoj mali LCD u kojem se moze pogledat X-Men ili novi Star Trek, a mozes gledat i putno racunalo koje ti kaze sve zakon stvari o letu. Na moje opce iznenadjenje, avion ne leti iznad Indije i Kine, nego fura do Baltika, Finske pa okine Ruskom obalom i kasnije se preko Sibira spusti do Japana. Svejedno, kad se vozis oko 1000 km/h na visini od 10km, temperatura vani je -50 C. Od vegetarijanskog rucka nisam bas puno ocekivao, pa se nisam niti previse razocarao. Nije da trazim sabji na gujaratski nacin, ali riza se moze malo bolje zacinit. Zeludac se razveselio kad su stjuardese pocele nositi japanske noodle  u miso juhi, ali naravno, hrpa iritantnih Spanjolaca je bila brza pa ispusili i to. Nakon gadnih 12 sati leta, stizemo na Narita aerodrom u 6.50 po lokalnom vremenu. Ostavljamo sliku i otiske,  lazemo da cemo si trazit hostel i bez problema prolazimo imigracijske provjere.
+
+Mjenjamo lovu i kupujemo kartu za ugodno klimatiziran i prilicno skup jutarnji vlak koji nas vozi do Tokyo Stationa, odakle se vozimo lokalnim vlakom do Hino Stationa. Iako smo mislili da se radi o selendri, Hino City je prilicno kewl dio Tokya, iako puno mirniji od susjedne Tachikawe ili Shibuye i Shinjukua. Zovemo Kazuko-san i to je trenutak u kojem nam dolazi do mozga da je Kazuko-san zena i da smo napravili totalni zajeb kad smo uz knjigu od Rvackoj kupili kravatu. Enivej, Kazuko-san nas pobrala nekim kombijem, svratili po bento, pokazala nam di je budisticki hram pa krenuli domeka.
+]]></content>
+  </entry>
+  
+</feed>
